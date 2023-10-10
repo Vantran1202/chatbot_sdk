@@ -1,0 +1,18 @@
+current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/home/developer/.asdf/installs/ruby/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231011-46827-pnzt5z sitelibdir\=./.gem.20231011-46827-pnzt5z clean
+
+current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231011-46827-pnzt5z sitelibdir\=./.gem.20231011-46827-pnzt5z
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231011-46827-pnzt5z sitelibdir\=./.gem.20231011-46827-pnzt5z install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20231011-46827-pnzt5z/bootsnap
+
+current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231011-46827-pnzt5z sitelibdir\=./.gem.20231011-46827-pnzt5z clean
