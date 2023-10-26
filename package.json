@@ -11,16 +11,19 @@
     "defaults"
   ],
   "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.5",
     "sass": "^1.69.4",
-    "vite": "^4.4.11",
-    "vite-plugin-ruby": "^3.2.2",
     "stimulus-vite-helpers": "^3.0.1",
+    "vite": "^4.4.11",
     "vite-plugin-full-reload": "^1.0.5",
+    "vite-plugin-ruby": "^3.2.2",
     "vite-plugin-stimulus-hmr": "^3.0.0"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
+    "remixicon": "^3.5.0"
   }
 }

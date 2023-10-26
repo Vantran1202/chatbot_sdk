@@ -11,7 +11,13 @@
     <%= vite_stylesheet_tag 'stylesheets/application.scss', media: 'all' %>
   </head>
 
-  <body>
+  <body class="page-template-default page page-id-578 atar-toolkit-activate elementor-default elementor-kit-7 elementor-page elementor-page-578">
+    <%= render partial: 'layouts/shared/preloader' %>
+    <%= render partial: 'layouts/shared/nav' %>
+    <%= render partial: 'layouts/shared/search_modal' %>
+    <%= render partial: 'layouts/shared/responsive_nav' %>
     <%= yield %>
+    <%= render partial: 'layouts/shared/footer' %>
+    <%= render partial: 'layouts/shared/go_top' %>
   </body>
 </html>

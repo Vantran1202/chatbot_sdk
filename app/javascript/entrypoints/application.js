@@ -24,12 +24,12 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // // Import all channels.
 // const channels = import.meta.globEager('./**/*_channel.js')
 
-
 import '../controllers'
 import * as boostrap from 'bootstrap'
+import $ from 'jquery';
+import '../vendors/atar'
 
-// import '../stylesheets/application.scss'
-
+window.$ = $;
 window.boostrap = boostrap
 
 // initialize the page
@@ -40,7 +40,7 @@ window.addEventListener('turbo:render', (event) => {
     initPage();
 });
 function initPage() {
-      // initialize popovers
+  // initialize popovers
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
