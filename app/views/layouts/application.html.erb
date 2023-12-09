@@ -6,23 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
-
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
-
+    <%= vite_stylesheet_tag 'stylesheets/application.scss', media: 'all' %>
   </head>
 
-  <body>
+  <body class="page-template-default page page-id-578 atar-toolkit-activate elementor-default elementor-kit-7 elementor-page elementor-page-578">
+    <%= render partial: 'layouts/shared/preloader' %>
+    <%= render partial: 'layouts/shared/nav' %>
+    <%= render partial: 'layouts/shared/search_modal' %>
+    <%= render partial: 'layouts/shared/responsive_nav' %>
     <%= yield %>
+    <%= render partial: 'layouts/shared/footer' %>
+    <%= render partial: 'layouts/shared/go_top' %>
   </body>
 </html>
