@@ -47,3 +47,4 @@ node_modules
 *.local
 
 vendor/bundle
+config/database.yml
