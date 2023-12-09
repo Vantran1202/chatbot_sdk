@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   resources :home, only: %i[index]
+  scope :projects do
+    resources :campaigns, only: %i[index]
+  end
 end
