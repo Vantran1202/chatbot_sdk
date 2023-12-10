@@ -1,0 +1,33 @@
+doctype html
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title= @seo_title || 'Atarbot SDK'
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = vite_client_tag
+    = vite_javascript_tag 'projects'
+    = vite_stylesheet_tag 'stylesheets/projects.scss', media: 'all'
+
+  body.page-template-default.page.page-id-578.atar-toolkit-activate.elementor-default.elementor-kit-7.elementor-page.elementor-page-578
+    div.page-wrapper#main-wrapper(data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed")
+      aside.left-sidebar
+        div
+          == render 'layouts/shared/projects/logo'
+          == render 'layouts/shared/projects/sidebar_items'
+
+      main.body-wrapper
+        header.app-header
+          nav.navbar.navbar-expand-lg.navbar-light.align-items-center.mt-3.px-3.mx-2
+            == render 'layouts/shared/projects/upgrade_plan'
+            == render 'layouts/shared/projects/mobile_toggle'
+
+            h4.text-primary.font-bold.d-none.d-sm-block= @page_title || 'Welcome to Atarbot SDK'
+
+            == render 'layouts/shared/projects/user_dropdown'
+
+        div.container-fluid
+          == yield

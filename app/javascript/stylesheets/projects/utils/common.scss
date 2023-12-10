@@ -1,0 +1,74 @@
+// WIDTH
+.mw-75 {
+  max-width: 75%;
+}
+.min-w-0 {
+  min-width: 0;
+}
+.w-2 {
+  width: 2.25rem;
+}
+
+// HEIGHT
+.h-2 {
+  height: 2.25rem;
+}
+.h-05 {
+  height: 0.5rem;
+}
+.h-26 {
+  height: 26rem;
+}
+.max-h-36 {
+  max-height: 36rem;
+}
+.mh-50 {
+  min-height: 50px;
+}
+
+// TEXT
+.text-sm {
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+.white-break {
+  white-space: break-spaces;
+}
+
+// OTHER
+
+.notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+textarea {
+  resize: none;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 1;
+}
+
+.disabled-form {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.spinner-border {
+  width: 15px;
+  height: 15px;
+  font-size: 7px;
+}

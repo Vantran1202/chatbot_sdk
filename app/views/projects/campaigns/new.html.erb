@@ -1,0 +1,719 @@
+              <ul class="nav nav-tabs mb-3 mt-5  align-items-center" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link nav-tab" data-bs-toggle="tab" data-id="#tab-1" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-1" aria-selected="false" tabindex="-1">Source
+                              <i class="ti ms-1 ti-circle-check-filled" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Source has been processed successfully." data-bs-original-title="Source has been processed successfully."></i>
+                        </a>
+    </li>
+    <li class="nav-item " role="presentation">
+      <a class="nav-link nav-tab" data-bs-toggle="tab" data-id="#tab-2" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-2" aria-selected="false" tabindex="-1">Chatbot
+                              <i class="ti ms-1 ti-circle-check-filled" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Source has been processed successfully." data-bs-original-title="Source has been processed successfully."></i>
+                        </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link nav-tab active" data-bs-toggle="tab" data-id="#tab-3" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-3" aria-selected="true">Intergate
+        <i class="ti ti-message-2-code ms-1" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Click here to set up information for the integrations." data-bs-original-title="Click here to set up information for the integrations."></i>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link nav-tab" data-mdb-toggle="tab" data-id="#tab-4" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-4" aria-selected="false" tabindex="-1">Embed on site
+          <i class="ti ms-1 ti-pill" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Copy the script to apply the chatbot to your website." data-bs-original-title="Copy the script to apply the chatbot to your website."></i>
+        </a>
+    </li>
+          <a class="text-danger ms-3 delete-project-btn" data-delete-id="f841620a-970c-4de5-aa7a-a63eb1743934" data-project-name="Demo" name="delete-project" href="javascript:void(0)">
+        Delete
+        <i class="ti ms-1 ti-trash text-danger delete-project-btn" data-bs-toggle="tooltip" aria-label="Delete your project." data-bs-original-title="Delete your project."></i>
+      </a>
+      </ul>
+  <!-- Tabs navs -->
+  <!-- Tabs content -->
+  <div class="tab-content" id="ex1-content">
+    <div class="tab-pane fade" id="tab-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+      <section class="py-5 header">
+        <div class="container py-4">
+                        <div class="row">
+                <div class="col-md-2">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tabType" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow active" id="v-pills-text" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-text" aria-selected="true">
+                            <i class="ti ti-align-center me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">Text</span>
+                        </a>
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow" id="v-pills-file" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-file" aria-selected="false">
+                            <i class="ti ti-file-upload me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">File</span>
+                        </a>
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow" id="v-pills-crawl" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-crawl" aria-selected="false">
+                            <i class="ti ti-world-www me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">Website</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 py-3 border">
+                    <!-- Tabs content -->
+                    <div class="p-3">
+                        <label for="project-name" class="form-label">Project Name</label>
+                        <input value="Demo" type="text" class="form-project form-control" id="project-name">
+                        <span id="error-name" class="validation text-danger mt-2"></span>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabTypeContent">
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3 show active" id="v-pills-text-panel" role="tabpanel" aria-labelledby="v-pills-text-tab">
+                            <div class="mb-1 text-center">
+                                <h5 class="mb-0">Text</h5>
+                            </div>
+                            <div id="text-form">
+                                                                                                            <div class="form-content">
+                                            <div class="detail-content alert alert-secondary d-flex justify-content-between align-items-center">
+                                                <span>https://example.com (11 characters)</span>
+                                                <i name="show-form" class="ti ti-caret-right-filled fs-6 cusor-pointer d-none"></i>
+                                                <i name="hide-form" class="ti ti-caret-up-filled fs-6 cusor-pointer"></i>
+                                            </div>
+                                            <div class="form-modify">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Page</label>
+                                                    <input value="https://example.com" type="text" class="form-project form-control page-name-input" oninput="updateArrayInput(this)">
+                                                    <span class="error-page-name validation text-danger mt-2"></span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Content</label>
+                                                    <textarea rows="15" class="form-project form-control project-content-input" oninput="updateArrayInput(this)">Hello world</textarea>
+                                                    <span class="error-page-content validation text-danger mt-2"></span>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <div class="justify-content-end">
+                                                        <div class="mb-3 d-flex">
+                                                            <button class="btn btn-danger mx-1" type="button" style="display: none" onclick="removeForm(this)">
+                                                                <i class="ti ti-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                </div>
+                            <div class="justify-content-end mb-3 d-flex">
+                                <button class="btn btn-secondary font-weight-medium waves-effect waves-light mx-1" type="button" onclick="addForm()">
+                                    <i class="ti ti-circle-plus fs-5"></i>
+                                </button>
+                            </div>
+                            <span id="error-contents-text" class="text-danger"></span>
+                        </div>
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3" id="v-pills-file-panel" role="tabpanel" aria-labelledby="v-pills-file-tab">
+                            <div class="mb-1 text-center">
+                                <h5 class="mb-0">File</h5>
+                            </div>
+                            <div class="">
+                                <div class="mb-3">
+                                    <label for="project-content" class="form-label">Project Content</label>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label for="fileInput" class="text-center drop-area" id="dropArea">
+                                                <input accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="d-none" type="file" id="fileInput" multiple="">
+                                                <p>Drag and drop files here or click to select files</p>
+                                                <p class="fs-1"> Supported File Types: .pdf, .docx </p>
+                                                <div for="fileInput" class="file-label d-block text-center text-success">
+                                                    <i class="ti ti-cloud-upload fs-6"></i>
+                                                </div>
+                                            </label>
+                                            <div id="fileList" class="mt-3 max-h-36 overflow-auto file-list">
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header">
+                                        <i style="color: greenyellow !important" class="ti ti-circle-check-filled me-2"></i>
+                                        <strong class="me-auto">Project Save Success</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        See? Just like this.
+                                    </div>
+                                </div>
+                            </div>
+                            <span id="error-contents-file" class="text-danger"></span>
+                        </div>
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3" id="v-pills-crawl-panel" role="tabpanel" aria-labelledby="v-pills-crawl-tab">
+    <div class="mb-1 text-center">
+        <h5 class="mb-3">Website</h5>
+    </div>
+    <div id="project-form" class="">
+        <div class="mb-3 border p-3">
+            <div>
+                <label class="form-label">Crawl</label>
+                <div class="relative mt-2 rounded-md">
+                    <div class="d-flex">
+                        <input type="text" id="website" name="website" class="form-control me-2 " placeholder="https://www.example.com" value="">
+                        <button id="btn_crawl" class="btn btn-primary col-4" type="button">Fetch more links</button>
+                    </div>
+                    <div id="progress_container" class="w-full rounded-full py-3 d-none">
+                        <p id="progress_text" class="text-xs text-gray-600">0%</p>
+                        <div id="progress_bar" class="progress bg-green h-05" style="width: 0%;"></div>
+                    </div>
+                    <div class="py-4 text-sm text-gray-600">This will crawl all the links starting with the URL (not including files on the website).</div>
+                </div>
+                <div id="include_links" class="mt-16">
+                    <div class="d-flex align-items-center my-5">
+                        <hr class="w-50 rounded">
+                        <span class="px-2 w-50 text-center">Included Links</span>
+                        <hr class="w-50 rounded">
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button id="delete_all" type="button" class="btn btn-danger">Delete all</button>
+                    </div>
+
+                    <div class="max-h-36 overflow-auto mt-5 pr-2">
+                        <div id="content-crawls" class="relative mt-2 rounded-md shadow-sm">
+                                                                                </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <p class="mt-4 fs-2"><span id="total_detect">0</span>&nbsp; detected characters</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span id="error-contents-link" class="text-danger"></span>
+</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card alert-dismissible fade show alert p-0 card-hover bg-white" role="alert">
+                        <div class="p-2 d-block mt-3">
+                            <h5 class="card-title text-center">DemoSource</h5>
+                            <p class="fs-2" id="total-file-chars"></p>
+                            <p class="fs-2" id="total-text-chars">1 Pages text input (11 chars)</p>
+                            <p class="fs-2" id="total-link-chars"></p>
+                            <span class="fs-3 fw-bold">Total detected characters</span>
+                            <p class="text-center fs-2">
+                              <span id="total-length">11</span> /
+                              1,000,000
+                            </p>
+                            <p id="total-detect-chars-error" class="fs-2 text-danger text-center my-2"></p>
+                                                        <button id="update-button" type="button" class="modify-project-btn form-project btn btn-outline-primary d-block w-100">Retraining</button>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+              <div class="card position-sticky overflow-hidden chat-application">
+  <div class="d-container">
+    <div class="w-70 w-xs-100 chat-container border">
+      <div class="chat-box-inner-part h-100">
+        <div class="chatting-box d-block">
+          <div class="position-relative overflow-hidden d-flex">
+            <div class="position-relative d-flex flex-grow-1 flex-column">
+              <div class="chat-box p-9" style="height: calc(100vh - 300px)" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: -20px;">
+                  <div class="simplebar-height-auto-observer-wrapper">
+                      <div class="simplebar-height-auto-observer"></div>
+                  </div>
+                  <div class="simplebar-mask">
+                    <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                      <div id="chat-box-content" class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                        <div class="simplebar-content" style="padding: 20px;">
+                          <div id="msg_history" class="chat-list chat active-chat" data-user-id="1">
+                            <div class="hstack gap-3 align-items-start mb-7 justify-content-start">
+                              <img src="https://mgpt.tomosia.com.vn/assets/images/logos/logo.png" alt="user8" width="40" height="40">
+                              <div>
+                                <h6 class="fs-2 text-muted">Demo Assistant</h6>
+                                <div class="p-2 bg-light rounded-1 d-inline-block text-dark fs-3">I am a AI Assistant, Ask me anything, I will help answer your questions based on my understanding. </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <!-- 2 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="simplebar-placeholder" style="width: auto; height: 577px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 241px; transform: translate3d(0px, 132px, 0px); display: block;"></div></div>
+              </div>
+              <div class="px-3 py-6 border-top chat-send-message-footer">
+                <form id="form-question">
+                  <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">                  <div class="position-relative d-flex align-items-center">
+                    <textarea rows="2" id="question-text" required="" type="text" name="input" placeholder="Type your question here!" class="form-control border message-type-box text-muted p-2" style="height: 2rem;
+                           box-sizing: initial;"></textarea>
+                           <i id="send-message-icon" class="position-absolute ti ti-brand-telegram" style="right: 1rem;font-size: 1.5rem;color: dodgerblue;"></i>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="tab-pane fade show active" id="tab-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+        <section class="py-5 header">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Tabs nav -->
+                <div class="nav flex-column nav-pills nav-pills-custom" id="nav-pills-integrate" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link nav-link-integrate mb-3 p-3 shadow active" id="v-pills-line" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-line" aria-selected="true">
+                                                    <i class="ti mr-2 ti-alert-circle-filled" data-bs-toggle="tooltip" aria-label="Line has not been installed." data-bs-original-title="Line has not been installed."></i>
+                                                <span class="font-weight-bold small text-uppercase">Line</span></a>
+                    <a class="nav-link nav-link-integrate mb-3 p-3 shadow" id="v-pills-zalo" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-zalo" aria-selected="false">
+                                                    <i class="ti mr-2 ti-alert-circle-filled" data-bs-toggle="tooltip" aria-label="Zalo has not been installed." data-bs-original-title="Zalo has not been installed."></i>
+                                                <span class="font-weight-bold small text-uppercase">Zalo</span></a>
+                    <a class="nav-link nav-link-integrate mb-3 p-3 shadow" id="v-pills-messenger" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-messenger" aria-selected="false">
+                                                    <i class="ti mr-2 ti-alert-circle-filled" data-bs-toggle="tooltip" aria-label="Messenger has not been installed." data-bs-original-title="Messenger has not been installed."></i>
+                                                <span class="font-weight-bold small text-uppercase">Messenger</span></a>
+                    </div>
+            </div>
+            <div class="col-md-10">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3 show active" id="v-pills-line-panel" role="tabpanel" aria-labelledby="v-pills-line-tab">
+                        <div class="d-flex flex-sm-row flex-column">
+    <form id="line-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/line/create" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="project-id" value="f841620a-970c-4de5-aa7a-a63eb1743934">
+      <input type="hidden" id="provider-id" value="">
+            <div class="mb-3">
+        <label for="provider-name" class="form-label">Channel Name</label>
+        <input value="" type="text" class="form-provider form-control " id="provider-name">
+        <span id="error-provider_name" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="provider-name" class="form-label">Channel Description</label>
+        <input value="" type="text" class="form-provider form-control" id="provider-description">
+        <span id="error-provider_description" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="provider-icon" class="form-label">Channel Icon</label>
+        <input value="" type="file" class="form-provider form-control mb-3 " id="provider-icon">
+                <span id="error-provider_icon" class="validation text-danger"></span>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button id="btn-save-line" type="button" class="form-provider btn btn-primary mx-1 mb-3">Save</button>
+      </div>
+    </form>
+    <div class="line-container">
+      <div class="mb-3">
+        <label for="provider-icon" class="form-label">QR CODE</label>
+              </div>
+    </div>
+  </div>
+                    </div>
+                    <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3" id="v-pills-zalo-panel" role="tabpanel" aria-labelledby="v-pills-zalo-tab">
+                        <div class="d-flex flex-sm-row flex-column">
+    <form id="zalo-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/zalo/create" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="zalo-id" value="">
+            <div class="mb-3">
+        <label for="zalo-oa-name" class="form-label">Official Account Name</label>
+        <input value="" type="text" class="form-zalo form-control" id="zalo-name">
+        <span id="error-zalo_name" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="zalo-oa-id" class="form-label">Official Account ID</label>
+        <input value="" type="text" class="form-zalo form-control" id="zalo-oa-id">
+        <span id="error-oa_id" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="zalo-client-id" class="form-label">Client ID</label>
+        <input value="" type="text" class="form-zalo form-control" id="zalo-client-id">
+        <span id="error-client_id" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="zalo-client-secret" class="form-label">Client Secret</label>
+        <input value="" type="text" class="form-zalo form-control" id="zalo-client-secret">
+        <span id="error-client_secret" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="zalo-access-token" class="form-label">Access Token</label>
+        <input value="" type="password" autocomplete="on" class="form-zalo form-control" id="zalo-access-token">
+        <span id="error-access_token" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="zalo-refresh-token" class="form-label">Refresh Token</label>
+        <input value="" type="password" autocomplete="on" class="form-zalo form-control" id="zalo-refresh-token">
+        <span id="error-refresh_token" class="validation text-danger"></span>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button id="btn-save-zalo" type="button" class="form-provider btn btn-primary mt-3">Save</button>
+      </div>
+    </form>
+    <div class="line-container">
+        <div class="mb-3">
+            <a href="https://mgpt.tomosia.com.vn/assets/document/Settup_zalo_developers.docx" target="_blank">Document settup<i class="ti ti-click"></i></a>
+        </div>
+      <div class="mb-3">
+        <div class="mb-3">
+                  </div>
+        <label for="zalo-icon" class="form-label">QR CODE</label>
+              </div>
+    </div>
+  </div>
+  <div>
+    <section class="align-items-center">
+    <div class="align-items-center d-flex mt-3" style="cursor: pointer" onclick="showIntroduction('#introduction_zalo')">
+        <span class="text-primary">Click to instructions</span><i class="ti ti-chevrons-right fs-6 introduction-icon text-primary"></i>
+    </div>
+    <div id="introduction_zalo" class="d-none mt-5 line-container w-100">
+        <p class="fs-6 fw-bold text-center">Zalo Settings Intructions</p>
+        <div class="mt-3">
+            <p class="form-label">Step 1: Add new app</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li class="my-2">Access the link <a target="blank" href="https://developers.zalo.me/">https://developers.zalo.me/ </a>and log in with your phone number or QR code.</li>
+                    <li class="my-2">Click on the avatar icon in the top right corner and select "Add a new application.</li>
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/new_app.png" alt="#">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 2: Enter the application information.</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/create_app.png" alt="#">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label text-danger">Step 3: In the next step, pay attention to two fields: `Application ID` corresponding to APP_ID and `Application Secret Key` corresponding to APP_SECRET.</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/client.png" alt="#">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 4: Domain Verification</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li class="my-2">In this step, you need to enter the domain mgpt.tomosia.com as the URL prefix <a href="javascript:void(0)">https://mgpt.tomosia.com.vn</a> and then click "Authenticate."</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/domain.png" alt="">
+                    <li class="my-2">After clicking Authenticate, a popup will open. Here, you continue to select Authenticate now.</li>
+                    <li class="my-2">There are two ways to do this (this process may take up to 72 hours):</li>
+                    <span class="my-2">+ Choose "Upload HTML file to your website," then download the HTML file and send it to us.</span>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/file_html.png" alt="">
+                    <span class="my-2">+ Choose Add a meta tag to your website, then copy the meta link and send it to us.</span>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/meta_data.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 5: Webhook</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li class="my-2">After you send the domain verification information to us, we will send you an endpoint.</li>
+                    <li class="my-2">Click Change and paste the endpoint to confirm.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/add_webhook.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 6: Official Account</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li class="my-2">Link your official account with your website.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/add_office_account.png" alt="">
+                    <li class="my-2">In the general settings, enter your official account callback URL as <a href="javascript:void(0)">https://mgpt.tomosia.com.vn</a> and save it. Then copy the link to request permission and paste it into your browser.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/callback_url.png" alt="">
+                    <li class="my-2">Select "Agree" and grant permission.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/confirm_token.png" alt="">
+                    <li class="my-2">Our website will open with an `oa_id` like this. You can copy this `oa_id` and send it to us.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/token_oa_id.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 7: Office account</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li class="text-danger my-2">In the official account's details, copy the ID and name and fill in the form with the fields `Official Account ID` and `Official Account Name`</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/oa_id.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div style="cursor: pointer" class="text-center"><i class="ti ti-chevrons-up fs-6 introduction-icon text-primary" onclick="hideIntroduction('#introduction_zalo')"></i></div>
+        <p class="fs-3 fw-semibold text-center text-primary">Thank you for reading this far.</p>
+    </div>
+</section>
+  </div>
+                    </div>
+                    <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3" id="v-pills-messenger-panel" role="tabpanel" aria-labelledby="v-pills-messenger-tab">
+                        <div class="d-flex flex-sm-row flex-column">
+    <form id="fanpage-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/facebook-fanpage/create" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="messager-intergate-id" value="">
+            <div class="mb-3">
+        <label for="fanpage-name" class="form-label">Fanpage Name</label>
+        <input value="" type="text" class="form-fanpage form-control" id="fanpage-name">
+        <span id="error-fanpage_name" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="fanpage-id" class="form-label">Fanpage ID</label>
+        <input value="" type="text" class="form-fanpage form-control" id="fanpage-id">
+        <span id="error-fanpage_id" class="validation text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label for="fanpage-access-token" class="form-label">Access Token</label>
+        <input value="" type="password" autocomplete="on" class="form-fanpage form-control" id="fanpage-access-token">
+        <span id="error-fanpage_access_token" class="validation text-danger"></span>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button id="btn-save-messager" type="button" class="form-provider btn btn-primary mx-1 mb-3">Save</button>
+      </div>
+    </form>
+    <div class="line-container align-items-centers">
+      <div class="mb-3">
+              </div>
+    </div>
+  </div>
+  <div>
+    <section class="align-items-center">
+    <div class="align-items-center d-flex mt-3" style="cursor: pointer" onclick="showIntroduction('#introduction_messenger')">
+        <span class="text-primary">Click to instructions</span><i class="ti ti-chevrons-right fs-6 introduction-icon text-primary"></i>
+    </div>
+    <div id="introduction_messenger" class="d-none mt-5 line-container w-100">
+        <p class="fs-6 fw-bold text-center">Messenger Webhook Settings Intructions</p>
+        <div class="mt-3">
+            <p class="form-label">Required conditions:</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li>You need to have a Meta Business account and an activated Messenger feature on a fan page.</li>
+                    <li>If you don't have a fan page, you can create a new one (detailed instructions will be provided below).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 1: Create a Facebook App</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li>Visit the Facebook for Developers website <a target="blank" href="https://developers.facebook.com/">(https://developers.facebook.com/)</a> and log in with your Facebook account.</li>
+                    <li>Create a new application by clicking "My Apps" and then selecting "Create App."</li>
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/create_meta_app.jpg" alt="#">
+                    <li>After creating the app, you need to add a product. Select "Messenger" and set up basic configurations like the app's icon, app name, and description.</li>
+                    <img width="60%" class="my-2 mx-auto d-flex" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_messenger_product.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 2: Configure the Webhook</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li>If you don't have a fanpage, you can create a new at here.</li>
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/create_fanpage.png" alt="#">
+                    <li>In the "Access Tokens" section, create an Access Token.</li>
+                    <div class="d-flex my-2 mx-auto d-flex mx-auto">
+                        <img class="mx-1" width="45%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/generate_page_token.png" alt="">
+                        <img class="mx-1" width="45%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/coppy_save_token.png" alt="">
+                    </div>
+                    <li>Register your Fanpage name, page ID &amp; page access token on MGPT</li>
+                        <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/setting_on_mgpt.png" alt="">
+                    <li>After registering on the MGPT system, you will receive a webhook URL and its corresponding verification code. Use this code in the messenger's webhook setup section.</li>
+                    <li>Then, configure the Webhook to receive notifications from Messenger. In the "Webhooks" section, click on "Set Up Webhooks." This will require you to provide your server's URL and an authentication token. Enter the URL and authentication token you received from MGPT into the respective fields to activate the connection.</li>
+                        <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_url_callback.png" alt="">
+                    <li>To verify the Webhook, Facebook will send a GET request to the URL you provide. Respond with the authentication token to verify.</li>
+                    <li>After a successful connection, select the "messages, messaging_postbacks, message_deliveries, messaging_optins" field so that your MGPT can receive signals through the webhook whenever there is a message to your page.</li>
+                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_events.png" alt="">
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 3: Send messages testing</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li>After completing the above steps, try sending a message to your fan page to test the webhook's functionality.</li>
+                </ul>
+                <span class="text-danger ms-1">*</span><span class="ms-2 text-danger">Please note that because your application is currently in development mode, the webhook will only work for your account. To enable this feature for any other accounts, you'll need to submit a request to Meta and wait for approval.</span>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="form-label">Step 4: Submit request permisions to Meta</p>
+            <div class="fs-3">
+                <ul style="list-style: disc" class="ms-3">
+                    <li>
+                        To publish the webhook feature on your page, you need to submit an approval request with the "pages_messaging" permission to Meta and wait for approval. This process may take several days. For more information, Learn more about
+                        <a target="blank" href="https://developers.facebook.com/docs/graph-api/overview/access-levels">
+                            Standard Access and Enhanced Access on Meta developers.
+                        </a>
+                    </li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/submit_pages_messaging.png" alt="">
+                </ul>
+            </div>
+            <div style="cursor: pointer" class="text-center"><i class="ti ti-chevrons-up fs-6 introduction-icon text-primary" onclick="hideIntroduction('#introduction_messenger')"></i></div>
+        </div>
+        <p class="fs-3 fw-semibold text-center text-primary">Thank you for reading this far.</p>
+    </div>
+</section>
+  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      </div>
+              <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="ex1-tab-4">
+        <section class="py-5 header">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Tabs nav -->
+                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-embed" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link nav-link-left mb-3 p-3 shadow active" id="v-pills-embed" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-embed" aria-selected="true">
+                        <i class="ti ti-sdk mr-2 fs-4"></i>
+                        <span class="font-weight-bold small text-uppercase">Embed on site</span></a>
+                    <a class="nav-link nav-link-left mb-3 p-3 shadow" id="v-pills-interface" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-interface" aria-selected="false">
+                        <i class="ti ti-brand-hipchat mr-2 fs-4"></i>
+                        <span class="font-weight-bold small text-uppercase">Chat interface</span></a>
+                    </div>
+            </div>
+            <div class="col-md-10">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane tab-pane-left fade rounded bg-white p-3 show active" id="v-pills-embed-panel" role="tabpanel" aria-labelledby="v-pills-embed-tab">
+                        <div class="container py-3 border">
+                            <div class="mt-2" style="text-align: center;">
+                                <p class="text-sm text-gray-500">To add a chat bubble to the bottom right of your website add this script tag to your html</p>
+                            </div>
+                            <div class="mb-3">
+                            <div class="row justify-content-center" style="">
+                                <div class="position-relative col-md-6">
+                                    <pre class=" w-full overflow-auto text-xs bg-slate-100 rounded p-2"><code id="p1"> &lt;script src="https://mgpt.tomosia.com.vn/sdk/embedded.min.js"
+projectId="f841620a-970c-4de5-aa7a-a63eb1743934"
+domain="https://mgpt.tomosia.com.vn"
+defer&gt;
+&lt;/script&gt;</code></pre>
+                                <div class="col-12 fs-5 lg:col-auto order-last lg:order-first d-flex justify-content-center">
+                                    <a onclick="copyToClipboard('#p1')" href="javascript:void(0)" id="copy_embed" class="btn btn-light fs-2 lg:w-auto">
+                                        Copy Script<i id="icon-copy" class="ti ti-folders ms-2"></i>
+                                    </a>
+                                </div>
+                                </div>
+                                <div class="col-md-6" style="width: 300px">
+                                    <img src="https://mgpt.tomosia.com.vn/assets/images/chatbot_bubble.png" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane tab-pane-left fade rounded bg-white p-3" id="v-pills-interface-panel" role="tabpanel" aria-labelledby="v-pills-interface-tab">
+                                                    <div>
+    <form id="chat_interface_form" action="https://mgpt.tomosia.com.vn/api/v1/chat_interface/create" enctype="multipart/form-data">
+        <input type="hidden" id="project_id" value="f841620a-970c-4de5-aa7a-a63eb1743934">
+        <input type="hidden" id="chat_interface_id" value="">
+        <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">        <div class="border border-gray-200">
+            <div class="border-bottom border-gray-200 bg-white py-3 px-5">
+                <h3 class="text-xl font-semibold text-gray-900">Chat Interface</h3>
+            </div>
+            <div class="p-1 p-sm-5">
+                <h4 class="mb-4 text-sm text-gray-600">Note: Applies when embedded on a website</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="pb-4">
+                            <label class="form-label">Display name</label>
+                            <input type="text" id="bot_name" name="bot_name" class="form-control" value="">
+                            <span id="error-bot_name" class="validation text-danger"></span>
+                        </div>
+                        <div class="pb-4">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label">Theme</label>
+                                <button type="button" id="theme_reset" class="btn btn-sm btn-primary">Reset</button>
+                            </div>
+                            <div class="mb-2">
+                                <input type="color" class="form-control w-2 h-2 p-1 border bg-gray-100" value="#1F2937" id="theme" name="theme">
+                                <span id="error-theme" class="validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div id="display_icon" class="pb-4" style="">
+                            <label class="form-label">Update chatbot profile picture</label>
+                            <input id="bot_profile_picture" type="file" accept="image/*" name="bot_profile_picture" class="form-control">
+                            <span id="error-bot_profile_picture" class="validation text-danger"></span>
+                        </div>
+                        <div class="pb-4">
+                            <label class="form-label">Remove Chatbot Profile Picture</label>
+                            <div class="form-check">
+                                <input type="checkbox" id="remove_bot_profile_picture" name="remove_bot_profile_picture" class="form-check-input">
+                                <span id="error-remove_bot_profile_picture" class="validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="pb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <label class="form-label">Initial Messages</label>
+                                <button type="button" id="initial_reset" class="btn btn-sm btn-primary">Reset</button>
+                            </div>
+                            <div class="mb-2">
+                                <textarea id="initial_messages" name="initial_messages" class="form-control" rows="4" placeholder="Hi! What can I help you with?" maxlength="1000">I am an AI Assistant, Ask me anything, I will help answer your questions based on my understanding.</textarea>
+                                <p class="mt-2 text-sm text-gray-600">Enter each message in a new line.</p>
+                                <span id="error-initial_message" class="validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Suggested Messages</label>
+                            <div class="mb-2">
+                                <textarea id="suggested_messages" name="suggested_messages" class="form-control" rows="4" placeholder="What is example.com?"></textarea>
+                                <p class="mt-2 text-sm text-gray-600">Enter each message in a new line.</p>
+                                <span id="error-suggested_messages" class="validation text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex flex-column flex-shrink-0 border rounded-top">
+                            <div class="w-100">
+                                <div id="chat_theme" class="d-flex justify-between py-1 mb-2 mh-50 rounded-top bg-gray-800 rounded-top text-white" style="background-color: rgb(31, 41, 55);">
+                                    <div class="d-flex align-items-center p-1 m-1">
+                                        <img id="chat_bot_profile_picture" src="" width="35" height="35" decoding="async" data-nimg="1" class="rounded-circle mx-2" loading="lazy" alt="profile picture" style="display: none;" onerror="this.style.display='none';">
+                                        <h1 id="chat_bot_name" class="h4 mx-2 fs-5 m-auto" style="color: #fff"></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-26 overflow-auto">
+                                <div class="pr-2 p-2">
+                                    <div class="d-flex justify-content-start mb-3">
+                                        <div id="chat_initial_messages" class="reply text-black white-break rounded-lg py-2 px-4 typing bg-gray-200">I am an AI Assistant, Ask me anything, I will help answer your questions based on my understanding.</div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mb-3">
+                                        <div class="text-white rounded-lg py-2 px-4 bg-question">
+                                            Hi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="container mt-4">
+                                    <div id="suggest_mess" class="py-3 d-flex overflow-x-auto">
+                                                                            </div>
+                                </div>
+                                <div id="chat-input-container" class="p-2 border-t border-gray-200">
+                                    <div class="items-center d-flex">
+                                        <input type="text" id="chat-input" class="min-w-0 flex-1 rounded-md px-4 py-2 outline-none border-none" placeholder="Type your message...">
+                                        <button type="button" id="chat-submit" class="bg-gray-800 text-white rounded-md px-4 py-2 cursor-pointer border-0">
+                                        <i class="ti ti-send" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="flex text-center text-xs pt-2">
+                                        <span class="flex-1">Prompted by <a id="current_url" href="https://tomosia.com" target="_blank" class="text-indigo-600">MGPT</a></span>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end bg-gray-100 mt-3">
+                <button id="update-chat-interface" type="button" class="modify-project-btn form-project btn btn-primary mx-2 mb-1 mt-1">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      </div>
+      <div>
+        </div>
+      </div>
