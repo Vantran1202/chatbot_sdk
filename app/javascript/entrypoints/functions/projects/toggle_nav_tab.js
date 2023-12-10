@@ -56,13 +56,13 @@ $(function () {
 
     $.ajax({
       type: 'POST',
-      url: `https://mgpt.tomosia.com.vn/api/v1/line/create`,
+      url: `http://127.0.0.1:5100/api/v1/line/create`,
       data: formData,
       contentType: false,
       processData: false,
       success: function(res) {
         $.LoadingOverlay('hide');
-        window.location.href = `https://mgpt.tomosia.com.vn/project/list`;
+        window.location.href = `http://127.0.0.1:5100/project/list`;
       },
       error: function(error) {
         error.responseJSON.meta.errors && error.responseJSON.meta.errors.provider_name ?
