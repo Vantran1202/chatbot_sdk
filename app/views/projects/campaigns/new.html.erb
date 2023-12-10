@@ -1,0 +1,203 @@
+<ul class="nav nav-tabs mb-3 mt-5 align-items-center" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link nav-tab" data-bs-toggle="tab" data-id="#tab-1" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-1" aria-selected="false" tabindex="-1">Source
+                  <i class="ti ms-1 ti-alert-circle-filled" data-bs-toggle="tooltip" aria-label="Source has not been installed." data-bs-original-title="Source has not been installed."></i>
+              </a>
+    </li>
+    <li class="nav-item d-none" role="presentation">
+      <a class="nav-link nav-tab" data-bs-toggle="tab" data-id="#tab-2" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-2" aria-selected="false" tabindex="-1">Chatbot
+                  <i class="ti ms-1 ti-alert-circle-filled" data-bs-toggle="tooltip" aria-label="Source has not been installed." data-bs-original-title="Source has not been installed."></i>
+              </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link nav-tab active" data-bs-toggle="tab" data-id="#tab-3" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-3" aria-selected="true">Intergate
+        <i class="ti ti-message-2-code ms-1" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Click here to set up information for the integrations." data-bs-original-title="Click here to set up information for the integrations."></i>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link nav-tab" data-mdb-toggle="tab" data-id="#tab-4" href="javascript:void(0)" role="tab" aria-controls="ex1-tabs-4" aria-selected="false" tabindex="-1">Embed on site
+          <i class="ti ms-1 ti-pill" data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Copy the script to apply the chatbot to your website." data-bs-original-title="Copy the script to apply the chatbot to your website."></i>
+        </a>
+    </li>
+      </ul>
+
+<div class="tab-content" id="ex1-content">
+    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+      <section class="py-5 header">
+        <div class="container py-4">
+                        <div class="row">
+                <div class="col-md-2">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tabType" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow active" id="v-pills-text" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-text" aria-selected="true">
+                            <i class="ti ti-align-center me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">Text</span>
+                        </a>
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow" id="v-pills-file" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-file" aria-selected="false">
+                            <i class="ti ti-file-upload me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">File</span>
+                        </a>
+                        <a class="nav-link nav-link-type mb-3 p-3 shadow" id="v-pills-crawl" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-crawl" aria-selected="false">
+                            <i class="ti ti-world-www me-2 fs-6"></i>
+                            <span class="font-weight-bold small text-uppercase">Website</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 py-3 border">
+                    <!-- Tabs content -->
+                    <div class="p-3">
+                        <label for="project-name" class="form-label">Project Name</label>
+                        <input value="" type="text" class="form-project form-control" id="project-name">
+                        <span id="error-name" class="validation text-danger mt-2"></span>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabTypeContent">
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3 show active" id="v-pills-text-panel" role="tabpanel" aria-labelledby="v-pills-text-tab">
+                            <div class="mb-1 text-center">
+                                <h5 class="mb-0">Text</h5>
+                            </div>
+                            <div id="text-form">
+                                                                    <div class="form-content">
+                                        <div class="detail-content alert alert-secondary d-flex justify-content-between align-items-center">
+                                            <span>Let create content for page to training.</span>
+                                            <i name="show-form" class="ti ti-caret-right-filled fs-6 cusor-pointer d-none"></i>
+                                            <i name="hide-form" class="ti ti-caret-up-filled fs-6 cusor-pointer"></i>
+                                        </div>
+                                        <div class="form-modify">
+                                            <div class="mb-3">
+                                                <label class="form-label">Page</label>
+                                                <input type="text" class="form-project form-control page-name-input" oninput="updateArrayInput(this)">
+                                                <span class="error-page-name validation text-danger mt-2"></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Content</label>
+                                                <textarea rows="15" class="form-project form-control project-content-input" oninput="updateArrayInput(this)"></textarea>
+                                                <span class="error-page-content validation text-danger mt-2"></span>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <div class="justify-content-end">
+                                                    <div class="mb-3 d-flex">
+                                                        <button class="btn btn-danger mx-1" type="button" style="display: none" onclick="removeForm(this)">
+                                                            <i class="ti ti-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                            </div>
+                            <div class="justify-content-end mb-3 d-flex">
+                                <button class="btn btn-secondary font-weight-medium waves-effect waves-light mx-1" type="button" onclick="addForm()">
+                                    <i class="ti ti-circle-plus fs-5"></i>
+                                </button>
+                            </div>
+                            <span id="error-contents-text" class="text-danger"></span>
+                        </div>
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3" id="v-pills-file-panel" role="tabpanel" aria-labelledby="v-pills-file-tab">
+                            <div class="mb-1 text-center">
+                                <h5 class="mb-0">File</h5>
+                            </div>
+                            <div class="">
+                                <div class="mb-3">
+                                    <label for="project-content" class="form-label">Project Content</label>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <label for="fileInput" class="text-center drop-area" id="dropArea">
+                                                <input accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="d-none" type="file" id="fileInput" multiple="">
+                                                <p>Drag and drop files here or click to select files</p>
+                                                <p class="fs-1"> Supported File Types: .pdf, .docx </p>
+                                                <div for="fileInput" class="file-label d-block text-center text-success">
+                                                    <i class="ti ti-cloud-upload fs-6"></i>
+                                                </div>
+                                            </label>
+                                            <div id="fileList" class="mt-3 max-h-36 overflow-auto file-list">
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div class="toast-header">
+                                        <i style="color: greenyellow !important" class="ti ti-circle-check-filled me-2"></i>
+                                        <strong class="me-auto">Project Save Success</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    </div>
+                                    <div class="toast-body">
+                                        See? Just like this.
+                                    </div>
+                                </div>
+                            </div>
+                            <span id="error-contents-file" class="text-danger"></span>
+                        </div>
+                        <div class="tab-pane tab-pane-type fade rounded bg-white p-3" id="v-pills-crawl-panel" role="tabpanel" aria-labelledby="v-pills-crawl-tab">
+    <div class="mb-1 text-center">
+        <h5 class="mb-3">Website</h5>
+    </div>
+    <div id="project-form" class="">
+        <div class="mb-3 border p-3">
+            <div>
+                <label class="form-label">Crawl</label>
+                <div class="relative mt-2 rounded-md">
+                    <div class="d-flex">
+                        <input type="text" id="website" name="website" class="form-control me-2 " placeholder="https://www.example.com" value="">
+                        <button id="btn_crawl" class="btn btn-primary col-4" type="button">Fetch more links</button>
+                    </div>
+                    <div id="progress_container" class="w-full rounded-full py-3 d-none">
+                        <p id="progress_text" class="text-xs text-gray-600">0%</p>
+                        <div id="progress_bar" class="progress bg-green h-05" style="width: 0%;"></div>
+                    </div>
+                    <div class="py-4 text-sm text-gray-600">This will crawl all the links starting with the URL (not including files on the website).</div>
+                </div>
+                <div id="include_links" class="mt-16">
+                    <div class="d-flex align-items-center my-5">
+                        <hr class="w-50 rounded">
+                        <span class="px-2 w-50 text-center">Included Links</span>
+                        <hr class="w-50 rounded">
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button id="delete_all" type="button" class="btn btn-danger">Delete all</button>
+                    </div>
+
+                    <div class="max-h-36 overflow-auto mt-5 pr-2">
+                        <div id="content-crawls" class="relative mt-2 rounded-md shadow-sm">
+                                                                                </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <p class="mt-4 fs-2"><span id="total_detect">0</span>&nbsp; detected characters</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span id="error-contents-link" class="text-danger"></span>
+</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card alert-dismissible fade show alert p-0 card-hover bg-white" role="alert">
+                        <div class="p-2 d-block mt-3">
+                            <h5 class="card-title text-center">Source</h5>
+                            <p class="fs-2" id="total-file-chars"></p>
+                            <p class="fs-2" id="total-text-chars"></p>
+                            <p class="fs-2" id="total-link-chars"></p>
+                            <span class="fs-3 fw-bold">Total detected characters</span>
+                            <p class="text-center fs-2">
+                              <span id="total-length">0</span> /
+                              100,000
+                            </p>
+                            <p id="total-detect-chars-error" class="fs-2 text-danger text-center my-2"></p>
+                                                        <button id="save-button" type="button" class="modify-project-btn form-project btn btn-outline-primary d-block w-100">Create</button>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+              <div class="alert alert-warning disabled text-center">
+          <span class="ms-3 text-danger">The data is currently being trained by AI, please wait until the process is complete.</span>
+        </div>
+          </div>
+          <div>
+        </div>
+      </div>

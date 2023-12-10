@@ -1,0 +1,14 @@
+ruby:
+  option = h_plan_option(item)
+
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i class== "#{option[:icon]}"
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            h4.card-title== option[:title]
+            h6.fs-2.mb-0.fw-light.text-nowrap= option[:desc]
