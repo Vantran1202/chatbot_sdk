@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
-class Projects::Campaigns::IndexOperation < ApplicationOperation
-  def call; end
+module Projects
+  module Campaigns
+    class IndexOperation < ApplicationOperation
+      def call; end
+    end
+  end
 end

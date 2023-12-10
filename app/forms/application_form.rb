@@ -12,7 +12,7 @@ class ApplicationForm
       self.class.attribute(column.to_sym)
     end
 
-    super attributes
+    super(attributes)
   end
 
   def valid!

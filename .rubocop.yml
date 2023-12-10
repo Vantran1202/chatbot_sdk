@@ -1,0 +1,59 @@
+# Guideline [https://docs.rubocop.org/rubocop-rails/index.html]
+#
+# Template YAML
+##  + Rails [https://github.com/rails/rails/blob/main/.rubocop.yml]
+##  + Ruby [https://github.com/rubocop/rubocop/blob/master/config/default.yml]
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - slimcop
+
+AllCops:
+  TargetRubyVersion: 3.2.1
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - vendor/**/*
+    - db/schema.rb
+    - db/migrate/*
+    - bin/*
+    - coverage/**/*
+    - config/**/*
+    - tmp/**/*
+    - log/*
+    - public/**/*
+    - node_modules/**/*
+
+# ===== RAILS =====
+Rails/Output:
+  Enabled: true
+  Exclude:
+    - 'config/unicorn/*'
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+
+# ===== LAYOUT =====
+Layout/LineLength:
+  Exclude:
+    - 'Gemfile'
+    - spec/**/*_spec.rb
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+  Enabled: true

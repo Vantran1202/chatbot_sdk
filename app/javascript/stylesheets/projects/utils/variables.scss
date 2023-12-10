@@ -1,0 +1,20 @@
+
+$blue: #5D87FF !default;
+$cyan: #539BFF !default;
+$gray-500: #5A6A85 !default;
+$font-family-base: "Plus Jakarta Sans", "Noto Sans", "Roboto", system-ui;
+$font-size-base: 0.875rem !default;
+$body-color: $gray-500 !default;
+$border-color: #ebf1f6 !default;
+
+:root {
+  --bs-light-primary-rgb: 236,242,255;
+  --bs-light-secondary-rgb: 232,247,255;
+  --bs-light-info-rgb: 235,243,254;
+  --bs-light-success-rgb: 230,255,250;
+  --bs-light-warning-rgb: 254,245,229;
+  --bs-light-danger-rgb: 251,242,239;
+  --bs-light-indigo-rgb: 235,243,254;
+  --bs-dark-light-rgb: 42,53,71;
+  --bs-light-gray-rgb: 246,249,252;
+}

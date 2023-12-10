@@ -3,7 +3,7 @@ html lang="en"
   head
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
-    title= @seo_title || 'Chatbot SDK'
+    title= @seo_title || 'Atarbot SDK'
 
     = csrf_meta_tags
     = csp_meta_tag
@@ -25,7 +25,7 @@ html lang="en"
             == render 'layouts/shared/projects/upgrade_plan'
             == render 'layouts/shared/projects/mobile_toggle'
 
-            h4.text-primary.font-bold.d-none.d-sm-block= @page_title
+            h4.text-primary.font-bold.d-none.d-sm-block= @page_title || 'Welcome to Atarbot SDK'
 
             == render 'layouts/shared/projects/user_dropdown'
 
