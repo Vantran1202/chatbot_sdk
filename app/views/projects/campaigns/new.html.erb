@@ -217,7 +217,7 @@
                         <div class="simplebar-content" style="padding: 20px;">
                           <div id="msg_history" class="chat-list chat active-chat" data-user-id="1">
                             <div class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                              <img src="https://mgpt.tomosia.com.vn/assets/images/logos/logo.png" alt="user8" width="40" height="40">
+                              <img src="http://127.0.0.1:5100/assets/images/logos/logo.png" alt="user8" width="40" height="40">
                               <div>
                                 <h6 class="fs-2 text-muted">Demo Assistant</h6>
                                 <div class="p-2 bg-light rounded-1 d-inline-block text-dark fs-3">I am a AI Assistant, Ask me anything, I will help answer your questions based on my understanding. </div>
@@ -275,7 +275,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3 show active" id="v-pills-line-panel" role="tabpanel" aria-labelledby="v-pills-line-tab">
                         <div class="d-flex flex-sm-row flex-column">
-    <form id="line-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/line/create" enctype="multipart/form-data">
+    <form id="line-form" class="line-container " method="post" action="http://127.0.0.1:5100/api/v1/line/create" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="project-id" value="f841620a-970c-4de5-aa7a-a63eb1743934">
       <input type="hidden" id="provider-id" value="">
             <div class="mb-3">
@@ -306,7 +306,7 @@
                     </div>
                     <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3" id="v-pills-zalo-panel" role="tabpanel" aria-labelledby="v-pills-zalo-tab">
                         <div class="d-flex flex-sm-row flex-column">
-    <form id="zalo-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/zalo/create" enctype="multipart/form-data">
+    <form id="zalo-form" class="line-container " method="post" action="http://127.0.0.1:5100/api/v1/zalo/create" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="zalo-id" value="">
             <div class="mb-3">
         <label for="zalo-oa-name" class="form-label">Official Account Name</label>
@@ -344,7 +344,7 @@
     </form>
     <div class="line-container">
         <div class="mb-3">
-            <a href="https://mgpt.tomosia.com.vn/assets/document/Settup_zalo_developers.docx" target="_blank">Document settup<i class="ti ti-click"></i></a>
+            <a href="http://127.0.0.1:5100/assets/document/Settup_zalo_developers.docx" target="_blank">Document settup<i class="ti ti-click"></i></a>
         </div>
       <div class="mb-3">
         <div class="mb-3">
@@ -366,7 +366,7 @@
                 <ul style="list-style: disc" class="ms-3">
                     <li class="my-2">Access the link <a target="blank" href="https://developers.zalo.me/">https://developers.zalo.me/ </a>and log in with your phone number or QR code.</li>
                     <li class="my-2">Click on the avatar icon in the top right corner and select "Add a new application.</li>
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/new_app.png" alt="#">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/new_app.png" alt="#">
                 </ul>
             </div>
         </div>
@@ -374,7 +374,7 @@
             <p class="form-label">Step 2: Enter the application information.</p>
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/create_app.png" alt="#">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/create_app.png" alt="#">
                 </ul>
             </div>
         </div>
@@ -382,7 +382,7 @@
             <p class="form-label text-danger">Step 3: In the next step, pay attention to two fields: `Application ID` corresponding to APP_ID and `Application Secret Key` corresponding to APP_SECRET.</p>
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/client.png" alt="#">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/client.png" alt="#">
                 </ul>
             </div>
         </div>
@@ -390,14 +390,14 @@
             <p class="form-label">Step 4: Domain Verification</p>
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
-                    <li class="my-2">In this step, you need to enter the domain mgpt.tomosia.com as the URL prefix <a href="javascript:void(0)">https://mgpt.tomosia.com.vn</a> and then click "Authenticate."</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/domain.png" alt="">
+                    <li class="my-2">In this step, you need to enter the domain mgpt.tomosia.com as the URL prefix <a href="javascript:void(0)">http://127.0.0.1:5100</a> and then click "Authenticate."</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/domain.png" alt="">
                     <li class="my-2">After clicking Authenticate, a popup will open. Here, you continue to select Authenticate now.</li>
                     <li class="my-2">There are two ways to do this (this process may take up to 72 hours):</li>
                     <span class="my-2">+ Choose "Upload HTML file to your website," then download the HTML file and send it to us.</span>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/file_html.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/file_html.png" alt="">
                     <span class="my-2">+ Choose Add a meta tag to your website, then copy the meta link and send it to us.</span>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/meta_data.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/meta_data.png" alt="">
                 </ul>
             </div>
         </div>
@@ -407,7 +407,7 @@
                 <ul style="list-style: disc" class="ms-3">
                     <li class="my-2">After you send the domain verification information to us, we will send you an endpoint.</li>
                     <li class="my-2">Click Change and paste the endpoint to confirm.</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/add_webhook.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/add_webhook.png" alt="">
                 </ul>
             </div>
         </div>
@@ -416,13 +416,13 @@
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
                     <li class="my-2">Link your official account with your website.</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/add_office_account.png" alt="">
-                    <li class="my-2">In the general settings, enter your official account callback URL as <a href="javascript:void(0)">https://mgpt.tomosia.com.vn</a> and save it. Then copy the link to request permission and paste it into your browser.</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/callback_url.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/add_office_account.png" alt="">
+                    <li class="my-2">In the general settings, enter your official account callback URL as <a href="javascript:void(0)">http://127.0.0.1:5100</a> and save it. Then copy the link to request permission and paste it into your browser.</li>
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/callback_url.png" alt="">
                     <li class="my-2">Select "Agree" and grant permission.</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/confirm_token.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/confirm_token.png" alt="">
                     <li class="my-2">Our website will open with an `oa_id` like this. You can copy this `oa_id` and send it to us.</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/token_oa_id.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/token_oa_id.png" alt="">
                 </ul>
             </div>
         </div>
@@ -431,7 +431,7 @@
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
                     <li class="text-danger my-2">In the official account's details, copy the ID and name and fill in the form with the fields `Official Account ID` and `Official Account Name`</li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/zalo/oa_id.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/zalo/oa_id.png" alt="">
                 </ul>
             </div>
         </div>
@@ -443,7 +443,7 @@
                     </div>
                     <div class="tab-pane tab-pane-integrate fade rounded bg-white p-3" id="v-pills-messenger-panel" role="tabpanel" aria-labelledby="v-pills-messenger-tab">
                         <div class="d-flex flex-sm-row flex-column">
-    <form id="fanpage-form" class="line-container " method="post" action="https://mgpt.tomosia.com.vn/api/v1/facebook-fanpage/create" enctype="multipart/form-data">
+    <form id="fanpage-form" class="line-container " method="post" action="http://127.0.0.1:5100/api/v1/facebook-fanpage/create" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">      <input type="hidden" id="messager-intergate-id" value="">
             <div class="mb-3">
         <label for="fanpage-name" class="form-label">Fanpage Name</label>
@@ -491,9 +491,9 @@
                 <ul style="list-style: disc" class="ms-3">
                     <li>Visit the Facebook for Developers website <a target="blank" href="https://developers.facebook.com/">(https://developers.facebook.com/)</a> and log in with your Facebook account.</li>
                     <li>Create a new application by clicking "My Apps" and then selecting "Create App."</li>
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/create_meta_app.jpg" alt="#">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/create_meta_app.jpg" alt="#">
                     <li>After creating the app, you need to add a product. Select "Messenger" and set up basic configurations like the app's icon, app name, and description.</li>
-                    <img width="60%" class="my-2 mx-auto d-flex" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_messenger_product.png" alt="">
+                    <img width="60%" class="my-2 mx-auto d-flex" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/add_messenger_product.png" alt="">
                 </ul>
             </div>
         </div>
@@ -502,20 +502,20 @@
             <div class="fs-3">
                 <ul style="list-style: disc" class="ms-3">
                     <li>If you don't have a fanpage, you can create a new at here.</li>
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/create_fanpage.png" alt="#">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/create_fanpage.png" alt="#">
                     <li>In the "Access Tokens" section, create an Access Token.</li>
                     <div class="d-flex my-2 mx-auto d-flex mx-auto">
-                        <img class="mx-1" width="45%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/generate_page_token.png" alt="">
-                        <img class="mx-1" width="45%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/coppy_save_token.png" alt="">
+                        <img class="mx-1" width="45%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/generate_page_token.png" alt="">
+                        <img class="mx-1" width="45%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/coppy_save_token.png" alt="">
                     </div>
                     <li>Register your Fanpage name, page ID &amp; page access token on MGPT</li>
-                        <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/setting_on_mgpt.png" alt="">
+                        <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/setting_on_mgpt.png" alt="">
                     <li>After registering on the MGPT system, you will receive a webhook URL and its corresponding verification code. Use this code in the messenger's webhook setup section.</li>
                     <li>Then, configure the Webhook to receive notifications from Messenger. In the "Webhooks" section, click on "Set Up Webhooks." This will require you to provide your server's URL and an authentication token. Enter the URL and authentication token you received from MGPT into the respective fields to activate the connection.</li>
-                        <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_url_callback.png" alt="">
+                        <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/add_url_callback.png" alt="">
                     <li>To verify the Webhook, Facebook will send a GET request to the URL you provide. Respond with the authentication token to verify.</li>
                     <li>After a successful connection, select the "messages, messaging_postbacks, message_deliveries, messaging_optins" field so that your MGPT can receive signals through the webhook whenever there is a message to your page.</li>
-                    <img class="my-2 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/add_events.png" alt="">
+                    <img class="my-2 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/add_events.png" alt="">
                 </ul>
             </div>
         </div>
@@ -538,7 +538,7 @@
                             Standard Access and Enhanced Access on Meta developers.
                         </a>
                     </li>
-                    <img class="mt-3 mx-auto d-flex" width="60%" src="https://mgpt.tomosia.com.vn/assets/projects/assets/images/documents/submit_pages_messaging.png" alt="">
+                    <img class="mt-3 mx-auto d-flex" width="60%" src="http://127.0.0.1:5100/assets/projects/assets/images/documents/submit_pages_messaging.png" alt="">
                 </ul>
             </div>
             <div style="cursor: pointer" class="text-center"><i class="ti ti-chevrons-up fs-6 introduction-icon text-primary" onclick="hideIntroduction('#introduction_messenger')"></i></div>
@@ -580,9 +580,9 @@
                             <div class="mb-3">
                             <div class="row justify-content-center" style="">
                                 <div class="position-relative col-md-6">
-                                    <pre class=" w-full overflow-auto text-xs bg-slate-100 rounded p-2"><code id="p1"> &lt;script src="https://mgpt.tomosia.com.vn/sdk/embedded.min.js"
+                                    <pre class=" w-full overflow-auto text-xs bg-slate-100 rounded p-2"><code id="p1"> &lt;script src="http://127.0.0.1:5100/sdk/embedded.min.js"
 projectId="f841620a-970c-4de5-aa7a-a63eb1743934"
-domain="https://mgpt.tomosia.com.vn"
+domain="http://127.0.0.1:5100"
 defer&gt;
 &lt;/script&gt;</code></pre>
                                 <div class="col-12 fs-5 lg:col-auto order-last lg:order-first d-flex justify-content-center">
@@ -592,7 +592,7 @@ defer&gt;
                                 </div>
                                 </div>
                                 <div class="col-md-6" style="width: 300px">
-                                    <img src="https://mgpt.tomosia.com.vn/assets/images/chatbot_bubble.png" width="100%" height="100%">
+                                    <img src="http://127.0.0.1:5100/assets/images/chatbot_bubble.png" width="100%" height="100%">
                                 </div>
                             </div>
                         </div>
@@ -600,7 +600,7 @@ defer&gt;
                     </div>
                     <div class="tab-pane tab-pane-left fade rounded bg-white p-3" id="v-pills-interface-panel" role="tabpanel" aria-labelledby="v-pills-interface-tab">
                                                     <div>
-    <form id="chat_interface_form" action="https://mgpt.tomosia.com.vn/api/v1/chat_interface/create" enctype="multipart/form-data">
+    <form id="chat_interface_form" action="http://127.0.0.1:5100/api/v1/chat_interface/create" enctype="multipart/form-data">
         <input type="hidden" id="project_id" value="f841620a-970c-4de5-aa7a-a63eb1743934">
         <input type="hidden" id="chat_interface_id" value="">
         <input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off">        <div class="border border-gray-200">
