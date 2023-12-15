@@ -48,3 +48,5 @@ node_modules
 
 vendor/bundle
 config/database.yml
+
+/config/credentials/development.key

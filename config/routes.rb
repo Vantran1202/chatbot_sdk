@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root "home#index"
   resources :home, only: %i[index]
 
-  scope :projects, module: :projects, as: :project do
-    resources :campaigns, only: %i[index new]
+  scope :campaigns, module: :campaigns, as: :campaign do
+    resources :projects, only: %i[index new]
     resources :upgrades, only: %i[index]
   end
 end
