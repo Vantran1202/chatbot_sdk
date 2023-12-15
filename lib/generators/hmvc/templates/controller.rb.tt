@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+class <%= class_name %>Controller < ApplicationController<% options[:action].split(',').sort.each do |action| %>
+  <%= add_comment_endpoint(action) %>
+  def <%= action %>
+    operator = <%= class_name %>::<%= action.humanize %>Operation.new(params)
+    operator.call
+  end
+<% end %>end

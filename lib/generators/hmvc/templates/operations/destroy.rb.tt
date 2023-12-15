@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+class <%= class_name %>::DestroyOperation < ApplicationOperation
+  def call; end
+end
