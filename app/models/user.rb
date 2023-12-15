@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-  has_one :user_counters, dependent: :destroy
+  acts_as_paranoid
+
+  has_one :user_counter, dependent: :destroy
 
   has_many :projects, dependent: :destroy
+  has_many :orders,   dependent: :destroy
 end

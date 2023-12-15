@@ -1,0 +1,10 @@
+.tab-pane.fade#tab-4 role="tabpanel" aria-labelledby="ex1-tab-4"
+  section.py-5.header
+    div.container.py-4
+      div.row
+        == render partial: 'campaigns/projects/new/tab/embed_on_site/nav'
+
+        div.col-md-10
+          div.tab-content#v-pills-tabContent
+            == render partial: 'campaigns/projects/new/tab/embed_on_site/embed'
+            == render partial: 'campaigns/projects/new/tab/embed_on_site/interface'

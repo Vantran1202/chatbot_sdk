@@ -7,9 +7,25 @@ class Campaigns::ProjectsController < ProjectsController
     operator.call
   end
 
-  # [GET] /campaigns/new
+  # [GET] /campaigns/projects/new
   def new
-    operator = Campaigns::Projects::IndexOperation.new(params)
+    operator = Campaigns::Projects::NewOperation.new(params)
     operator.call
+
+    @form = operator.form
+  end
+
+  # [POST] /campaigns/projects
+  def create
+    operator = Campaigns::Projects::CreateOperation.new(params)
+    operator.call
+
+    @form = operator.form
+
+    if @form.invalid?
+      render :new
+    else
+      redirect_to campaigns_projects_path, notice: :success
+    end
   end
 end

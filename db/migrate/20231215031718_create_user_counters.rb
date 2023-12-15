@@ -12,6 +12,12 @@ class CreateUserCounters < ActiveRecord::Migration[7.1]
       t.integer :used_request_counts, default: 0
       t.integer :limited_request_counts, default: 0
 
+      t.boolean :has_zalo, default: false
+      t.boolean :has_line, default: false
+      t.boolean :has_messenger, default: false
+      t.boolean :has_chat_integraton, default: false
+      t.boolean :has_custom_interface, default: false
+
       t.datetime :deleted_at
       t.timestamps
     end

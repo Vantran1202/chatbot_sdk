@@ -1,0 +1,35 @@
+.row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3#v-pills-crawl-panel role="tabpanel" aria-labelledby="v-pills-crawl-tab"
+  .col-md-7
+    .mb-3
+      label.form-label Project Name
+      input.form-project.form-control#project-name value="Demo" type="text"
+      span#error-name.validation.text-danger.mt-2
+
+    .mb-3
+      div
+        label.form-label Crawl
+        div.relative.mt-2.rounded-md
+          div.d-flex
+            input.form-control.me-2 type="text" id="website" name="website" placeholder="https://www.example.com" value=""
+            button#btn_crawl.btn.btn-primary.col-4 type="button" Fetch more links
+          div#progress_container.w-full.rounded-full.py-3.d-none
+            p#progress_text.text-xs.text-gray-600 0%
+            div#progress_bar.progress.bg-green.h-05 style="width: 0%;"
+          div.py-4.text-sm.text-gray-600 This will crawl all the links starting with the URL (not including files on the website).
+          div#include_links.mt-16
+            div.d-flex.align-items-center.my-5
+              hr.w-50.rounded
+              span.px-2.w-50.text-center Included Links
+              hr.w-50.rounded
+            div.d-flex.justify-content-end
+              button#delete_all.btn.btn-danger type="button" Delete all
+            div.max-h-36.overflow-auto.mt-5.pr-2
+              div#content-crawls.relative.mt-2.rounded-md.shadow-sm
+            div.d-flex.justify-content-end
+              p.mt-4.fs-2
+                span#total_detect 0
+                |  detected characters
+    span#error-contents-link.text-danger
+
+  .col-md-5
+    == render partial: 'campaigns/projects/new/form_source/form_submit'

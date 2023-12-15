@@ -33,10 +33,10 @@ ruby:
   ]
 
 .my-3
-  == render 'projects/upgrades/index/page_title'
+  == render 'campaigns/upgrades/index/page_title'
 
   .row
-    == render partial: 'projects/upgrades/index/plan', collection: plans, as: :plan
+    == render partial: 'campaigns/upgrades/index/plan', collection: @plans, as: :plan
 
   .row.mb-9
-    == render 'projects/upgrades/index/feature'
+    == render 'campaigns/upgrades/index/feature'

@@ -3,13 +3,13 @@ class CreateProjects < ActiveRecord::Migration[7.1]
     create_table :projects do |t|
       t.uuid :uuid, null: false
       t.string :name, null: false
-      t.string :website
+      t.string :content_type, default: 'text'
 
       # 1 to 255 bytes: TINYTEXT
       # 256 to 65535 bytes: TEXT
       # 65536 to 16777215 bytes: MEDIUMTEXT --> Default
       # 16777216 to 4294967295 bytes: LONGTEXT
-      t.text :content, limit: 16777215
+      t.text :contents, limit: 16777215, array: true, default: []
       t.string :cfg_interfaces
       t.datetime :deleted_at
 

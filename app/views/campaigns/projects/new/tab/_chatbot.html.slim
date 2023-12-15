@@ -1,0 +1,34 @@
+.tab-pane.fade#tab-2[role="tabpanel" aria-labelledby="ex1-tab-2"]
+  div.card.position-sticky.overflow-hidden.chat-application
+    div.d-container
+      div.w-70.w-xs-100.chat-container.border
+        div.chat-box-inner-part.h-100
+          div.chatting-box.d-block
+            div.position-relative.overflow-hidden.d-flex
+              div.position-relative.d-flex.flex-grow-1.flex-column
+                div.chat-box.p-9[data-simplebar="init" style="height: calc(100vh - 300px);"]
+                  div.simplebar-wrapper[style="margin: -20px;"]
+                    div.simplebar-height-auto-observer-wrapper
+                      div.simplebar-height-auto-observer
+                    div.simplebar-mask
+                      div.simplebar-offset[style="right: 0px; bottom: 0px;"]
+                        div#chat-box-content.simplebar-content-wrapper[tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"]
+                          div.simplebar-content[style="padding: 20px;"]
+                            div#msg_history.chat-list.chat.active-chat[data-user-id="1"]
+                              div.hstack.gap-3.align-items-start.mb-7.justify-content-start
+                                img[src="http://127.0.0.1:5100/assets/images/logos/logo.png" alt="user8" width="40" height="40"]
+                                div
+                                  h6.fs-2.text-muted Demo Assistant
+                                  div.p-2.bg-light.rounded-1.d-inline-block.text-dark.fs-3 I am a AI Assistant, Ask me anything, I will help answer your questions based on my understanding.
+
+                    div.simplebar-placeholder[style="width: auto; height: 577px;"]
+                  div.simplebar-track.simplebar-horizontal[style="visibility: hidden;"]
+                    div.simplebar-scrollbar[style="width: 0px; display: none;"]
+                  div.simplebar-track.simplebar-vertical[style="visibility: visible;"]
+                    div.simplebar-scrollbar[style="height: 241px; transform: translate3d(0px, 132px, 0px); display: block;"]
+                div.px-3.py-6.border-top.chat-send-message-footer
+                  form#form-question
+                    input[type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off"]
+                    div.position-relative.d-flex.align-items-center
+                      textarea#question-text[rows="2" required="" type="text" name="input" placeholder="Type your question here!" class="form-control border message-type-box text-muted p-2" style="height: 2rem; box-sizing: initial;"]
+                      i#send-message-icon.position-absolute.ti.ti-brand-telegram[style="right: 1rem; font-size: 1.5rem; color: dodgerblue;"]

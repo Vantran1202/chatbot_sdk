@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-module Projects
-  class UpgradesController < ProjectsController
-    # [GET] /projects/upgrades
-    def index
-    end
+class Campaigns::UpgradesController < ProjectsController
+  # [GET] /projects/upgrades
+  def index
+    operator = Campaigns::Upgrades::IndexOperation.new(params)
+    operator.call
+
+    @plans = operator.plans
   end
 end

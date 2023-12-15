@@ -10,3 +10,8 @@
 @import "./projects/chatbot.scss";
 @import "./projects/chat-interface.scss";
 @import "./projects/form.scss";
+
+.fade:not(.show) {
+  opacity: 0;
+  display: none;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_15_031836) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,11 +25,24 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_031836) do
     t.index ["project_id"], name: "index_files_on_project_id", where: "(deleted_at IS NULL)"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "plan_id", null: false
+    t.float "price"
+    t.string "payment_token"
+    t.datetime "paid_at", null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_orders_on_plan_id", unique: true, where: "(deleted_at IS NULL)"
+    t.index ["user_id", "plan_id", "paid_at"], name: "index_orders_on_user_id_and_plan_id_and_paid_at", unique: true, where: "(deleted_at IS NULL)"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.uuid "uuid", null: false
     t.string "name", null: false
-    t.string "website"
-    t.text "content"
+    t.string "content_type", default: "text"
+    t.text "contents", default: [], array: true
     t.string "cfg_interfaces"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
@@ -45,6 +58,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_031836) do
     t.integer "limited_project_counts", default: 0
     t.integer "used_request_counts", default: 0
     t.integer "limited_request_counts", default: 0
+    t.boolean "has_zalo", default: false
+    t.boolean "has_line", default: false
+    t.boolean "has_messenger", default: false
+    t.boolean "has_chat_integraton", default: false
+    t.boolean "has_custom_interface", default: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

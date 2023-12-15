@@ -1,0 +1,20 @@
+= form_with(model: @form, url: campaign_projects_path, local: true, scope: '') do |f|
+  = f.hidden_field :content_type, value: Project.content_type.text
+
+  .row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3.show.active#v-pills-text-panel role="tabpanel" aria-labelledby="v-pills-text-tab"
+    .col-md-7
+      div#text-form
+        div.form-content
+
+          div.form-modify
+            .mb-3
+              = f.label :name, 'Project Name *', class: 'form-label'
+              = f.text_field :name, class: 'form-project form-control', id: 'project-name'
+              = error_message_for(:name, f)
+            .mb-3
+              = f.label :content, 'Content *', class: 'form-label'
+              = f.text_area :content, class: 'form-project form-control project-content-input', rows: 15
+              = error_message_for(:content, f)
+
+    .col-md-5
+      = render partial: 'campaigns/projects/new/form_source/form_submit', locals: { form: f }

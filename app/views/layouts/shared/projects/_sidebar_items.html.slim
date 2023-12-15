@@ -1,47 +1,3 @@
-ruby:
-  plan_options = [
-    {
-      title: "100,000",
-      desc: "Limit characters",
-      icon: "ti ti-alphabet-greek fs-6",
-    },
-    {
-      title: "0/1",
-      desc: "Limit projects",
-      icon: "ti ti-briefcase fs-6"
-    },
-    {
-      title: "4/40",
-      desc: "Message credits/month",
-      icon: "ti ti-chart-line fs-6"
-    },
-    {
-      title: "unlimited",
-      desc: "Chat integration",
-      icon: "ti ti-brand-hipchat fs-6"
-    },
-    {
-      title: "limited",
-      desc: "Chatbot interface",
-      icon: "ti ti-settings-code fs-6"
-    },
-    {
-      title: "limited",
-      desc: "Line integration",
-      icon: "ti ti-brand-line fs-6"
-    },
-    {
-      title: "limited",
-      desc: "Zalo integration",
-      icon: "ti ti-brand-zwift fs-6"
-    },
-    {
-      title: "limited",
-      desc: "Messenger integration",
-      icon: "ti ti-brand-messenger fs-6"
-    }
-  ]
-
 nav.sidebar-nav.scroll-sidebar(data-simplebar="")
   ul#sidebarnav.in
     li.nav-small-cap
@@ -55,7 +11,7 @@ nav.sidebar-nav.scroll-sidebar(data-simplebar="")
         span.hide-menu Create Project
 
     li.sidebar-item.selected
-      a.sidebar-link.active(href="/project/list" aria-expanded="false")
+      a.sidebar-link(href="/project/list" aria-expanded="false")
         span
           i.ti.ti-list
         span.hide-menu My Projects
@@ -64,4 +20,4 @@ nav.sidebar-nav.scroll-sidebar(data-simplebar="")
       i.ti.ti-dots.nav-small-cap-icon.fs-4
       span#subscription-plan-name.hide-menu free Plan
 
-    = render partial: 'layouts/shared/projects/sidebar_items/item', collection: plan_options, as: :item
+    = render partial: 'layouts/shared/projects/sidebar_items/plan_option'

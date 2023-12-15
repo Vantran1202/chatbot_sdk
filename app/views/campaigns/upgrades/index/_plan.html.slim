@@ -1,9 +1,12 @@
+ruby:
+  popular = plan[:popular] ? 'popular' : ''
 .col-sm-6.col-lg-4
-  .card.sub-active.d-flex.flex-column class="#{plan.dig(:css, :tiem)}"
+  / class .disabled
+  .card.sub-active.d-flex.flex-column
     .card-body.flex-grow-1
       div.d-flex.justify-content-between
         span.fw-bolder.text-uppercase.fs-2.d-block.mb-7= plan[:name]
-        span.badge.fw-bolder.py-1.bg-light-warning.text-warning.text-uppercase.fs-2.rounded-3= plan[:popular]
+        span.badge.fw-bolder.py-1.bg-light-warning.text-warning.text-uppercase.fs-2.rounded-3= popular
 
       div.my-4
         = vite_image_tag plan[:image], width: "80", height: "80", class: "img-fluid"
@@ -11,15 +14,7 @@
       .d-flex.mb-3== h_plan_price(plan[:price])
 
       ul.list-unstyled.mb-7
-        li.d-flex.align-items-center.gap-2.py-2
-          i.ti.ti-check.text-primary.fs-4
-          span.text-dark = pluralize(plan[:projects], 'projects')
-        li.d-flex.align-items-center.gap-2.py-2
-          i.ti.ti-check.text-primary.fs-4
-          span.text-dark= "#{pluralize(number_with_delimiter(plan[:characters_per_project]), 'characters')} /Project"
-        li.d-flex.align-items-center.gap-2.py-2
-          i.ti.ti-check.text-primary.fs-4
-          span.text-dark= "#{pluralize(number_with_delimiter(plan[:messages_per_month]), 'messages')} /Month"
+        == render partial: 'campaigns/upgrades/index/plan_option', locals: { plan_option: plan.plan_option }
 
       form action="/stripe/checkout" method="post"
         input hidden="" name="price_id" value="1"
