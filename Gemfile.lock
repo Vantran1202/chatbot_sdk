@@ -327,6 +327,10 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    versionist (2.0.1)
+      activesupport (>= 3)
+      railties (>= 3)
+      yard (~> 0.9.20)
     vite_rails (3.0.17)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
@@ -346,6 +350,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yard (0.9.34)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -380,6 +385,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  versionist (= 2.0.1)
   vite_rails
   web-console
 

@@ -3,6 +3,6 @@
 
 .tab-content
   = render partial: 'campaigns/projects/shared/tab/source'
-  = render partial: 'campaigns/projects/shared/tab/chatbot'
+  = render partial: 'campaigns/projects/shared/tab/chatbot', locals: { project: @project }
   = render partial: 'campaigns/projects/shared/tab/integrate'
   = render partial: 'campaigns/projects/shared/tab/embed_on_site'

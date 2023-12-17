@@ -13,4 +13,8 @@ Rails.application.routes.draw do
     resources :projects, only: %i[index new create edit update destroy], param: :uuid
     resources :upgrades, only: %i[index]
   end
+
+  api_version module: 'api/v1', path: { value: 'api/v1' } do
+    resources :chats, only: %i[create]
+  end
 end

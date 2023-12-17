@@ -23,6 +23,7 @@ class Campaigns::ProjectsController < ProjectsController
     operator.call
 
     @form = operator.form
+    @project = operator.project
   end
 
   def create
@@ -44,6 +45,7 @@ class Campaigns::ProjectsController < ProjectsController
     operator.call
 
     @form = operator.form
+    @project = operator.project
 
     if @form.invalid?
       render :edit

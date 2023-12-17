@@ -1,13 +1,7 @@
 div.card.alert-dismissible.fade.show.alert.p-0.card-hover.bg-white role="alert"
   div.p-2.d-block.mt-3
-    h5.card-title.text-center DemoSource
-    p.fs-2#total-file-chars
-    p.fs-2#total-text-chars 1 Pages text input (11 chars)
-    p.fs-2#total-link-chars
-    span.fs-3.fw-bold Total detected characters
-    p.text-center.fs-2
-      span#total-length 11 /
-      | 1,000,000
+    h5.card-title.text-center Summary
+    p.fs-2.pt-3 Total characters: 11 / 1,000,000
     p#total-detect-chars-error.fs-2.text-danger.text-center.my-2
 
     - if local_assigns[:form].present?

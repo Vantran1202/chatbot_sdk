@@ -55,6 +55,7 @@ gem 'carrierwave'
 gem 'enumerize'
 gem 'paranoia'
 gem 'ruby-openai'
+gem 'versionist', '2.0.1'
 gem 'vite_rails'
 
 group :development, :test do

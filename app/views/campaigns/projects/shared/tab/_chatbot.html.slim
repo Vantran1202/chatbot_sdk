@@ -1,3 +1,6 @@
+ruby:
+  project ||= project
+
 .tab-pane.fade#tab-2[role="tabpanel" aria-labelledby="ex1-tab-2"]
   div.card.position-sticky.overflow-hidden.chat-application
     div.d-container
@@ -12,14 +15,14 @@
                       div.simplebar-height-auto-observer
                     div.simplebar-mask
                       div.simplebar-offset[style="right: 0px; bottom: 0px;"]
-                        div#chat-box-content.simplebar-content-wrapper[tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"]
+                        div#js-chatbot-content.simplebar-content-wrapper[tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"]
                           div.simplebar-content[style="padding: 20px;"]
-                            div#msg_history.chat-list.chat.active-chat[data-user-id="1"]
+                            div#js-chatbot-msg-history.chat-list.chat.active-chat[data-user-id="1"]
                               div.hstack.gap-3.align-items-start.mb-7.justify-content-start
-                                = vite_image_tag('images/atar/feature1.png', width: 40, height: 40)
+                                = vite_image_tag('images/atar/feature3.png', width: 40, height: 40)
                                 div
                                   h6.fs-2.text-muted Demo Assistant
-                                  div.p-2.bg-light.rounded-1.d-inline-block.text-dark.fs-3 I am a AI Assistant, Ask me anything, I will help answer your questions based on my understanding.
+                                  div.p-2.bg-light.rounded-1.d-inline-block.text-dark.fs-3 Tôi là một trợ lý hỗ trợ AI, Hỏi tôi bất cứ điều gì, tôi sẽ giúp trả lời các câu hỏi của bạn dựa trên hiểu biết của tôi
 
                     div.simplebar-placeholder[style="width: auto; height: 577px;"]
                   div.simplebar-track.simplebar-horizontal[style="visibility: hidden;"]
@@ -27,8 +30,7 @@
                   div.simplebar-track.simplebar-vertical[style="visibility: visible;"]
                     div.simplebar-scrollbar[style="height: 241px; transform: translate3d(0px, 132px, 0px); display: block;"]
                 div.px-3.py-6.border-top.chat-send-message-footer
-                  form#form-question
-                    input[type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off"]
+                  form#js-chatbot-form-question data-project-name="#{project&.name}" data-project-id="#{project&.uuid}"
                     div.position-relative.d-flex.align-items-center
                       textarea#question-text[rows="2" required="" type="text" name="input" placeholder="Type your question here!" class="form-control border message-type-box text-muted p-2" style="height: 2rem; box-sizing: initial;"]
-                      i#send-message-icon.position-absolute.ti.ti-brand-telegram[style="right: 1rem; font-size: 1.5rem; color: dodgerblue;"]
+                      i#send-message-icon.js-chatbot-btn-send-message.position-absolute.ti.ti-brand-telegram[style="right: 1rem; font-size: 1.5rem; color: dodgerblue;"]

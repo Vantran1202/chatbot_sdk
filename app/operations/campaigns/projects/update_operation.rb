@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Campaigns::Projects::UpdateOperation < ApplicationOperation
+  attr_reader :project
+
   def call
     step_load_project
     step_build_form { return }
@@ -8,8 +10,6 @@ class Campaigns::Projects::UpdateOperation < ApplicationOperation
   end
 
   private
-
-  attr_reader :project
 
   def step_load_project
     @project = Project.find_by!(uuid: params[:uuid])
