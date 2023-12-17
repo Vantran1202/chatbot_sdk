@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
 
   create_table "projects", force: :cascade do |t|
     t.uuid "uuid", null: false
+    t.bigint "user_id"
     t.string "name", null: false
     t.string "content_type", default: "text"
     t.text "contents", default: [], array: true
@@ -47,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id", where: "(deleted_at IS NULL)"
     t.index ["uuid"], name: "index_projects_on_uuid", unique: true, where: "(deleted_at IS NULL)"
   end
 

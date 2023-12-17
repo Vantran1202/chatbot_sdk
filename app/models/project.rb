@@ -1,5 +1,8 @@
 class Project < ApplicationRecord
   extend Enumerize
+  include Uuid
+
+  before_create :generate_uuid
 
   enumerize :content_type, in: %i[text file], default: :text
 

@@ -3,8 +3,10 @@
 class Campaigns::ProjectsController < ProjectsController
   # [GET] /campaigns/projects
   def index
-    operator = Campaigns::Projects::IndexOperation.new(params)
+    operator = Campaigns::Projects::IndexOperation.new(params, current_user:)
     operator.call
+
+    @projects = operator.projects
   end
 
   # [GET] /campaigns/projects/new
@@ -17,7 +19,7 @@ class Campaigns::ProjectsController < ProjectsController
 
   # [POST] /campaigns/projects
   def create
-    operator = Campaigns::Projects::CreateOperation.new(params)
+    operator = Campaigns::Projects::CreateOperation.new(params, current_user:)
     operator.call
 
     @form = operator.form
@@ -25,7 +27,7 @@ class Campaigns::ProjectsController < ProjectsController
     if @form.invalid?
       render :new
     else
-      redirect_to campaigns_projects_path, notice: :success
+      redirect_to campaign_projects_path, notice: 'Project created successfully.'
     end
   end
 end

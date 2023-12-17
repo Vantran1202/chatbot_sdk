@@ -13,7 +13,13 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
     yield if @form.invalid?
   end
 
-  def step_save_data; end
+  def step_save_data
+    current_user.projects.create!(
+      name: form.name,
+      content_type: form.content_type,
+      contents: form.content
+    )
+  end
 
   def per_params
     params.permit(:name, :content, :content_type)

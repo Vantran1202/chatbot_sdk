@@ -2,6 +2,8 @@ class CreateProjects < ActiveRecord::Migration[7.1]
   def change
     create_table :projects do |t|
       t.uuid :uuid, null: false
+      t.belongs_to :user, index: false
+
       t.string :name, null: false
       t.string :content_type, default: 'text'
 
@@ -17,5 +19,6 @@ class CreateProjects < ActiveRecord::Migration[7.1]
     end
 
     add_index :projects, %i[uuid], where: 'deleted_at IS NULL', unique: true
+    add_index :projects, %i[user_id], where: 'deleted_at IS NULL'
   end
 end

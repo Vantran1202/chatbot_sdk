@@ -1,5 +1,6 @@
 div.container.bg-white.ma.p-3.bg-body
-  div.p-2.border-bottom
-    h5 Here’s how to get started
-
-  = link_to 'Create your first project', new_campaign_project_path, class: "btn btn-info mt-3"
+  - if @projects.blank?
+    = render partial: 'campaigns/projects/index/empty'
+  - else
+    .row.mt-5
+      = render partial: 'campaigns/projects/index/project', collection: @projects
