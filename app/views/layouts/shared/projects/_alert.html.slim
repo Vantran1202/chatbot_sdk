@@ -1,0 +1,15 @@
+- if flash[:notice].present?
+  .mt-3.alert.text-center.alert-success
+    span.ms-3.text-success= flash[:notice]
+
+- elsif flash[:alert].present?
+  .mt-3.alert.text-center.alert-danger
+    span.ms-3.text-danger= flash[:notice]
+
+- elsif flash[:warning].present?
+  .mt-3.alert.text-center.alert-warning
+    span.ms-3.text-warning= flash[:warning]
+
+- elsif flash[:info].present?
+  .mt-3.alert.text-center.alert-info
+    span.ms-3.text-info= flash[:info]

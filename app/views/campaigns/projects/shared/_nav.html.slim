@@ -19,6 +19,8 @@ ul.nav.nav-tabs.mb-3.mt-5.align-items-center#ex1 role="tablist"
       | Embed on site
       i.ti.ms-1.ti-pill data-bs-toggle="tooltip" style="color: forestgreen !important" aria-label="Copy the script to apply the chatbot to your website." data-bs-original-title="Copy the script to apply the chatbot to your website."
 
-  a.text-danger.ms-3.delete-project-btn data-delete-id="f841620a-970c-4de5-aa7a-a63eb1743934" data-project-name="Demo" name="delete-project" href="javascript:void(0)"
-    | Delete
-    i.ti.ms-1.ti-trash.text-danger.delete-project-btn data-bs-toggle="tooltip" aria-label="Delete your project." data-bs-original-title="Delete your project."
+  - if params[:uuid]
+    li.nav-item role="presentation"
+      a.text-danger.ms-3.delete-project-btn data-delete-url="#{campaign_project_path(params[:uuid])}" data-delete-url-success="#{campaign_projects_path}" data-project-name="#{@form.name}" name="delete-project" href="javascript:void(0)"
+        | Delete
+        i.ti.ms-1.ti-trash.text-danger.delete-project-btn data-bs-toggle="tooltip" aria-label="Delete your project." data-bs-original-title="Delete your project."

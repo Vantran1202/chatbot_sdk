@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   extend Enumerize
   include Uuid
 
+  acts_as_paranoid
+
   before_create :generate_uuid
 
   enumerize :content_type, in: %i[text file], default: :text
@@ -11,5 +13,5 @@ class Project < ApplicationRecord
 
   belongs_to :user
 
-  has_many :files, dependent: :destroy
+  has_many :project_files, dependent: :destroy
 end

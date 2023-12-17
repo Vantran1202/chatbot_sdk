@@ -14,17 +14,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "files", force: :cascade do |t|
-    t.bigint "project_id", null: false
-    t.string "filename", null: false
-    t.string "filetype", null: false
-    t.float "filesize", default: 0.0, null: false
-    t.datetime "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_files_on_project_id", where: "(deleted_at IS NULL)"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "plan_id", null: false
@@ -36,6 +25,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.datetime "updated_at", null: false
     t.index ["plan_id"], name: "index_orders_on_plan_id", unique: true, where: "(deleted_at IS NULL)"
     t.index ["user_id", "plan_id", "paid_at"], name: "index_orders_on_user_id_and_plan_id_and_paid_at", unique: true, where: "(deleted_at IS NULL)"
+  end
+
+  create_table "project_files", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "filename", null: false
+    t.string "filetype", null: false
+    t.float "filesize", default: 0.0, null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_files_on_project_id", where: "(deleted_at IS NULL)"
   end
 
   create_table "projects", force: :cascade do |t|

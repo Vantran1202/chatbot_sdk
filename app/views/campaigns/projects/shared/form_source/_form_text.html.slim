@@ -1,4 +1,8 @@
-= form_with(model: @form, url: campaign_projects_path, local: true, scope: '') do |f|
+ruby:
+  url = @form.uuid ? campaign_project_path(@form.uuid) : campaign_projects_path
+  method = @form.uuid ? :put : :post
+
+= form_with(model: @form, url:, local: true, scope: '', method:) do |f|
   = f.hidden_field :content_type, value: Project.content_type.text
 
   .row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3.show.active#v-pills-text-panel role="tabpanel" aria-labelledby="v-pills-text-tab"
@@ -17,4 +21,4 @@
               = error_message_for(:content, f)
 
     .col-md-5
-      = render partial: 'campaigns/projects/new/form_source/form_submit', locals: { form: f }
+      = render partial: 'campaigns/projects/shared/form_source/form_submit', locals: { form: f }

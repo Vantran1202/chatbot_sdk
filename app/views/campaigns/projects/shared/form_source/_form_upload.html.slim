@@ -3,7 +3,7 @@
     div
       .mb-3
         label.form-label Project Name
-        input.form-project.form-control#project-name value="Demo" type="text"
+        input.form-project.form-control value="Demo" type="text"
         span#error-name.validation.text-danger.mt-2
       .mb-3
         label.form-label for="project-content" Project Content
@@ -26,4 +26,4 @@
     span#error-contents-file.text-danger
 
   .col-md-5
-    == render partial: 'campaigns/projects/new/form_source/form_submit'
+    == render partial: 'campaigns/projects/shared/form_source/form_submit'

@@ -1,6 +1,2 @@
-class Campaigns::Projects::NewForm < ApplicationForm
-  attribute :name
-  attribute :content_type
-  attribute :content
-  attribute :files
+class Campaigns::Projects::NewForm < Campaigns::Projects::BaseForm
 end

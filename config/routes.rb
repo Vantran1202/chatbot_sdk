@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :home, only: %i[index]
 
   scope :campaigns, module: :campaigns, as: :campaign do
-    resources :projects, only: %i[index new create]
+    resources :projects, only: %i[index new create edit update destroy], param: :uuid
     resources :upgrades, only: %i[index]
   end
 end

@@ -8,4 +8,8 @@ module ApplicationHelper
   rescue StandardError
     nil
   end
+
+  def show_alert_message
+    render partial: 'layouts/shared/projects/alert'
+  end
 end

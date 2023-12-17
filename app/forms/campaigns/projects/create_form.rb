@@ -1,4 +1,4 @@
-class Campaigns::Projects::CreateForm < Campaigns::Projects::NewForm
+class Campaigns::Projects::CreateForm < ApplicationForm
   attribute :name
   attribute :content_type
   attribute :content

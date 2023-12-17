@@ -10,6 +10,6 @@ class Campaigns::Projects::IndexOperation < ApplicationOperation
   private
 
   def step_load_projects
-    @projects = current_user.projects
+    @projects = current_user.projects.order(updated_at: :desc)
   end
 end
