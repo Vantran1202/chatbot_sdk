@@ -20,6 +20,7 @@ import './functions/projects/chat_interface';
 import './functions/projects/integrate';
 import './functions/projects/chatbot';
 import './functions/projects/delete';
+import './functions/projects/global';
 
 // Set Global
 window.ResizeObserver = ResizeObserver;

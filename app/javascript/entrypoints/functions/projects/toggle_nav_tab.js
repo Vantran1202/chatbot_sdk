@@ -128,24 +128,6 @@ $(function () {
   });
 });
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $('#icon-copy').removeClass('ti-folders').addClass('ti-checks');
-  $temp.remove();
-}
-
-function copyWebhookUrlToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $(element).next().removeClass('ti-folders').addClass('ti-checks');
-  $temp.remove();
-}
-
 
 $(document).ready(function() {
   const tabs = document.querySelectorAll(".nav-link-type");
