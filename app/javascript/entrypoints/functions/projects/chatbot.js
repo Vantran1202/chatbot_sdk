@@ -1,5 +1,6 @@
 class ChatApp {
   constructor() {
+    const chatbot             = document.getElementById("js-chatbot-form-question")
     this.resultId             = 1;
     this.streamGenerateStatus = false;
     this.histories            = [];
@@ -7,7 +8,8 @@ class ChatApp {
     this.projectName          = '';
     this.projectId            = '';
     this.msgHistory           = $('#js-chatbot-msg-history');
-    this.messageInput         = document.getElementById("js-chatbot-form-question").querySelector('textarea');
+    this.messageInput         = chatbot.querySelector('textarea');
+    this.apiChat              = chatbot.dataset['apiUrl']
   }
 
   async streamGenerate(question, resultText) {
@@ -21,7 +23,7 @@ class ChatApp {
     const signal = this.controller.signal;
 
     try {
-      const response = await fetch('http://localhost:3000/api/v1/chats', {
+      const response = await fetch(this.apiChat, {
         method: "POST",
         mode: "cors",
         headers: {

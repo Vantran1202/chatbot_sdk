@@ -9,12 +9,13 @@ class Campaigns::ProjectsController < ProjectsController
     @projects = operator.projects
   end
 
-  # [GET] /campaigns/projects/shared
+  # [GET] /campaigns/projects/new
   def new
     operator = Campaigns::Projects::NewOperation.new(params)
     operator.call
 
     @form = operator.form
+    @form_interface = operator.form_interface
   end
 
   # [GET] /campaigns/projects/:uuid
@@ -22,8 +23,9 @@ class Campaigns::ProjectsController < ProjectsController
     operator = Campaigns::Projects::EditOperation.new(params, current_user:)
     operator.call
 
-    @form = operator.form
-    @project = operator.project
+    @form           = operator.form
+    @form_interface = operator.form_interface
+    @project        = operator.project
   end
 
   def create

@@ -3,15 +3,11 @@ $(function () {
   const initialReset = document.getElementById('initial_reset');
   const theme = document.getElementById('theme');
   const themeReset = document.getElementById('theme_reset');
-  const displayIcon = document.getElementById('display_icon');
-  const botProfilePicture = document.getElementById('bot_profile_picture');
-  const removeBotProfilePicture = document.getElementById('remove_bot_profile_picture');
   const botName = document.getElementById('bot_name');
   const suggestedMessages = document.getElementById('suggested_messages');
   //Form chatbot
   const chatInitialMessages = document.getElementById('chat_initial_messages');
   const chatTheme = document.getElementById('chat_theme');
-  const chatBotProfilePicture = document.getElementById('chat_bot_profile_picture');
   const chatBotName = document.getElementById('chat_bot_name');
   const chatSuggestMess = document.getElementById('suggest_mess');
   //Default
@@ -37,9 +33,10 @@ $(function () {
   //Handle input chat initial
   suggestedMessages.addEventListener('keyup', function (event) {
       const currentValue = suggestedMessages.value;
-      contentArray = currentValue.split("\n");
+      const contentArray = currentValue.split("\n");
       chatSuggestMess.innerHTML = "";
-      contentArray.forEach((content, index) => {
+
+      contentArray.forEach((content, _index) => {
           if (content !== "") {
               const buttonSuggest = document.createElement("button");
               buttonSuggest.setAttribute("type", "button");
@@ -72,91 +69,8 @@ $(function () {
       chatBotName.style.color = "#fff";
       theme.value = colorTheme;
   });
-  //Remove bot profile picture
-  removeBotProfilePicture.addEventListener('change', function (event) {
-      if (removeBotProfilePicture.checked == true ) {
-          displayIcon.style.display = 'none';
-          chatBotProfilePicture.style.display = 'none';
-      } else {
-          displayIcon.style.display = 'block';
-          chatBotProfilePicture.style.display = 'block';
-      }
-  });
-  //Handle upload icon picture
-  botProfilePicture.addEventListener("change", function () {
-      const selectedFile = botProfilePicture.files[0];
 
-      if (selectedFile) {
-          const reader = new FileReader();
-
-          reader.onload = function (e) {
-              chatBotProfilePicture.src = e.target.result;
-          };
-
-          reader.readAsDataURL(selectedFile);
-          displayIcon.style.display = 'block';
-          chatBotProfilePicture.style.display = 'block';
-      } else {
-          chatBotProfilePicture.src = "";
-      }
-  });
-  //save chat interface
-  $('#update-chat-interface').on('click', function() {
-      $('.text-danger').text('');
-      $.LoadingOverlay('show');
-      var formData = new FormData();
-      var isPictureNotActive = 0;
-      if ($('#remove_bot_profile_picture').is(':checked')) {
-          isPictureNotActive = 1;
-      }
-      var file = $('#bot_profile_picture')[0].files[0];
-
-      if (!file) {
-        file = "";
-      }
-      formData.append('chatbot_name', $('#bot_name').val());
-      formData.append('theme_color', $('#theme').val());
-      formData.append('chatbot_picture', file);
-      formData.append('chatbot_picture_active', isPictureNotActive);
-      formData.append('project_id', $('#project_id').val());
-      formData.append('chat_interface_id', $('#chat_interface_id').val());
-      formData.append('initial_message', $('#initial_messages').val());
-      formData.append('suggest_message', $('#suggested_messages').val());
-
-      var urlCreate = $('#chat_interface_form').attr('action');
-
-      $.ajax({
-        type: 'POST',
-        url: urlCreate,
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(res) {
-          $.LoadingOverlay('hide');
-        },
-        error: function(error) {
-          console.log('error', error);
-          error.responseJSON.meta.errors && error.responseJSON.meta.errors.chatbot_name ?
-            $('#error-bot_name').text(error.responseJSON.meta.errors.chatbot_name[0]) :
-            '';
-          error.responseJSON.meta.errors && error.responseJSON.meta.errors.chatbot_picture ?
-            $('#error-bot_profile_picture').text(error.responseJSON.meta.errors.chatbot_picture[
-              0]) :
-            '';
-          error.responseJSON.meta.errors && error.responseJSON.meta.errors.theme_color ?
-            $('#error-theme').text(error.responseJSON.meta.errors.theme_color[0]) :
-            '';
-          error.responseJSON.meta.errors && error.responseJSON.meta.errors.chatbot_picture_active ?
-            $('#error-remove_bot_profile_picture').text(error.responseJSON.meta.errors.chatbot_picture_active[0]) :
-            '';
-          error.responseJSON.meta.errors && error.responseJSON.meta.errors.initial_message ?
-            $('#error-initial_message').text(error.responseJSON.meta.errors.initial_message[0]) :
-            '';
-          $.LoadingOverlay('hide');
-        }
-      });
-    });
-    // Tab left menu
+// Tab left menu
   const tabs = document.querySelectorAll(".nav-link-left");
   const tabContents = document.querySelectorAll(".tab-pane-left");
 

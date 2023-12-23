@@ -22,7 +22,7 @@ ruby:
                                 = vite_image_tag('images/atar/feature3.png', width: 40, height: 40)
                                 div
                                   h6.fs-2.text-muted Demo Assistant
-                                  div.p-2.bg-light.rounded-1.d-inline-block.text-dark.fs-3 Tôi là một trợ lý hỗ trợ AI, Hỏi tôi bất cứ điều gì, tôi sẽ giúp trả lời các câu hỏi của bạn dựa trên hiểu biết của tôi
+                                  div.p-2.bg-light.rounded-1.d-inline-block.text-dark.fs-3 I am an AI Assistant, Ask me anything, I will help answer your questions based on my understanding.
 
                     div.simplebar-placeholder[style="width: auto; height: 577px;"]
                   div.simplebar-track.simplebar-horizontal[style="visibility: hidden;"]
@@ -30,7 +30,7 @@ ruby:
                   div.simplebar-track.simplebar-vertical[style="visibility: visible;"]
                     div.simplebar-scrollbar[style="height: 241px; transform: translate3d(0px, 132px, 0px); display: block;"]
                 div.px-3.py-6.border-top.chat-send-message-footer
-                  form#js-chatbot-form-question data-project-name="#{project&.name}" data-project-id="#{project&.uuid}"
+                  form#js-chatbot-form-question data-project-name="#{project&.name}" data-project-id="#{project&.uuid}" data-api-url="#{api_v1_chats_url}"
                     div.position-relative.d-flex.align-items-center
                       textarea#question-text[rows="2" required="" type="text" name="input" placeholder="Type your question here!" class="form-control border message-type-box text-muted p-2" style="height: 2rem; box-sizing: initial;"]
                       i#send-message-icon.js-chatbot-btn-send-message.position-absolute.ti.ti-brand-telegram[style="right: 1rem; font-size: 1.5rem; color: dodgerblue;"]

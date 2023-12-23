@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   end
 
   scope :campaigns, module: :campaigns, as: :campaign do
-    resources :projects, only: %i[index new create edit update destroy], param: :uuid
+    resources :projects, only: %i[index new create edit update destroy], param: :uuid do
+      resources :interfaces, only: %i[create], module: :projects
+    end
     resources :upgrades, only: %i[index]
   end
 

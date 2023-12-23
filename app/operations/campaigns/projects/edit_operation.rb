@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class Campaigns::Projects::EditOperation < ApplicationOperation
-  attr_reader :project
+  attr_reader :project, :form_interface
 
   def call
     step_load_project
     step_build_form
+    step_build_resource_form
   end
 
   private
@@ -20,5 +21,10 @@ class Campaigns::Projects::EditOperation < ApplicationOperation
     @form.name         = project.name
     @form.content_type = project.content_type
     @form.content      = project.contents.first
+  end
+
+  def step_build_resource_form
+    @form_interface = Campaigns::Projects::Interfaces::NewForm.new(project:)
+    @form_interface.valid?
   end
 end
