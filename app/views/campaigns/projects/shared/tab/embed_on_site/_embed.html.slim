@@ -1,5 +1,5 @@
 ruby:
-  script = "<script src='http://127.0.0.1:5100/sdk/embedded.min.js' projectId='#{project.uuid}' defer></script>"
+  script = "<script src='#{Settings.sdk.script}' domain='#{Settings.sdk.host}' projectId='#{project.uuid}' defer></script>"
 .tab-pane.tab-pane-left.fade.rounded.bg-white.p-3.show.active#v-pills-embed-panel role="tabpanel" aria-labelledby="v-pills-embed-tab"
   div.container.py-3.border
     div.mt-2 style="text-align: center;"

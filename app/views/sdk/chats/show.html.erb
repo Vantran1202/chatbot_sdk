@@ -1,19 +1,27 @@
+<%
+  bgChatheader = ''
+  if @project.cfg_interfaces['theme_color'].present?
+    bgChatheader = "background-color: #{@project.cfg_interfaces['theme_color']}"
+  end
+%>
+
 <div id="js-chatbot" data-api-path="<%= api_v1_chats_path %>">
   <div id="chat-popup" class="absolute right-0 w-96 bg-white shadow-md flex flex-col transition-all text-sm">
-    <div id="chat-header" class="flex items-center p-4 bg-gray-800 text-white">
-      <img id="chatbot_avatar" src="" width="35" height="35" decoding="async" data-nimg="1" class="rounded-circle mx-2" loading="lazy" alt="profile picture" onerror="this.style.display='none';">
-      <h3 id="chatbot_name" class="m-0 text-lg">AI assistant</h3>
+    <div id="chat-header" class="flex items-center p-4 bg-gray-800 text-white" style="<%= bgChatheader %>">
+      <h3 id="chatbot_name" class="m-0 text-lg"><%= @project.cfg_interfaces['chatbot_name'] %></h3>
     </div>
     <div id="chat-messages" class="flex-1 p-4 overflow-y-auto">
         <div class="flex mb-3">
             <div id="chat_initial" class="reply text-black rounded-lg py-2 px-4 max-w-[70%] typing bg-gray-200">
-                I am an AI Assistant, Ask me anything, I will help answer your questions based on my understanding.
+                <%= @project.cfg_interfaces['initial_message'] %>
             </div>
         </div>
     </div>
     <div>
         <div class="container">
-            <div id="suggest_mess" class="p-4 flex overflow-x-auto"></div>
+            <div id="suggest_mess" class="p-4 flex overflow-x-auto">
+
+            </div>
         </div>
     </div>
     <div id="chat-input-container" class="p-2 border-t border-gray-200">

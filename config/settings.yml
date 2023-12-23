@@ -1,2 +1,4 @@
 sdk:
   chatbot_name: Atarbot
+  script: http://localhost:3000/vite-dev/entrypoints/sdk.js?v1
+  host: http://localhost:3000
