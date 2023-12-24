@@ -1,15 +1,19 @@
 - if flash[:notice].present?
-  .mt-3.alert.text-center.alert-success
+  .mt-3.alert.text-center.alert-success.alert-dismissible.fade.show[role="alert"]
     span.ms-3.text-success= flash[:notice]
+    button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"
 
 - elsif flash[:alert].present?
-  .mt-3.alert.text-center.alert-danger
+  .mt-3.alert.text-center.alert-danger.alert-dismissible.fade.show[role="alert"]
     span.ms-3.text-danger= flash[:notice]
+    button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"
 
 - elsif flash[:warning].present?
-  .mt-3.alert.text-center.alert-warning
+  .mt-3.alert.text-center.alert-warning.alert-dismissible.fade.show[role="alert"]
     span.ms-3.text-warning= flash[:warning]
+    button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"
 
 - elsif flash[:info].present?
-  .mt-3.alert.text-center.alert-info
+  .mt-3.alert.text-center.alert-info.alert-dismissible.fade.show[role="alert"]
     span.ms-3.text-info= flash[:info]
+    button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"

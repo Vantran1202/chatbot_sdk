@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   root "home#index"
   resources :home, only: %i[index]
 
+  scope :webhooks, module: :webhooks do
+    resources :onetap_login_googles, only: %i[create]
+  end
+
   scope :sdk, module: :sdk do
     resources :chats, only: %i[show], param: :project_uuid
   end

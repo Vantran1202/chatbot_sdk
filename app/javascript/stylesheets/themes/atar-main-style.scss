@@ -258,7 +258,7 @@ p:last-child {
   padding-right: 25px;
 }
 
-.default-btn {
+.default-btn, .login-btn {
   background: var(--secondaryGradientColor);
   padding: 16.5px 47px 16.5px 20px;
   transition: var(--transition);
@@ -271,10 +271,10 @@ p:last-child {
   font-size: 16px;
   font-weight: 500;
 }
-.default-btn span {
+.default-btn span, .login-btn span {
   color: var(--whiteColor);
 }
-.default-btn i {
+.default-btn i, .login-btn i {
   top: 50%;
   right: 20px;
   line-height: 1;
@@ -283,7 +283,7 @@ p:last-child {
   position: absolute;
   transform: translateY(-50%);
 }
-.default-btn::before {
+.default-btn::before, .login-btn::before {
   top: 0;
   left: 0;
   right: 0;

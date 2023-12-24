@@ -55,7 +55,7 @@
                   div.w-100
                     div.container.mt-4
                       div#suggest_mess.py-3.d-flex.overflow-x-auto
-                        = render partial: 'campaigns/projects/shared/tab/embed_on_site/suggest', collection: f.object.suggest_message.split("\n"), as: :suggest
+                        = render partial: 'campaigns/projects/shared/tab/embed_on_site/suggest', collection: f.object.suggest_message&.split("\n"), as: :suggest
 
                   div#chat-input-container.p-2.border-t.border-gray-200
                     div.items-center.d-flex
