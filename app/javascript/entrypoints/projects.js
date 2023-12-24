@@ -11,6 +11,12 @@ import ResizeObserver from 'resize-observer-polyfill';
 import 'gasparesganga-jquery-loading-overlay';
 import Swal from 'sweetalert2';
 
+// import * as Turbo from '@hotwired/turbo'
+// Turbo.start()
+
+import "@hotwired/turbo-rails"
+Turbo.session.drive = false
+
 // Import functions
 import './functions/projects/toggle_menu_mobile';
 import './functions/projects/sidebar';

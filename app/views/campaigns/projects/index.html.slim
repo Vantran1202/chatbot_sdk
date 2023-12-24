@@ -1,4 +1,6 @@
 div.container.bg-white.ma.p-3.bg-body
+  = show_alert_message
+
   - if @projects.blank?
     = render partial: 'campaigns/projects/index/empty'
   - else

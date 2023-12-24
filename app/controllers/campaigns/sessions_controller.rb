@@ -6,6 +6,8 @@ class Campaigns::SessionsController < ApplicationController
     operator = Campaigns::Sessions::DestroyOperation.new(params, cookies:)
     operator.call
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path, status: :see_other }
+    end
   end
 end

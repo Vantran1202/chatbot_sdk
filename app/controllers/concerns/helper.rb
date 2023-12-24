@@ -4,7 +4,9 @@ module Helper
   extend ActiveSupport::Concern
 
   def current_user
-    cookie_data = cookies.encrypted[:google_login]
+    cookie_data = cookies.encrypted[Settings.session.cookie_name]
+    return if cookie_data.blank?
+
     @current_user ||= User.find_by(email: cookie_data['email'])
   end
 

@@ -9,8 +9,8 @@ html lang="en"
     = csp_meta_tag
 
     = vite_client_tag
-    = vite_javascript_tag 'projects'
-    = vite_stylesheet_tag 'stylesheets/projects.scss', media: 'all'
+    = vite_javascript_tag 'projects', data: { turbo_track:"reload" }
+    = vite_stylesheet_tag 'stylesheets/projects.scss', media: 'all', data: { turbo_track:"reload" }
 
   body.page-template-default.page.page-id-578.atar-toolkit-activate.elementor-default.elementor-kit-7.elementor-page.elementor-page-578
     div.page-wrapper#main-wrapper(data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed")

@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title Atarbot
+    title= yield(:page_title).presence || 'Atarbot'
     meta name="viewport" content="width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
 
     = vite_client_tag
-    = vite_javascript_tag 'application'
-    = vite_stylesheet_tag 'stylesheets/application.scss', media: 'all'
+    = vite_javascript_tag 'application', data: { turbo_track:"reload" }
+    = vite_stylesheet_tag 'stylesheets/application.scss', media: 'all', data: { turbo_track:"reload" }
 
   body.page-template-default.page.page-id-578.atar-toolkit-activate.elementor-default.elementor-kit-7.elementor-page.elementor-page-578[
     data-host="#{Settings.host}"
