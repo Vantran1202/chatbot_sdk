@@ -31,7 +31,7 @@ class Webhooks::OnetapLoginGoogles::CreateOperation < ApplicationOperation
   end
 
   def step_set_cookies
-    cookies.encrypted[:google_login] =
+    cookies.encrypted[Settings.session.cookie_name] =
       { value: { email: user.email, picture: user.avatar, fullname: user.fullname }, expires: 7.days, httponly: true }
   end
 end

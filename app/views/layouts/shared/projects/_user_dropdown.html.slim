@@ -8,5 +8,4 @@ div.navbar-collapse.justify-content-end.px-0#navbarNav
           a.d-flex.align-items-center.gap-2.dropdown-item href="http://127.0.0.1:5100/profile"
             i.ti.ti-user.fs-6
             p.mb-0.fs-3 My Profile
-          a.btn.btn-outline-primary.mx-3.mt-2.d-block href="http://127.0.0.1:5100/logout"
-            | Logout
+          = link_to 'Logout', campaign_sessions_path, class: 'btn btn-outline-primary mx-3 mt-2 d-block', data: { turbo_method: :delete }, method: :delete
