@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options host: Settings.host
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "home#index"
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   scope :webhooks, module: :webhooks do
     resources :onetap_login_googles, only: %i[create]
+    resources :payment_stripe_statuses, only: %i[index]
   end
 
   scope :sdk, module: :sdk do
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
     resources :projects, only: %i[index new create edit update destroy], param: :uuid do
       resources :interfaces, only: %i[create], module: :projects
     end
-    resources :upgrades, only: %i[index]
+    resources :upgrades, only: %i[index create]
     resource :sessions, only: %i[destroy]
   end
 

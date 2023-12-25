@@ -12,6 +12,6 @@ class CreateOrders < ActiveRecord::Migration[7.1]
     end
 
     add_index :orders, %i[user_id plan_id paid_at], where: 'deleted_at IS NULL', unique: true
-    add_index :orders, %i[plan_id], where: 'deleted_at IS NULL', unique: true
+    add_index :orders, %i[plan_id], where: 'deleted_at IS NULL'
   end
 end

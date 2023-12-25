@@ -35,4 +35,16 @@ module Plan::Reader
       find_by!(type: PACKAGES[:premium])
     end
   end
+
+  def package_free?
+    type == PACKAGES[:free]
+  end
+
+  def package_standard?
+    type == PACKAGES[:standard]
+  end
+
+  def package_premium?
+    type == PACKAGES[:premium]
+  end
 end

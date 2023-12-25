@@ -1,9 +1,9 @@
 li.d-flex.align-items-center.gap-2.py-2
   i.ti.ti-check.text-primary.fs-4
-  span.text-dark = pluralize(plan_option[:limit_project_counts], 'projects')
+  span.text-dark = pluralize(plan_option[:limited_project_counts], 'projects')
 li.d-flex.align-items-center.gap-2.py-2
   i.ti.ti-check.text-primary.fs-4
-  span.text-dark= "#{pluralize(number_with_delimiter(plan_option[:limit_character_counts]), 'characters')} /Project"
+  span.text-dark= "#{pluralize(number_with_delimiter(plan_option[:limited_character_counts]), 'characters')} /Project"
 li.d-flex.align-items-center.gap-2.py-2
   i.ti.ti-check.text-primary.fs-4
-  span.text-dark= "#{pluralize(number_with_delimiter(plan_option[:limit_request_counts]), 'requests')} /Month"
+  span.text-dark= "#{pluralize(number_with_delimiter(plan_option[:limited_request_counts]), 'requests')} /Month"

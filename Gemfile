@@ -69,6 +69,7 @@ group :development, :test do
   # An extension of RuboCop focused on code performance checks.
   gem 'rubocop-performance'
   # A RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem 'dotenv-rails'
   gem 'rubocop-rails'
   gem 'seed-fu'
   gem 'slimcop'
@@ -93,4 +94,6 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "jwt", "~> 2.7"
+gem 'jwt', '~> 2.7'
+
+gem 'stripe', '~> 10.4'

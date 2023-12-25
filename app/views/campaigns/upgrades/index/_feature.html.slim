@@ -1,3 +1,7 @@
+ruby:
+  checked = '<i aria-hidden="true" class="v-icon notranslate" style="font-size: 15px; height: 15px; width: 15px;"><svg aria-hidden="true" class="v-icon notranslate v-theme--light iconify iconify--tabler" height="1em" role="img" style="font-size: 15px; height: 15px; width: 15px;" tag="i" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="m5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></i>'
+  unchecked = '<i aria-hidden="true" class="v-icon notranslate" style="font-size: 15px; height: 15px; width: 15px;"><svg aria-hidden="true" class="v-icon notranslate v-theme--light iconify iconify--tabler" height="1em" role="img" style="font-size: 15px; height: 15px; width: 15px;" tag="i" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></i>'
+
 .row-body
   .v-card-text.text-center.mt-16.fs-10
     h4.text-h4.mb-5
@@ -11,133 +15,34 @@
               thead.text-dark.fs-4
                 tr
                   th.py-4[scope="col"]
-                    h6.text-sm.font-weight-semibold.mb-1
-                      | FEATURES
-                  th.text-center.py-4[scope="col"]
-                    h6.text-sm.font-weight-semibold.mb-1
-                      | Free
-                    span.text-disabled.font-weight-regular.text-sm
-                      |  $0/month
-                  th.text-center.py-4[scope="col"]
-                    h6.text-sm.font-weight-semibold.mb-1
-                      | Standard
-                    span.text-disabled.font-weight-regular.text-sm
-                      |  $39/month
-                  th.text-center.py-4[scope="col"]
-                    h6.text-sm.font-weight-semibold.mb-1
-                      | Premium
-                    span.text-disabled.font-weight-regular.text-sm
-                      |  $99/month
+                    h6.text-sm.font-weight-semibold.mb-1 FEATURES
+                  - plans.each do |plan|
+                    th.text-center.py-4[scope="col"]
+                      h6.text-sm.font-weight-semibold.mb-1= plan.name
+                      span.text-disabled.font-weight-regular.text-sm= "$#{"%01d" % plan.price}/month"
               tbody
                 tr
-                  td
-                    | Custom chatbots using Open AI technology and business data
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
+                  td Custom chatbots using Open AI technology and business data
+                  td.text-center== checked
+                  td.text-center== checked
+                  td.text-center== checked
                 tr
-                  td
-                    | Chatbot interface
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
+                  td Chatbot interface
+                  td.text-center== unchecked
+                  td.text-center== unchecked
+                  td.text-center== checked
                 tr
-                  td
-                    | Line integration
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
+                  td Line integration
+                  td.text-center== unchecked
+                  td.text-center== checked
+                  td.text-center== checked
                 tr
-                  td
-                    | Zalo integration
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
+                  td Zalo integration
+                  td.text-center== unchecked
+                  td.text-center== checked
+                  td.text-center== checked
                 tr
-                  td
-                    | Messenger integration
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-secondary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      i.v-icon.notranslate[aria-hidden="true" style="font-size: 15px; height: 15px; width: 15px;"]
-                        svg.v-icon.notranslate.v-theme--light.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                          path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"]
-                  td.text-center
-                    span.v-chip.v-chip--pill.text-primary.v-chip--density-default.v-chip--variant-tonal.pa-1[draggable="false"]
-                      span.v-chip__underlay
-                    .v-chip__content
-                      svg.v-icon.notranslate.iconify.iconify--tabler[xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" width="1em" height="1em" viewbox="0 0 24 24" style="font-size: 15px; height: 15px; width: 15px;"]
-                        path[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"]
+                  td Messenger integration
+                  td.text-center== unchecked
+                  td.text-center== unchecked
+                  td.text-center== checked

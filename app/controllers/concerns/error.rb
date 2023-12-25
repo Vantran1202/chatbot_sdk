@@ -4,7 +4,9 @@ module Error
   class Unauthorized < StandardError; end
 
   included do
-    rescue_from StandardError do |_exception|
+    rescue_from StandardError do |exception|
+      return raise exception if ENV['DEBUG'] == '1'
+
       render_error_page(status: 500, text: 'Internal Server Error', template: 'errors/internal_server')
     end
 
