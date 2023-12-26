@@ -132,19 +132,23 @@ class ChatApp {
   }
 }
 
-const chatApp      = new ChatApp();
-const $formChatbot = document.getElementById("js-chatbot-form-question")
-const projectName  = $formChatbot.dataset['projectName']
-const projectId    = $formChatbot.dataset['projectId']
+$(function() {
+  const $formChatbot = document.getElementById("js-chatbot-form-question")
+  if (!$formChatbot) return;
 
-$formChatbot.addEventListener("keydown", function(event) {
-  if (event.keyCode == 13 && !event.shiftKey) {
-    event.preventDefault();
+  const chatApp      = new ChatApp();
+  const projectName  = $formChatbot.dataset['projectName']
+  const projectId    = $formChatbot.dataset['projectId']
 
+  $formChatbot.addEventListener("keydown", function(event) {
+    if (event.keyCode == 13 && !event.shiftKey) {
+      event.preventDefault();
+
+      chatApp.sendMessage(projectName, projectId)
+    }
+  });
+
+  $(document).on('click', '.js-chatbot-btn-send-message', function() {
     chatApp.sendMessage(projectName, projectId)
-  }
-});
-
-$(document).on('click', '.js-chatbot-btn-send-message', function() {
-  chatApp.sendMessage(projectName, projectId)
-});
+  });
+})

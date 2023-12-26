@@ -34,7 +34,7 @@ class Campaigns::ProjectsController < ProjectsController
 
     @form = operator.form
 
-    if @form.errors
+    if @form.errors.present?
       flash.now[:alert] = @form.errors[:base][0] if @form.errors[:base].present?
       render :new
     else
@@ -48,9 +48,10 @@ class Campaigns::ProjectsController < ProjectsController
     operator.call
 
     @form = operator.form
-    @project = operator.project
+    @form_interface = operator.form_interface
+    @project        = operator.project
 
-    if @form.errors
+    if @form.errors.present?
       flash.now[:alert] = @form.errors[:base][0] if @form.errors[:base].present?
       render :edit
     else

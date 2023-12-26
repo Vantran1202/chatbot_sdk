@@ -3,7 +3,7 @@ const tabContents = document.querySelectorAll(".tab-pane-integrate");
 const navTab = document.getElementById("nav-pills-integrate");
 
 tabs.forEach(function(tab, index) {
-    tab.addEventListener("click", function() {
+    tab?.addEventListener("click", function() {
         tabContents.forEach(function(content) {
             content.classList.remove("show", "active");
         });
@@ -15,7 +15,7 @@ tabs.forEach(function(tab, index) {
     });
 });
 let currentTabIndex = 0;
-navTab.addEventListener("keydown", function(event) {
+navTab?.addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
         event.preventDefault();
         const tabs = document.querySelectorAll(".nav-link-integrate");
@@ -38,7 +38,7 @@ navTab.addEventListener("keydown", function(event) {
 //Form zalo official account
 const btnZaloSubmit = document.getElementById('btn-save-zalo');
 if (btnZaloSubmit) {
-    btnZaloSubmit.addEventListener("click", function() {
+    btnZaloSubmit?.addEventListener("click", function() {
         $('.text-danger').text('');
         $.LoadingOverlay('show');
         var formData = new FormData();
@@ -92,7 +92,7 @@ if (btnZaloSubmit) {
 //Form zalo official account
 const btnMessagerSubmit = document.getElementById('btn-save-messager');
 if (btnMessagerSubmit) {
-    btnMessagerSubmit.addEventListener("click", function() {
+    btnMessagerSubmit?.addEventListener("click", function() {
         $('.text-danger').text('');
         $.LoadingOverlay('show');
         var formData = new FormData();

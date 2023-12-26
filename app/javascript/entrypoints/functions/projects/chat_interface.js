@@ -14,24 +14,24 @@ $(function () {
   const textInitial = "I am an AI Assistant, Ask me anything, I will help answer your questions based on my understanding.";
   const colorTheme = "#1F2937";
   //onload
-  changeColor();
+//   changeColor();
   //Handle input chat initial
-  initialMessages.addEventListener('keyup', function (event) {
+  initialMessages?.addEventListener('keyup', function (event) {
       const currentMessValue = initialMessages.value;
       chatInitialMessages.textContent = currentMessValue;
       // chatInitialMessages.innerHTML = initialMessages.value;
   });
   //Reset chat initial
-  initialReset.addEventListener('click', function (event) {
+  initialReset?.addEventListener('click', function (event) {
       initialMessages.value  = textInitial;
       chatInitialMessages.innerHTML  = textInitial;
   })
   //Handle input chat bot name
-  botName.addEventListener('keyup', function (event) {
+  botName?.addEventListener('keyup', function (event) {
       chatBotName.innerHTML = botName.value;
   });
   //Handle input chat initial
-  suggestedMessages.addEventListener('keyup', function (event) {
+  suggestedMessages?.addEventListener('keyup', function (event) {
       const currentValue = suggestedMessages.value;
       const contentArray = currentValue.split("\n");
       chatSuggestMess.innerHTML = "";
@@ -47,12 +47,14 @@ $(function () {
       });
   });
   //Handle input color theme change
-  theme.addEventListener('change', function (event) {
+  theme?.addEventListener('change', function (event) {
       changeColor();
   });
   //Handle change color
   function changeColor() {
       const selectedColor = theme.value;
+      if (!selectedColor) return
+
       chatTheme.style.backgroundColor = selectedColor;
       const backgroundColor = getComputedStyle(chatTheme).backgroundColor;
       const rgb = backgroundColor.match(/\d+/g);
@@ -64,7 +66,7 @@ $(function () {
       }
   }
   //Reset input color theme
-  themeReset.addEventListener('click', function (event) {
+  themeReset?.addEventListener('click', function (event) {
       chatTheme.style.backgroundColor = colorTheme;
       chatBotName.style.color = "#fff";
       theme.value = colorTheme;
@@ -75,7 +77,7 @@ $(function () {
   const tabContents = document.querySelectorAll(".tab-pane-left");
 
   tabs.forEach(function(tab, index) {
-      tab.addEventListener("click", function() {
+      tab?.addEventListener("click", function() {
           tabContents.forEach(function(content) {
               content.classList.remove("show", "active");
           });
@@ -88,7 +90,7 @@ $(function () {
   });
   let currentTabIndex = 0;
   const vPillsEmbed = document.getElementById('v-pills-embed');
-  vPillsEmbed.addEventListener("keydown", function(event) {
+  vPillsEmbed?.addEventListener("keydown", function(event) {
       if (event.key === "Tab") {
           event.preventDefault();
           const tabs = document.querySelectorAll(".nav-link-left");

@@ -134,7 +134,7 @@ $(document).ready(function() {
   const tabContents = document.querySelectorAll(".tab-pane-type");
 
   tabs.forEach(function(tab, index) {
-    tab.addEventListener("click", function() {
+    tab?.addEventListener("click", function() {
         tabContents.forEach(function(content) {
             content.classList.remove("show", "active");
         });
@@ -148,7 +148,7 @@ $(document).ready(function() {
 
   let currentTabIndex = 0;
   const vPillsTabType = document.getElementById('v-pills-tabType');
-  vPillsTabType.addEventListener("keydown", function(event) {
+  vPillsTabType?.addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
       event.preventDefault();
       const tabs = document.querySelectorAll(".nav-link-type");

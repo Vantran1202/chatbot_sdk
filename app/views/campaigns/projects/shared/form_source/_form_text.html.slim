@@ -2,7 +2,7 @@ ruby:
   url = @form.uuid ? campaign_project_path(@form.uuid) : campaign_projects_path
   method = @form.uuid ? :put : :post
 
-= form_with(model: @form, url:, local: true, scope: '', method:) do |f|
+= form_with(model: @form, url:, local: true, scope: '', method:, html: { data: { turbo: false } }) do |f|
   = f.hidden_field :content_type, value: Project.content_type.text
 
   .row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3.show.active#v-pills-text-panel role="tabpanel" aria-labelledby="v-pills-text-tab"

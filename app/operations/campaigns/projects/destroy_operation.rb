@@ -4,7 +4,10 @@ class Campaigns::Projects::DestroyOperation < ApplicationOperation
   attr_reader :project
 
   def call
-    step_destroy_project
+    ActiveRecord::Base.transaction do
+      step_destroy_project
+      step_recover_counter
+    end
   end
 
   private
@@ -12,5 +15,12 @@ class Campaigns::Projects::DestroyOperation < ApplicationOperation
   def step_destroy_project
     @project = current_user.projects.find_by!(uuid: params[:uuid])
     @project.destroy!
+  end
+
+  def step_recover_counter
+    counter = current_user.user_counter
+    counter.used_character_counts -= project.content_type.size
+    counter.used_project_counts -= 1
+    counter.save!
   end
 end
