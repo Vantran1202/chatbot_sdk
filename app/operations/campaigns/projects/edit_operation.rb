@@ -20,7 +20,7 @@ class Campaigns::Projects::EditOperation < ApplicationOperation
     @form.uuid         = project.uuid
     @form.name         = project.name
     @form.content_type = project.content_type
-    @form.content      = project.contents.first
+    @form.content      = project.contents
   end
 
   def step_build_resource_form

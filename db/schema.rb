@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.bigint "user_id"
     t.string "name", null: false
     t.string "content_type", default: "text"
-    t.text "contents", default: [], array: true
+    t.text "contents"
     t.string "cfg_interfaces"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false

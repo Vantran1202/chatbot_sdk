@@ -3,22 +3,12 @@
 module Projects
   module ApplicationHelper
     def h_plan_option_for_text(used, limited)
+      remain = limited - used
+      class_text = remain == 0 ? 'text-danger' : 'text-info'
       html = ''
-      if used == 0
-        html += "<h4 class='card-title'>#{number_with_delimiter(limited)}</h4>"
-      elsif used < limited
-        html += "<h4 class='card-title'>"
-        html += "<span class='text-info'>#{used}</span>"
-        html += "<span class='fw-lighter'> / </span>"
-        html += "<span>#{limited}</span>"
-        html += '</h4>'
-      else
-        html += "<h4 class='card-title'>"
-        html += "<span class='text-danger'>#{used}</span>"
-        html += "<span class='fw-lighter'> / </span>"
-        html += "<span>#{limited}</span>"
-        html += '</h4>'
-      end
+      html += "<h4 class='card-title'>"
+      html += "<span class='#{class_text}'>#{number_with_delimiter(remain)}</span>"
+      html += '</h4>'
       html
     end
 

@@ -5,7 +5,7 @@
 
 - elsif flash[:alert].present?
   .mt-3.alert.text-center.alert-danger.alert-dismissible.fade.show[role="alert"]
-    span.ms-3.text-danger= flash[:notice]
+    span.ms-3.text-danger= flash[:alert]
     button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"
 
 - elsif flash[:warning].present?

@@ -17,7 +17,7 @@ ruby:
               = error_message_for(:name, f)
             .mb-3
               = f.label :content, 'Content *', class: 'form-label'
-              = f.text_area :content, class: 'form-project form-control project-content-input', rows: 15
+              = f.text_area :content, class: 'form-project form-control project-content-input js-content-training', rows: 15, data: { limitted_character_counts: current_user.user_counter.remain_character_counts }
               = error_message_for(:content, f)
 
     .col-md-5

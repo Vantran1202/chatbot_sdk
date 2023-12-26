@@ -53,7 +53,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
     "Bạn là trợ lý cho hệ thống. Hãy dựa vào nội dung cung cấp bên dưới và trả lời câu hỏi cho người dùng
 
     ***NỘI DUNG:**
-    #{project[:contents].join("\n")}
+    #{project[:contents]}
 
     #**TRẢ LỜI:**
     "

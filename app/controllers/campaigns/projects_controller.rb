@@ -34,7 +34,8 @@ class Campaigns::ProjectsController < ProjectsController
 
     @form = operator.form
 
-    if @form.invalid?
+    if @form.errors
+      flash.now[:alert] = @form.errors[:base][0] if @form.errors[:base].present?
       render :new
     else
       redirect_to campaign_projects_path, notice: 'Project created successfully.'
@@ -49,7 +50,8 @@ class Campaigns::ProjectsController < ProjectsController
     @form = operator.form
     @project = operator.project
 
-    if @form.invalid?
+    if @form.errors
+      flash.now[:alert] = @form.errors[:base][0] if @form.errors[:base].present?
       render :edit
     else
       redirect_to edit_campaign_project_path(params[:uuid]), notice: 'Project updated successfully.'

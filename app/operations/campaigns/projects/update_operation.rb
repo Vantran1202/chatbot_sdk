@@ -6,7 +6,10 @@ class Campaigns::Projects::UpdateOperation < ApplicationOperation
   def call
     step_load_project
     step_build_form { return }
-    step_save_data
+    ActiveRecord::Base.transaction do
+      step_update_project
+      step_update_user_counter
+    end
   end
 
   private
@@ -16,16 +19,23 @@ class Campaigns::Projects::UpdateOperation < ApplicationOperation
   end
 
   def step_build_form
-    @form = Campaigns::Projects::UpdateForm.new(per_params)
+    @form = Campaigns::Projects::UpdateForm.new(per_params.merge(user_counter: current_user.user_counter))
     yield if @form.invalid?
   end
 
-  def step_save_data
+  def step_update_project
     project.update!(
       name: form.name,
       content_type: form.content_type,
-      contents: [form.content]
+      contents: form.content
     )
+  end
+
+  def step_update_user_counter
+    counter = current_user.user_counter
+    counter.used_character_counts += form.content_type.size
+    counter.used_project_counts += 1
+    counter.save!
   end
 
   def per_params

@@ -1,2 +1,2 @@
-class Campaigns::Projects::UpdateForm < Campaigns::Projects::CreateForm
+class Campaigns::Projects::UpdateForm < Campaigns::Projects::BaseForm
 end

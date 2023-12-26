@@ -12,7 +12,7 @@ li.sidebar-item
         div.col-8.d-flex.align-items-center.justify-content-end.text-end
           div
             == h_plan_option_for_text(user_counter[:used_character_counts], user_counter[:limited_character_counts])
-            h6.fs-2.mb-0.fw-light.text-nowrap Limit characters
+            h6.fs-2.mb-0.fw-light.text-nowrap Characters remaining
 
 / Limit projects
 li.sidebar-item
@@ -25,7 +25,7 @@ li.sidebar-item
         div.col-8.d-flex.align-items-center.justify-content-end.text-end
           div
             == h_plan_option_for_text(user_counter[:used_project_counts], user_counter[:limited_project_counts])
-            h6.fs-2.mb-0.fw-light.text-nowrap Limit projects
+            h6.fs-2.mb-0.fw-light.text-nowrap Project remaining
 
 / Limit requests
 li.sidebar-item
@@ -38,7 +38,7 @@ li.sidebar-item
         div.col-8.d-flex.align-items-center.justify-content-end.text-end
           div
             == h_plan_option_for_text(user_counter[:used_request_counts], user_counter[:limited_request_counts])
-            h6.fs-2.mb-0.fw-light.text-nowrap Limit requests
+            h6.fs-2.mb-0.fw-light.text-nowrap Requests remaining
 
 / Limit integration
 li.sidebar-item
