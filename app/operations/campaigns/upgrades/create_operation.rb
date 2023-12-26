@@ -16,27 +16,25 @@ class Campaigns::Upgrades::CreateOperation < ApplicationOperation
     @plan = Plan.find_by!(type: params[:plan_type])
   end
 
+  # See: https://stripe.com/docs/api/checkout/sessions/create
   def step_create_session_stripe
+    webhook_url = Rails.application.routes.url_helpers
     session = Stripe::Checkout::Session.create(
       {
         line_items: [
           {
-            price_data: {
-              currency: 'usd',
-              product_data: { name: plan.name },
-              unit_amount: plan.price.to_i
-            },
+            price: plan.price_id,
             quantity: 1
           }
         ],
         mode: 'payment',
         metadata: { **current_user.as_json.slice('id', 'email', 'fullname') },
-        success_url: Rails.application.routes.url_helpers.payment_stripe_statuses_url(payment_statuss: 'success',
-                                                                                      user_id: current_user.id,
-                                                                                      plan_id: plan.id),
-        cancel_url: Rails.application.routes.url_helpers.payment_stripe_statuses_url(payment_statuss: 'cancel',
-                                                                                     user_id: current_user.id,
-                                                                                     plan_id: plan.id)
+        success_url: webhook_url.payment_stripe_statuses_url(
+          payload: Plan.encrypted_payment_status(:success, user: current_user, plan:)
+        ),
+        cancel_url: webhook_url.payment_stripe_statuses_url(
+          payload: Plan.encrypted_payment_status(:cancel, user: current_user, plan:)
+        )
       }
     )
 

@@ -3,7 +3,6 @@ ruby:
   klass_disabled = plan.package_free? ? 'disabled' : nil
 
 .col-sm-6.col-lg-4
-  / class .disabled
   .card.sub-active.d-flex.flex-column class="#{klass_disabled}"
     .card-body.flex-grow-1
       div.d-flex.justify-content-between
@@ -18,4 +17,4 @@ ruby:
       ul.list-unstyled.mb-7
         == render partial: 'campaigns/upgrades/index/plan_option', locals: { plan_option: plan.plan_option }
 
-      = button_to 'Subscribe', campaign_upgrades_path(plan_type: plan.type), class: 'btn btn-primary fw-bolder rounded-2 py-6 w-100 text-capitalize', data: { turbo: false }
+      == h_disable_btn_upgrade_plan(plan)

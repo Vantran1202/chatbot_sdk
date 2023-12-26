@@ -11,6 +11,7 @@ module User::Callback
 
   def create_plan_resources
     plan = Plan.package_free
+    orders.create!(plan_id: plan.id, price: plan.price, paid_at: DateTime.current, expired_at: nil)
     create_user_counter!(
       used_character_counts: 0,
       limited_character_counts: plan.plan_option.limited_character_counts,

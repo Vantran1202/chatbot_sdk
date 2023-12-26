@@ -18,13 +18,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.bigint "user_id", null: false
     t.bigint "plan_id", null: false
     t.float "price"
-    t.string "payment_token"
     t.datetime "paid_at", null: false
+    t.datetime "expired_at"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["plan_id"], name: "index_orders_on_plan_id", where: "(deleted_at IS NULL)"
-    t.index ["user_id", "plan_id", "paid_at"], name: "index_orders_on_user_id_and_plan_id_and_paid_at", unique: true, where: "(deleted_at IS NULL)"
+    t.index ["user_id", "plan_id", "expired_at"], name: "index_orders_on_user_id_and_plan_id_and_expired_at", unique: true, where: "(deleted_at IS NULL)"
   end
 
   create_table "project_files", force: :cascade do |t|
