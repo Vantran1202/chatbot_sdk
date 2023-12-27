@@ -50,7 +50,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def system_content
-    "Bạn là trợ lý cho hệ thống. Hãy dựa vào nội dung cung cấp bên dưới và trả lời câu hỏi cho người dùng
+    "Bạn là trợ lý cho hệ thống. Hãy dựa vào nội dung cung cấp bên dưới và trả lời câu hỏi cho người dùng. Nếu không biết thì hãy trả lời 'Xin lỗi, tôi không biết.'
 
     ***NỘI DUNG:**
     #{project[:contents]}
