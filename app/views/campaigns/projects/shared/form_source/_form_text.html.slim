@@ -1,0 +1,24 @@
+ruby:
+  url = @form.uuid ? campaign_project_path(@form.uuid) : campaign_projects_path
+  method = @form.uuid ? :put : :post
+
+= form_with(model: @form, url:, local: true, scope: '', method:, html: { data: { turbo: false } }) do |f|
+  = f.hidden_field :content_type, value: Project.content_type.text
+
+  .row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3.show.active#v-pills-text-panel role="tabpanel" aria-labelledby="v-pills-text-tab"
+    .col-md-7
+      div#text-form
+        div.form-content
+
+          div.form-modify
+            .mb-3
+              = f.label :name, 'Project Name *', class: 'form-label'
+              = f.text_field :name, class: 'form-project form-control', id: 'project-name'
+              = error_message_for(:name, f)
+            .mb-3
+              = f.label :content, 'Content *', class: 'form-label'
+              = f.text_area :content, class: 'form-project form-control project-content-input js-content-training', rows: 15, data: { limitted_character_counts: current_user.user_counter.remain_character_counts }
+              = error_message_for(:content, f)
+
+    .col-md-5
+      = render partial: 'campaigns/projects/shared/form_source/form_submit', locals: { form: f }

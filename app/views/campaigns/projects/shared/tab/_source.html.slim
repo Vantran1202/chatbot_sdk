@@ -1,0 +1,11 @@
+.tab-pane.fade.show.active#tab-1 role="tabpanel" aria-labelledby="ex1-tab-1"
+  section.header
+    .container.py-4
+      .row
+        .col-md-2
+          = render partial: 'campaigns/projects/shared/sidebar'
+
+        .col-md-10.py-3.border
+          = render partial: 'campaigns/projects/shared/form_source/form_text'
+          = render partial: 'campaigns/projects/shared/form_source/form_upload'
+          / = render partial: 'campaigns/projects/shared/form_source/form_crawl'

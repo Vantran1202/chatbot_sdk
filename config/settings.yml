@@ -1,0 +1,9 @@
+host: http://localhost:3000
+google:
+  client_id: 94357377005-8jhs719l7sdnj90vl86pi821gkgs1aln.apps.googleusercontent.com
+sdk:
+  chatbot_name: Atarbot
+  script: http://localhost:3000/vite-dev/entrypoints/sdk.js?v1
+  host: http://localhost:3000
+session:
+  cookie_name: google_login

@@ -1,0 +1,17 @@
+ruby:
+  script = "<script src='#{Settings.sdk.script}' domain='#{Settings.sdk.host}' projectId='#{project.uuid}' defer></script>"
+.tab-pane.tab-pane-left.fade.rounded.bg-white.p-3.show.active#v-pills-embed-panel role="tabpanel" aria-labelledby="v-pills-embed-tab"
+  div.container.py-3.border
+    div.mt-2 style="text-align: center;"
+      p.text-sm.text-gray-500 To add a chat bubble to the bottom right of your website add this script tag to your html
+    div.mb-3
+      div.row.justify-content-center style=""
+        div.position-relative.col-md-6
+          pre.w-full.overflow-auto.text-xs.bg-slate-100.rounded.p-3
+            code#js-copy-script = script
+          div.col-12.fs-5.lg:col-auto.order-last.lg:order-first.d-flex.justify-content-center
+            a onclick="copyToClipboard('#js-copy-script')" href="javascript:void(0)" id="copy_embed" class="btn btn-light fs-2 lg:w-auto"
+              | Copy Script
+              i#icon-copy.ti.ti-folders.ms-2
+        div.col-md-6 style="width: 300px"
+          = vite_image_tag 'images/projects/chatbot_bubble.png', width: '100%', height: '100%'

@@ -1,0 +1,20 @@
+ruby:
+  popular = plan.popular ? 'popular' : ''
+  klass_disabled = plan.package_free? ? 'disabled' : nil
+
+.col-sm-6.col-lg-4
+  .card.sub-active.d-flex.flex-column class="#{klass_disabled}"
+    .card-body.flex-grow-1
+      div.d-flex.justify-content-between
+        span.fw-bolder.text-uppercase.fs-2.d-block.mb-7= plan.name
+        span.badge.fw-bolder.py-1.bg-light-warning.text-warning.text-uppercase.fs-2.rounded-3= popular
+
+      div.my-4
+        = vite_image_tag plan.image, width: "80", height: "80", class: "img-fluid"
+
+      .d-flex.mb-3== h_plan_price(plan.price)
+
+      ul.list-unstyled.mb-7
+        == render partial: 'campaigns/upgrades/index/plan_option', locals: { plan_option: plan.plan_option }
+
+      == h_disable_btn_upgrade_plan(plan)

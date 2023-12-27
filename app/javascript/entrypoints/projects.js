@@ -11,6 +11,12 @@ import ResizeObserver from 'resize-observer-polyfill';
 import 'gasparesganga-jquery-loading-overlay';
 import Swal from 'sweetalert2';
 
+// import * as Turbo from '@hotwired/turbo'
+// Turbo.start()
+
+import "@hotwired/turbo-rails"
+Turbo.session.drive = false
+
 // Import functions
 import './functions/projects/toggle_menu_mobile';
 import './functions/projects/sidebar';
@@ -20,6 +26,8 @@ import './functions/projects/chat_interface';
 import './functions/projects/integrate';
 import './functions/projects/chatbot';
 import './functions/projects/delete';
+import './functions/projects/global';
+import './functions/projects/counter_character_upload_file';
 
 // Set Global
 window.ResizeObserver = ResizeObserver;

@@ -1,0 +1,48 @@
+ruby:
+  checked = '<i aria-hidden="true" class="v-icon notranslate" style="font-size: 15px; height: 15px; width: 15px;"><svg aria-hidden="true" class="v-icon notranslate v-theme--light iconify iconify--tabler" height="1em" role="img" style="font-size: 15px; height: 15px; width: 15px;" tag="i" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="m5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></i>'
+  unchecked = '<i aria-hidden="true" class="v-icon notranslate" style="font-size: 15px; height: 15px; width: 15px;"><svg aria-hidden="true" class="v-icon notranslate v-theme--light iconify iconify--tabler" height="1em" role="img" style="font-size: 15px; height: 15px; width: 15px;" tag="i" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></i>'
+
+.row-body
+  .v-card-text.text-center.mt-16.fs-10
+    h4.text-h4.mb-5
+      | Pick a plan that works best for you
+  .v-card-text.mb-16.mt-2
+    .v-row
+      .v-col-md-10.v-col-12.mx-auto
+        .v-table.v-table--density-default.text-no-wrap.border.rounded
+          .v-table__wrapper
+            table.table.border.text-nowrap.customize-table.mb-0.align-middle
+              thead.text-dark.fs-4
+                tr
+                  th.py-4[scope="col"]
+                    h6.text-sm.font-weight-semibold.mb-1 FEATURES
+                  - plans.each do |plan|
+                    th.text-center.py-4[scope="col"]
+                      h6.text-sm.font-weight-semibold.mb-1= plan.name
+                      span.text-disabled.font-weight-regular.text-sm= "$#{"%01d" % plan.price}/month"
+              tbody
+                tr
+                  td Custom chatbots using Open AI technology and business data
+                  td.text-center== checked
+                  td.text-center== checked
+                  td.text-center== checked
+                tr
+                  td Chatbot interface
+                  td.text-center== unchecked
+                  td.text-center== unchecked
+                  td.text-center== checked
+                tr
+                  td Line integration
+                  td.text-center== unchecked
+                  td.text-center== checked
+                  td.text-center== checked
+                tr
+                  td Zalo integration
+                  td.text-center== unchecked
+                  td.text-center== checked
+                  td.text-center== checked
+                tr
+                  td Messenger integration
+                  td.text-center== unchecked
+                  td.text-center== unchecked
+                  td.text-center== checked

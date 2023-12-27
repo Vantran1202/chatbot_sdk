@@ -1,0 +1,78 @@
+.tab-pane.fade#tab-3 role="tabpanel" aria-labelledby="ex1-tab-3"
+  section.header
+    .container.py-4
+      .row
+        .col-md-2
+          div.nav.flex-column.nav-pills.nav-pills-custom#nav-pills-integrate role="tablist" aria-orientation="vertical"
+            a.nav-link.nav-link-integrate.mb-3.p-3.shadow.active id="v-pills-line" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-line" aria-selected="true"
+              i.ti.mr-2.ti-alert-circle-filled data-bs-toggle="tooltip" aria-label="Line has not been installed." data-bs-original-title="Line has not been installed."
+              span.font-weight-bold.small.text-uppercase Line
+            a.nav-link.nav-link-integrate.mb-3.p-3.shadow id="v-pills-zalo" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-zalo" aria-selected="false"
+              i.ti.mr-2.ti-alert-circle-filled data-bs-toggle="tooltip" aria-label="Zalo has not been installed." data-bs-original-title="Zalo has not been installed."
+              span.font-weight-bold.small.text-uppercase Zalo
+            a.nav-link.nav-link-integrate.mb-3.p-3.shadow id="v-pills-messenger" data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-messenger" aria-selected="false"
+              i.ti.mr-2.ti-alert-circle-filled data-bs-toggle="tooltip" aria-label="Messenger has not been installed." data-bs-original-title="Messenger has not been installed."
+              span.font-weight-bold.small.text-uppercase Messenger
+        .col-md-10
+          div.tab-content#v-pills-tabContent
+            div.tab-pane.tab-pane-integrate.fade.rounded.bg-white.p-3.show.active id="v-pills-line-panel" role="tabpanel" aria-labelledby="v-pills-line-tab"
+              div.d-flex.flex-sm-row.flex-column
+                form#line-form.line-container method="post" action="http://127.0.0.1:5100/api/v1/line/create" enctype="multipart/form-data"
+                  input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off"
+                  input type="hidden" id="project-id" value="f841620a-970c-4de5-aa7a-a63eb1743934"
+                  input type="hidden" id="provider-id" value=""
+                  div.mb-3
+                    label.form-label for="provider-name" Channel Name
+                    input value="" type="text" class="form-provider form-control" id="provider-name"
+                    span#error-provider_name.validation.text-danger
+                  div.mb-3
+                    label.form-label for="provider-name" Channel Description
+                    input value="" type="text" class="form-provider form-control" id="provider-description"
+                    span#error-provider_description.validation.text-danger
+                  div.mb-3
+                    label.form-label for="provider-icon" Channel Icon
+                    input value="" type="file" class="form-provider form-control.mb-3" id="provider-icon"
+                    span#error-provider_icon.validation.text-danger
+                  div.d-flex.justify-content-end
+                    button#btn-save-line type="button" class="form-provider btn btn-primary mx-1 mb-3" Save
+                div.line-container
+                  div.mb-3
+                    label.form-label for="provider-icon" QR CODE
+            div.tab-pane.tab-pane-integrate.fade.rounded.bg-white.p-3 id="v-pills-zalo-panel" role="tabpanel" aria-labelledby="v-pills-zalo-tab"
+              div.d-flex.flex-sm-row.flex-column
+                form#zalo-form.line-container method="post" action="http://127.0.0.1:5100/api/v1/zalo/create" enctype="multipart/form-data"
+                  input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off"
+                  input type="hidden" id="zalo-id" value=""
+                  div.mb-3
+                    label.form-label for="zalo-oa-name" Official Account Name
+                    input value="" type="text" class="form-zalo form-control" id="zalo-name"
+                    span#error-zalo_name.validation.text-danger
+                  div.mb-3
+                    label.form-label for="zalo-oa-id" Official Account ID
+                    input value="" type="text" class="form-zalo form-control" id="zalo-oa-id"
+                    span#error-oa_id.validation.text-danger
+                  div.mb-3
+                    label.form-label for="zalo-client-id" Client ID
+                    input value="" type="text" class="form-zalo form-control" id="zalo-client-id"
+                    span#error-client_id.validation.text-danger
+                  div.mb-3
+                    label.form-label for="zalo-client-secret" Client Secret
+                    input value="" type="text" class="form-zalo form-control" id="zalo-client-secret"
+                    span#error-client_secret.validation.text-danger
+                  div.mb-3
+                    label.form-label for="zalo-access-token" Access Token
+                    input value="" type="password" autocomplete="on" class="form-zalo form-control" id="zalo-access-token"
+                    span#error-access_token.validation.text-danger
+                  div.mb-3
+                    label.form-label for="zalo-refresh-token" Refresh Token
+                    input value="" type="password" autocomplete="on" class="form-zalo form-control" id="zalo-refresh-token"
+                    span#error-refresh_token.validation.text-danger
+                  div.d-flex.justify-content-end
+                    button#btn-save-zalo type="button" class="form-provider btn btn-primary mt-3" Save
+                div.line-container
+                  div.mb-3
+                    a href="http://127.0.0.1:5100/assets/document/Settup_zalo_developers.docx" target="_blank" Document settup
+                      i.ti.ti-click
+                  div.mb-3
+                    div.mb-3
+                    label.form-label for="zalo-icon" QR CODE

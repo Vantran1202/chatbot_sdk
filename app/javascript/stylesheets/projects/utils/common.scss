@@ -6,7 +6,7 @@
   min-width: 0;
 }
 .w-2 {
-  width: 2.25rem;
+  width: 2.25rem !important;
 }
 
 // HEIGHT
@@ -27,6 +27,11 @@
 }
 
 // TEXT
+.text-xs {
+  font-size: .775rem;
+  line-height: 1.25rem;
+}
+
 .text-sm {
   font-size: .875rem;
   line-height: 1.25rem;
@@ -62,7 +67,7 @@ textarea {
   opacity: 1;
 }
 
-.disabled-form {
+.disabled-05 {
   pointer-events: none;
   opacity: 0.5;
 }

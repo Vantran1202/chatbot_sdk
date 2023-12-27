@@ -1,0 +1,106 @@
+ruby:
+  user_counter = current_user.user_counter
+
+/ Limit characters
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-alphabet-greek.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_text(user_counter[:used_character_counts], user_counter[:limited_character_counts])
+            h6.fs-2.mb-0.fw-light.text-nowrap Characters remaining
+
+/ Limit projects
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-briefcase.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_text(user_counter[:used_project_counts], user_counter[:limited_project_counts])
+            h6.fs-2.mb-0.fw-light.text-nowrap Project remaining
+
+/ Limit requests
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-chart-line.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_text(user_counter[:used_request_counts], user_counter[:limited_request_counts])
+            h6.fs-2.mb-0.fw-light.text-nowrap Requests remaining
+
+/ Limit integration
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-brand-hipchat.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_icon(user_counter[:has_chat_integraton])
+            h6.fs-2.mb-0.fw-light.text-nowrap Chat integration
+
+/ Limit interface
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-settings-code.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_icon(user_counter[:has_custom_interface])
+            h6.fs-2.mb-0.fw-light.text-nowrap Chatbot interface
+
+/ Limit Line
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-brand-line.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_icon(user_counter[:has_line])
+            h6.fs-2.mb-0.fw-light.text-nowrap Line integration
+
+/ Limit Zalo
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-brand-zwift.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_icon(user_counter[:has_zalo])
+            h6.fs-2.mb-0.fw-light.text-nowrap Zalo integration
+
+/ Limit Messenger
+li.sidebar-item
+  div.card-sub-menu.card.border-start.border-info
+    div.card-body.card-sub-body
+      div.row
+        div.col-4
+          div.bg-primary.text-white.rounded.d-flex.align-items-center.p-6.justify-content-center
+            i.ti.ti-brand-messenger.fs-6
+        div.col-8.d-flex.align-items-center.justify-content-end.text-end
+          div
+            == h_plan_option_for_icon(user_counter[:has_messenger])
+            h6.fs-2.mb-0.fw-light.text-nowrap Messenger integration

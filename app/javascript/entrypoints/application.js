@@ -17,6 +17,10 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 //
 // import * as Turbo from '@hotwired/turbo'
 // Turbo.start()
+
+import "@hotwired/turbo-rails"
+Turbo.session.drive = false
+
 //
 // import ActiveStorage from '@rails/activestorage'
 // ActiveStorage.start()
@@ -42,7 +46,8 @@ window.addEventListener('turbo:render', (event) => {
 function initPage() {
   // initialize popovers
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
   })
 }
+

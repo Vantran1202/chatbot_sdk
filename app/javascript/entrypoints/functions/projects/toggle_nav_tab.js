@@ -128,31 +128,13 @@ $(function () {
   });
 });
 
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $('#icon-copy').removeClass('ti-folders').addClass('ti-checks');
-  $temp.remove();
-}
-
-function copyWebhookUrlToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $(element).next().removeClass('ti-folders').addClass('ti-checks');
-  $temp.remove();
-}
-
 
 $(document).ready(function() {
   const tabs = document.querySelectorAll(".nav-link-type");
   const tabContents = document.querySelectorAll(".tab-pane-type");
 
   tabs.forEach(function(tab, index) {
-    tab.addEventListener("click", function() {
+    tab?.addEventListener("click", function() {
         tabContents.forEach(function(content) {
             content.classList.remove("show", "active");
         });
@@ -166,7 +148,7 @@ $(document).ready(function() {
 
   let currentTabIndex = 0;
   const vPillsTabType = document.getElementById('v-pills-tabType');
-  vPillsTabType.addEventListener("keydown", function(event) {
+  vPillsTabType?.addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
       event.preventDefault();
       const tabs = document.querySelectorAll(".nav-link-type");

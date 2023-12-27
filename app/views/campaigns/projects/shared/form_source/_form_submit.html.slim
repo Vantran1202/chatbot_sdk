@@ -1,0 +1,13 @@
+ruby:
+  character_counts = local_assigns[:form].present? ? form.object.content&.size.to_i : 0
+  remain_character_counts = number_with_delimiter(current_user.user_counter.remain_character_counts)
+div.card.alert-dismissible.fade.show.alert.p-0.card-hover.bg-white role="alert"
+  div.p-2.d-block.mt-3
+    h5.card-title.text-center Summary
+    p.fs-2.pt-3
+      | Total characters:
+      span.js-total-character<= "#{character_counts} / #{remain_character_counts}"
+    p#total-detect-chars-error.fs-2.text-danger.text-center.my-2
+
+    - if local_assigns[:form].present?
+      = form.submit 'Training', class: "modify-project-btn form-project btn btn-outline-primary d-block w-100"

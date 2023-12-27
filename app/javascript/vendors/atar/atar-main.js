@@ -1,11 +1,16 @@
 
 $(function() {
-    'use strict';
-	
+	'use strict';
+
+	// Preloader
+	$(window).on('load', function() {
+		$('.preloader').addClass('preloader-deactivate');
+	})
+
 	// Sticky, Go To Top JS
 	$(window).on('scroll', function() {
 		// Header Sticky JS
-		if ($(this).scrollTop() >100){  
+		if ($(this).scrollTop() >100){
 			$('.navbar').addClass("is-sticky");
 		}
 		else{
@@ -310,17 +315,13 @@ $(function() {
 		document.body.appendChild(css);
 	};
 
-	// Preloader
-	$(window).on('load', function() {
-		$('.preloader').addClass('preloader-deactivate');
-	})
-
 	// Scroll Event
 	$(window).on('scroll', function(){
 		var scrolled = $(window).scrollTop();
 		if (scrolled > 100) $('.go-top').addClass('active');
-		if (scrolled < 100) $('.go-top').removeClass('active'); 
-	});  
+		if (scrolled < 100) $('.go-top').removeClass('active');
+	});
+
 	// Click Event
 	$('.go-top').on('click', function() {
 		$("html, body").animate({ scrollTop: "0" },  100);

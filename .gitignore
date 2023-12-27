@@ -10,6 +10,7 @@
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb
+!/.env_sample
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -48,3 +49,9 @@ node_modules
 
 vendor/bundle
 config/database.yml
+
+/config/credentials/development.key
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

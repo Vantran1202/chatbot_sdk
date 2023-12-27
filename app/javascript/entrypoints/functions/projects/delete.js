@@ -1,12 +1,11 @@
 $(document).on('click', 'a[name="delete-project"]', function() {
-  var projectName = $(this).data("project-name");
-  var projectId = $(this).data("delete-id");
-  // var deleteUrl = deleteProjectUrl.replace('id', projectId);
-  var deleteUrl = ''
+  var projectName = $(this).data('project-name');
+  var deleteUrl = $(this).data('delete-url')
+  var deleteUrlSuccess = $(this).data('delete-url-success')
 
   Swal.fire({
       icon: 'warning',
-      html: `<div class="w-full">
+      html: `<div class="w-full px-3">
                   <p class="fs-5 fw-semibold">Enter "<span class="text-primary">${projectName}</span>" to confirm deletion.</p>
                   <input id="project-name-confirm" type="text" class="form-control mt-1"/>
                   <p class="fs-3 text-warning mt-3">You won't be able to revert this!</p>
@@ -24,12 +23,13 @@ $(document).on('click', 'a[name="delete-project"]', function() {
       },
       preConfirm: () => {
           var projectNameConfirm = $('#project-name-confirm').val();
-          $.LoadingOverlay('show');
           if (projectNameConfirm === projectName) {
+            $.LoadingOverlay('show');
             return fetch(deleteUrl, {
               method: 'DELETE',
               headers: {
-                  'ContentType': 'application/json'
+                'ContentType': 'application/json',
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
               }
             })
             .then(response => {
@@ -73,7 +73,7 @@ $(document).on('click', 'a[name="delete-project"]', function() {
               },
               buttonsStyling: false
           });
-          window.location.href = projectIndexUrl;
+          window.location.href = deleteUrlSuccess;
       }
   });
 });

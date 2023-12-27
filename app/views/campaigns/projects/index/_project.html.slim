@@ -1,0 +1,9 @@
+.project-card.col-md-6.col-lg-3.mb-3
+  a href="#{edit_campaign_project_path(project.uuid)}"
+    .card.text-center.alert-dismissible.fade.show.alert.p-3.card-hover.bg-light-secondary role="alert"
+      .p-2.d-block
+        = vite_image_tag 'images/atar/logo.png', class: "img-fluid mb-5 mt-2", width: '80'
+        / h4.my-3
+        /   i.ti.fs-1.spinner-border style="width:20px; height:20px" data-bs-toggle="tooltip" aria-label="Source is being processed." data-bs-original-title="Source is being processed."
+        h5.card-title.mt-3.block-ellipsis data-bs-toggle="tooltip" data-bs-original-title="#{project.name}"= project.name
+        h6.fs-1.mt-3= project.updated_at

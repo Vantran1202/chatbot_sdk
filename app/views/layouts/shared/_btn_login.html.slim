@@ -1,0 +1,12 @@
+- if logged_in?
+  .option-item
+    a href="#{campaign_projects_path}" class="default-btn"
+      span
+        i class="flaticon-plus-1"
+        | Get Project
+- else
+  .option-item
+    a href="" class="login-btn" id="js-login-sns" data-callback-login="#{onetap_login_googles_url}"
+      span
+        i class="flaticon-plus-1"
+        | Get Strated

@@ -31,6 +31,7 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'config'
 gem 'slim'
 
 # Use Redis adapter to run Action Cable in production
@@ -50,6 +51,12 @@ gem 'bootsnap', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+gem 'active_hash'
+gem 'carrierwave'
+gem 'enumerize'
+gem 'paranoia'
+gem 'ruby-openai'
+gem 'versionist', '2.0.1'
 gem 'vite_rails'
 
 group :development, :test do
@@ -62,7 +69,9 @@ group :development, :test do
   # An extension of RuboCop focused on code performance checks.
   gem 'rubocop-performance'
   # A RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem 'dotenv-rails'
   gem 'rubocop-rails'
+  gem 'seed-fu'
   gem 'slimcop'
 end
 
@@ -84,3 +93,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'jwt', '~> 2.7'
+
+gem 'stripe', '~> 10.4'

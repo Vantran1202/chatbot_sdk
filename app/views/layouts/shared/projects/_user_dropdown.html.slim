@@ -1,12 +1,11 @@
 div.navbar-collapse.justify-content-end.px-0#navbarNav
   ul.navbar-nav.flex-row.ms-auto.align-items-center.justify-content-end
     li.nav-item.dropdown
-      a.nav-link.nav-icon-hover(href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false")
+      a.js-user-avatar.nav-link.nav-icon-hover(href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false" data-user-avatar="#{vite_asset_path('images/atar/feature1.png')}")
         = vite_image_tag 'images/atar/feature1.png', width: "35", height: "35", class: "rounded-circle"
       div.dropdown-menu.dropdown-menu-end.dropdown-menu-animate-up(aria-labelledby="drop2")
         div.message-body
           a.d-flex.align-items-center.gap-2.dropdown-item href="http://127.0.0.1:5100/profile"
             i.ti.ti-user.fs-6
             p.mb-0.fs-3 My Profile
-          a.btn.btn-outline-primary.mx-3.mt-2.d-block href="http://127.0.0.1:5100/logout"
-            | Logout
+          = button_to 'Logout', campaign_sessions_path, class: 'btn btn-outline-primary mx-3 mt-2 d-block', method: :delete

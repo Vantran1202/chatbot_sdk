@@ -3,16 +3,19 @@ html lang="en"
   head
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
-    title= @seo_title || 'Atarbot SDK'
+    title= @seo_title || Settings.sdk.chatbot_name
 
     = csrf_meta_tags
     = csp_meta_tag
 
     = vite_client_tag
-    = vite_javascript_tag 'projects'
-    = vite_stylesheet_tag 'stylesheets/projects.scss', media: 'all'
+    = vite_javascript_tag 'projects', data: { turbo_track:"reload" }
+    = vite_stylesheet_tag 'stylesheets/projects.scss', media: 'all', data: { turbo_track:"reload" }
+    script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js" integrity="sha512-QJy1NRNGKQoHmgJ7v+45V2uDbf2me+xFoN9XewaSKkGwlqEHyqLVaLtVm93FzxVCKnYEZLFTI4s6v0oD0FbAlw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js" integrity="sha512-sG5Q7boJL+ft/weuz6Mmi9XBD+bEzE9AI2FMP4YMFxp3FpTFUQSQQm5K5cSgJCyed6bWs3W8f8h0lp36lHXhQA==" crossorigin="anonymous" referrerpolicy="no-referrer"
 
-  body.page-template-default.page.page-id-578.atar-toolkit-activate.elementor-default.elementor-kit-7.elementor-page.elementor-page-578
+
+  body.page-template-default.page.page-id-578.atar-toolkit-activate.elementor-default.elementor-kit-7.elementor-page.elementor-page-578 data-turbo="false"
     div.page-wrapper#main-wrapper(data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed")
       aside.left-sidebar
         div
@@ -25,7 +28,7 @@ html lang="en"
             == render 'layouts/shared/projects/upgrade_plan'
             == render 'layouts/shared/projects/mobile_toggle'
 
-            h4.text-primary.font-bold.d-none.d-sm-block= @page_title || 'Welcome to Atarbot SDK'
+            h4.text-primary.font-bold.d-none.d-sm-block= @page_title || Settings.sdk.chatbot_name
 
             == render 'layouts/shared/projects/user_dropdown'
 
