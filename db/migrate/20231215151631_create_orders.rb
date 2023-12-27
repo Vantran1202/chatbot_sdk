@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[7.1]
   def change
     create_table :orders do |t|
-      t.belongs_to :user, index: false, null: false
+      t.belongs_to :user, index: false, null: false, foreign_key: true
       t.belongs_to :plan, index: false, null: false
       t.float :price
       t.datetime :paid_at, null: false

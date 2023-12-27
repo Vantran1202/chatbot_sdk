@@ -81,4 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.index ["email"], name: "index_users_on_email", unique: true, where: "(deleted_at IS NULL)"
   end
 
+  add_foreign_key "orders", "users"
+  add_foreign_key "project_files", "projects"
+  add_foreign_key "projects", "users"
+  add_foreign_key "user_counters", "users"
 end

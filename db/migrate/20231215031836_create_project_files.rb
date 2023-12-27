@@ -1,7 +1,7 @@
 class CreateProjectFiles < ActiveRecord::Migration[7.1]
   def change
     create_table :project_files do |t|
-      t.belongs_to :project, index: false, null: false
+      t.belongs_to :project, index: false, null: false, foreign_key: true
       t.string :filename, null: false
       t.string :filetype, null: false
       t.float :filesize, null: false, default: 0

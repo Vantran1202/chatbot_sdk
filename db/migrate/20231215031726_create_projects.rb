@@ -2,7 +2,7 @@ class CreateProjects < ActiveRecord::Migration[7.1]
   def change
     create_table :projects do |t|
       t.uuid :uuid, null: false
-      t.belongs_to :user, index: false
+      t.belongs_to :user, index: false, foreign_key: true
 
       t.string :name, null: false
       t.string :content_type, default: 'text'

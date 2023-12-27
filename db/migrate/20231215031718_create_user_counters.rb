@@ -1,7 +1,7 @@
 class CreateUserCounters < ActiveRecord::Migration[7.1]
   def change
     create_table :user_counters do |t|
-      t.belongs_to :user, index: false, null: false
+      t.belongs_to :user, index: false, null: false, foreign_key: true
 
       t.integer :used_character_counts, default: 0
       t.integer :limited_character_counts, default: 0
