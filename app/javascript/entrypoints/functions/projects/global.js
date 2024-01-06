@@ -12,3 +12,14 @@ function copyToClipboard(element) {
 }
 
 window.copyToClipboard = copyToClipboard
+
+function formatNumberCommas(yourNumber) {
+  //Seperates the components of the numbers
+  var n= yourNumber.toString().split(".");
+  //Comma-fies the first part
+  n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  //Combines the two sections
+  return n.join(".");
+}
+
+window.formatNumberCommas = formatNumberCommas

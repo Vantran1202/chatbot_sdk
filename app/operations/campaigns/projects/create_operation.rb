@@ -32,6 +32,7 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
   end
 
   def permit_params
+    params[:content_type] = Project.content_type.text if params[:content].present?
     params.permit(:name, :content, :content_type)
   end
 end
