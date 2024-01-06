@@ -32,6 +32,7 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 
 gem 'config'
+gem 'sidekiq'
 gem 'slim'
 
 # Use Redis adapter to run Action Cable in production

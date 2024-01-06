@@ -337,6 +337,11 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     sexp_processor (4.17.0)
+    sidekiq (7.2.0)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.14.0)
     slim (5.2.0)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -432,6 +437,7 @@ DEPENDENCIES
   ruby-openai
   seed-fu
   selenium-webdriver
+  sidekiq
   slim
   slimcop
   sprockets-rails
