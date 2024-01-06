@@ -152,6 +152,7 @@ $(function() {
       totalFiles= filesInputArray.length;
       totaltextFileLength = filesInputArray.reduce((sum, item) => sum + item.text.length, 0);
       $('.js-total-character').text( `${totalFiles} Files (${totaltextFileLength} chars)` );
+      $('#js-input-total-character').val(totaltextFileLength)
     } else {
       totaltextFileLength = 0;
       $('.js-total-character').text("");

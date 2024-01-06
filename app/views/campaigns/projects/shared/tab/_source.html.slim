@@ -9,8 +9,11 @@
           ruby:
             url = @form.uuid ? campaign_project_path(@form.uuid) : campaign_projects_path
             method = @form.uuid ? :put : :post
+            content_type = params[:content_type] || 'text'
 
-          = form_with(model: @form, url:, local: true, scope: '', method:, html: { data: { turbo: false } }) do |f|
+          = form_with(model: @form, url:, local: true, scope: '', multipart: true, method:, html: { data: { turbo: false } }) do |f|
+            = f.hidden_field :content_type, value: content_type, class: 'form-project form-control', id: 'js-input-content-type'
+            = f.hidden_field :total_character, value: 0, class: 'form-project form-control', id: 'js-input-total-character'
             .row
               .col-md-7
                 .mb-3

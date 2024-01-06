@@ -202,9 +202,9 @@ function checkLength() {
   totalPages = textInputArray.length;
   totalDetectLength = currentLength + totaltextFileLength + totalDetectCrawl;
   $('#total-text-chars').text( totalPages > 0
-    ? `${ReplaceNumberWithCommas(totalPages)} Pages text input (${ReplaceNumberWithCommas(currentLength)} chars)`
+    ? `${formatNumberCommas(totalPages)} Pages text input (${formatNumberCommas(currentLength)} chars)`
     : '' );
-  $('#total-length').text(ReplaceNumberWithCommas(totalDetectLength));
+  $('#total-length').text(formatNumberCommas(totalDetectLength));
 
   if (totalDetectLength >= maxLength) {
     $('#total-text-chars').addClass('text-danger');
@@ -219,12 +219,4 @@ function checkLength() {
     $('#total-link-chars').removeClass('text-danger');
     $('.modify-project-btn').attr('disabled', false);
   }
-}
-function ReplaceNumberWithCommas(yourNumber) {
-  //Seperates the components of the numbers
-  var n= yourNumber.toString().split(".");
-  //Comma-fies the first part
-  n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  //Combines the two sections
-  return n.join(".");
 }

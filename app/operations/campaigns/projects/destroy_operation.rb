@@ -19,7 +19,7 @@ class Campaigns::Projects::DestroyOperation < ApplicationOperation
 
   def step_recover_counter
     counter = current_user.user_counter
-    counter.used_character_counts -= project.content_type.size
+    counter.used_character_counts -= project.total_character
     counter.used_project_counts -= 1
     counter.save!
   end

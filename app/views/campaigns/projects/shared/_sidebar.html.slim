@@ -1,9 +1,9 @@
 .nav.flex-column.nav-pills.nav-pills-custom#v-pills-tabType[role="tablist" aria-orientation="vertical"]
-  a.nav-link.nav-link-type.mb-3.p-3.shadow.active#v-pills-text[data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-text" aria-selected="true"]
+  a.nav-link.nav-link-type.mb-3.p-3.shadow.js-nav-content-type#v-pills-text[class="#{h_active_sidebar_form_project('text', params[:content_type] || @project&.content_type)}" data-content-type='text' data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-text" aria-selected="true"]
     i.ti.ti-align-center.me-2.fs-6
     span.font-weight-bold.small.text-uppercase Text
 
-  a.nav-link.nav-link-type.mb-3.p-3.shadow#v-pills-file[data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-file" aria-selected="false"]
+  a.nav-link.nav-link-type.mb-3.p-3.shadow.js-nav-content-type#v-pills-file[class="#{h_active_sidebar_form_project('file', params[:content_type] || @project&.content_type)}" data-content-type='file' data-toggle="pill" href="javascript:void(0)" role="tab" aria-controls="v-pills-file" aria-selected="false"]
     i.ti.ti-file-upload.me-2.fs-6
     span.font-weight-bold.small.text-uppercase File
 

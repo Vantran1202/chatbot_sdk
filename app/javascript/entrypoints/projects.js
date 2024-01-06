@@ -27,6 +27,7 @@ import './functions/projects/integrate';
 import './functions/projects/chatbot';
 import './functions/projects/delete';
 import './functions/projects/global';
+import './functions/projects/create_project';
 import './functions/projects/counter_character_textarea';
 import './functions/projects/counter_character_upload_file';
 
