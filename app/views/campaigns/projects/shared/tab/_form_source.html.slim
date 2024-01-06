@@ -1,0 +1,27 @@
+.tab-pane.fade.show.active#tab-1 role="tabpanel" aria-labelledby="ex1-tab-1"
+  section.header
+    .container.py-4
+      .row
+        .col-md-2
+          = render partial: 'campaigns/projects/shared/sidebar'
+
+        .col-md-10.py-3.border
+          ruby:
+            url = @form.uuid ? campaign_project_path(@form.uuid) : campaign_projects_path
+            method = @form.uuid ? :put : :post
+            content_type = params[:content_type] || 'text'
+
+          = form_with(model: @form, url:, local: true, scope: '', multipart: true, method:, html: { data: { turbo: false } }) do |f|
+            = f.hidden_field :content_type, value: content_type, class: 'form-project form-control', id: 'js-input-content-type'
+            = f.hidden_field :total_character, value: 0, class: 'form-project form-control', id: 'js-input-total-character'
+            .row
+              .col-md-7
+                .mb-3
+                  = f.label :name, 'Name *', class: 'form-label'
+                  = f.text_field :name, class: 'form-project form-control', id: 'project-name'
+                  = error_message_for(:name, f)
+
+                = render partial: 'campaigns/projects/shared/form_source/form_text', locals: { f: }
+                = render partial: 'campaigns/projects/shared/form_source/form_upload', locals: { f: }
+              .col-md-5
+                = render partial: 'campaigns/projects/shared/form_source/form_submit', locals: { f: }

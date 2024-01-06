@@ -12,5 +12,6 @@ $(function() {
     }
 
     $total.text(`${value} / ${window.formatNumberCommas(limitted)}`)
+    $('#js-input-total-character').val(value)
   })
 })

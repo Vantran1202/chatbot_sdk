@@ -1,7 +1,6 @@
 class Project < ApplicationRecord
   extend Enumerize
   include Uuid
-
   acts_as_paranoid
 
   before_create :generate_uuid

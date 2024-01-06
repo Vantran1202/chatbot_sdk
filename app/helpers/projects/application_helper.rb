@@ -2,6 +2,11 @@
 
 module Projects
   module ApplicationHelper
+    def h_active_sidebar_form_project(type, current_type)
+      current_type ||= 'text'
+      'show active' if type == current_type
+    end
+
     def h_plan_option_for_text(used, limited)
       remain = limited - used
       class_text = remain == 0 ? 'text-danger' : 'text-info'

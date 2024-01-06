@@ -16,11 +16,12 @@ class Campaigns::Projects::EditOperation < ApplicationOperation
   end
 
   def step_build_form
-    @form              = Campaigns::Projects::EditForm.new
-    @form.uuid         = project.uuid
-    @form.name         = project.name
-    @form.content_type = project.content_type
-    @form.content      = project.contents
+    @form                 = Campaigns::Projects::EditForm.new
+    @form.uuid            = project.uuid
+    @form.name            = project.name
+    @form.content_type    = project.content_type
+    @form.content         = project.contents
+    @form.total_character = project.total_character
   end
 
   def step_build_resource_form

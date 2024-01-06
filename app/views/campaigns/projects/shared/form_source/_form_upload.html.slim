@@ -1,29 +1,21 @@
-.row.tab-pane.tab-pane-type.fade.rounded.bg-white.p-3#v-pills-file-panel role="tabpanel" aria-labelledby="v-pills-file-tab"
-  .col-md-7
-    div
-      .mb-3
-        label.form-label Project Name
-        input.form-project.form-control value="Demo" type="text"
-        span#error-name.validation.text-danger.mt-2
-      .mb-3
-        label.form-label for="project-content" Project Content
-        div.card
-          div.card-body
-            label.text-center.drop-area for="fileInput" id="dropArea"
-              input.d-none type="file" accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" id="fileInput" multiple=""
-              p Drag and drop files here or click to select files
-              p.fs-1 Supported File Types: .pdf, .docx
-              div.file-label.d-block.text-center.text-success for="fileInput"
-                i.ti.ti-cloud-upload.fs-6
-            div#fileList.mt-3.max-h-36.overflow-auto.file-list
-      div.toast role="alert" aria-live="assertive" aria-atomic="true"
-        div.toast-header
-          i.ti.ti-circle-check-filled.me-2 style="color: greenyellow !important"
-          strong.me-auto Project Save Success
-          button.btn-close type="button" data-bs-dismiss="toast" aria-label="Close"
-        div.toast-body
-          | See? Just like this.
-    span#error-contents-file.text-danger
-
-  .col-md-5
-    == render partial: 'campaigns/projects/shared/form_source/form_submit'
+#v-pills-file-panel.tab-pane.tab-pane-type.fade.rounded.bg-white class="#{h_active_sidebar_form_project('file', params[:content_type] || @project&.content_type)}" role="tabpanel" aria-labelledby="v-pills-file-tab"
+  .mb-3
+    label.form-label for="project-content" Content *
+    div.card
+      div.card-body
+        label.text-center.drop-area for="fileInput" id="dropArea"
+          input.d-none type="file"
+          = f.file_field :files, class: 'd-none', id:'fileInput', accept: "application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document", multiple: true
+          p Drag and drop files here or click to select files
+          p.fs-1 Supported File Types: .pdf, .docx
+          div.file-label.d-block.text-center.text-success for="fileInput"
+            i.ti.ti-cloud-upload.fs-6
+        div#fileList.mt-3.max-h-36.overflow-auto.file-list
+        = error_message_for(:files, f)
+  / div.toast role="alert" aria-live="assertive" aria-atomic="true"
+  /   div.toast-header
+  /     i.ti.ti-circle-check-filled.me-2 style="color: greenyellow !important"
+  /     strong.me-auto Project Save Success
+  /     button.btn-close type="button" data-bs-dismiss="toast" aria-label="Close"
+  /   div.toast-body
+  /     | See? Just like this.

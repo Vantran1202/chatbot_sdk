@@ -17,21 +17,29 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
   end
 
   def step_create_project
-    current_user.projects.create!(
+    project = current_user.projects.create!(
       name: form.name,
       content_type: form.content_type,
-      contents: form.content
+      contents: form.content,
+      total_character: form.total_character
     )
+
+    return if params[:files].blank?
+
+    params[:files].compact_blank.each do |file|
+      project.project_files.create!(filename: file)
+    end
   end
 
   def step_update_user_counter
     counter = current_user.user_counter
-    counter.used_character_counts += form.content_type.size
+    counter.used_character_counts += form.total_character
     counter.used_project_counts += 1
     counter.save!
   end
 
   def permit_params
-    params.permit(:name, :content, :content_type)
+    params[:files] = params[:files]&.compact_blank if params[:files].present?
+    params.permit(:name, :content, :content_type, :total_character, files: [])
   end
 end
