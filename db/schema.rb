@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_07_074340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "vector"
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -27,11 +28,24 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.index ["user_id", "plan_id", "expired_at"], name: "index_orders_on_user_id_and_plan_id_and_expired_at", unique: true, where: "(deleted_at IS NULL)"
   end
 
+  create_table "project_contents", force: :cascade do |t|
+    t.string "moduleable_type"
+    t.bigint "moduleable_id"
+    t.text "contents", null: false
+    t.vector "vectors", limit: 1536
+    t.integer "token_counts", default: 0
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["moduleable_id", "moduleable_type"], name: "index_project_contents_on_moduleable_id_and_moduleable_type", where: "(deleted_at IS NULL)"
+  end
+
   create_table "project_files", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.string "filename", null: false
     t.string "filetype", null: false
     t.float "filesize", default: 0.0, null: false
+    t.text "contents"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +60,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_151631) do
     t.integer "total_character", default: 0
     t.text "contents"
     t.string "cfg_interfaces"
+    t.string "status", null: false
+    t.string "reason_failure", default: "{}"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

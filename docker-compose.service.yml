@@ -3,11 +3,8 @@
 version: '3'
 services:
   db:
-    container_name: chatbot_sdk-postgres
-    image: chatbot_sdk:db-postgres
-    build:
-      context: .
-      dockerfile: ./docker/db/Dockerfile
+    container_name: chatbot_sdk-pgvector
+    image: ankane/pgvector
     restart: always
     ports:
       - 5432:5432
@@ -17,7 +14,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./tmp/pg_data:/var/lib/postgresql/data
+      # - ./tmp/pg_data:/var/lib/postgresql/data
+      - ./tmp/init.sql:/docker-entrypoint-initdb.d/init.sql
   redis:
     container_name: chatbot_sdk-redis
     image: redis:alpine

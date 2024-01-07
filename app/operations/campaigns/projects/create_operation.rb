@@ -7,9 +7,12 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
       step_create_project
       step_update_user_counter
     end
+    step_embedding_job
   end
 
   private
+
+  attr_reader :project
 
   def step_build_form
     @form = Campaigns::Projects::CreateForm.new(permit_params.merge(user_counter: current_user.user_counter))
@@ -17,11 +20,11 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
   end
 
   def step_create_project
-    project = current_user.projects.create!(
+    @project = current_user.projects.create!(
       name: form.name,
       content_type: form.content_type,
       contents: form.content,
-      total_character: form.total_character
+      status: Project.status.creating
     )
 
     return if params[:files].blank?
@@ -33,9 +36,12 @@ class Campaigns::Projects::CreateOperation < ApplicationOperation
 
   def step_update_user_counter
     counter = current_user.user_counter
-    counter.used_character_counts += form.total_character
     counter.used_project_counts += 1
     counter.save!
+  end
+
+  def step_embedding_job
+    EmbeddingJob.perform_later(project.id)
   end
 
   def permit_params
