@@ -2,7 +2,7 @@ class Campaigns::Projects::BaseForm < ApplicationForm
   attribute :user_counter
   attribute :uuid
   attribute :name
-  attribute :content_type
+  attribute :content_type, default: Project.content_type.text
   attribute :content
   attribute :files
   attribute :total_character, :integer, default: 0
@@ -11,7 +11,7 @@ class Campaigns::Projects::BaseForm < ApplicationForm
   validates :content_type, presence: true
 
   validate :must_content_presence
-  validate :must_available_character_counts
+  validate :must_valid_character_counts
   validate :must_valid_filetype
   validate :must_valid_filesize
 
@@ -24,18 +24,11 @@ class Campaigns::Projects::BaseForm < ApplicationForm
     errors.add(:files, :blank) if content_type == Project.content_type.file
   end
 
-  def must_available_character_counts
-    total_used = user_counter.used_character_counts + content.size
+  def must_valid_character_counts
+    total_used = user_counter.used_character_counts + total_character
     return if total_used <= user_counter.limited_character_counts
 
     errors.add(:base, 'Total used character counts exceeded the limit')
-  end
-
-  def must_available_project_counts
-    total_used = user_counter.used_project_counts + 1
-    return if total_used <= user_counter.limited_project_counts
-
-    errors.add(:base, 'Total used project counts exceeded the limit')
   end
 
   def must_valid_filetype
@@ -50,6 +43,8 @@ class Campaigns::Projects::BaseForm < ApplicationForm
   end
 
   def must_valid_filesize
+    return if files.blank?
+
     filesize = 0
     files.each { |file| filesize += file.size }
     return if filesize <= Settings.upload_files.max_size.megabytes

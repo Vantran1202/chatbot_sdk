@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_one :user_counter, dependent: :destroy
   has_one :current_order, -> { current_order }, class_name: 'Order', dependent: :destroy
 
-  has_many :projects, dependent: :destroy
-  has_many :orders,   dependent: :destroy
+  has_many :projects, dependent: :destroy, dependent: :destroy
+  has_many :orders,   dependent: :destroy, dependent: :destroy
 end

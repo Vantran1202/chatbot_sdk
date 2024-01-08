@@ -10,9 +10,14 @@ div.card.alert-dismissible.fade.show.alert.p-0.card-hover.bg-white role="alert"
     p#total-detect-chars-error.fs-2.text-danger.text-center.my-2
 
     - if local_assigns[:f].present?
-      = f.submit 'Training', class: "modify-project-btn form-project btn btn-outline-primary d-block w-100"
+      - if @project&.status_creating?
+        = f.submit 'Creating', class: "modify-project-btn form-project btn btn-outline-secondary d-block w-100", disabled: true
+        p.fs-2.fst-italic.text-warning.pt-2 Data is currently being trained
 
-  - if @project.present? && @project.project_files.present?
+      - else
+        = f.submit 'Training AI', class: "modify-project-btn form-project btn btn-outline-primary d-block w-100"
+
+  - if @project&.project_files.present?
     div.p-2.d-block.mt-3
       h5.card-title.text-center.mb-4 Files
       = render partial: 'campaigns/projects/shared/form_source/project_file', collection: @project.project_files, as: :project_file

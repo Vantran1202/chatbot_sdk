@@ -2,5 +2,5 @@ class Plan < ActiveHash::Base
   include ActiveHash::Associations
   include Plan::Reader
 
-  has_one :plan_option
+  has_one :plan_option, dependent: :destroy
 end

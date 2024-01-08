@@ -5,5 +5,5 @@ class ProjectFile < ApplicationRecord
 
   belongs_to :project
 
-  has_many :project_contents, as: :moduleable
+  has_many :project_contents, as: :moduleable, dependent: :destroy
 end

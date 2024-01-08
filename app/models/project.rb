@@ -16,7 +16,7 @@ class Project < ApplicationRecord
   }
 
   enumerize :content_type, in: %i[text file], default: :text, predicates: { prefix: true }
-  enumerize :status, in: %i[creating done failed]
+  enumerize :status, in: %i[creating done failed], predicates: { prefix: true }
 
   # https://api.rubyonrails.org/classes/ActiveRecord/AttributeMethods/Serialization/ClassMethods.html
   serialize :cfg_interfaces, type: Hash, coder: YAML
@@ -24,5 +24,5 @@ class Project < ApplicationRecord
   belongs_to :user
 
   has_many :project_files, dependent: :destroy
-  has_many :project_contents, as: :moduleable
+  has_many :project_contents, as: :moduleable, dependent: :destroy
 end
