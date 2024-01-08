@@ -5,6 +5,7 @@ class CreateProjectFiles < ActiveRecord::Migration[7.1]
       t.string :filename, null: false
       t.string :filetype, null: false
       t.float :filesize, null: false, default: 0
+      t.text :contents, limit: 10.megabytes # Maximum 100 GB
 
       t.datetime :deleted_at
       t.timestamps

@@ -32,10 +32,12 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 
 gem 'config'
+gem 'pinecone'
+gem 'sidekiq'
 gem 'slim'
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem 'redis'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -53,9 +55,14 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 gem 'active_hash'
 gem 'carrierwave'
+gem 'docx'
 gem 'enumerize'
+gem 'neighbor'
 gem 'paranoia'
+gem 'pdf-reader'
+gem 'retryable'
 gem 'ruby-openai'
+gem 'tiktoken_ruby'
 gem 'versionist', '2.0.1'
 gem 'vite_rails'
 
