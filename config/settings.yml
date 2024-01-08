@@ -14,3 +14,4 @@ upload_files:
   max_size: 10 # megabytes
 gpt:
   model_embedding: text-embedding-ada-002
+  max_characters_to_load_vector: 3000

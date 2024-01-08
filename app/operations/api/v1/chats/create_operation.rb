@@ -8,17 +8,32 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
 
   def call
     step_load_project
+    step_load_contents
     step_set_header
     step_open_stream
+  rescue StandardError => e
+    Rails.logger.error("#{e.class} - #{e.message}")
+    response.stream.write('Oops! Something went wrong. Please try reloading the page and try again.')
+  ensure
     step_close_stream
   end
 
   private
 
-  attr_reader :response, :project
+  attr_reader :response, :project, :contents
 
   def step_load_project
     @project = Project.find_by!(uuid: params[:project_id])
+  end
+
+  def step_load_contents
+    if project.total_character <= Settings.gpt.max_characters_to_load_vector
+      @contents = project.project_contents.map { |record| record.contents }.join("\n")
+      return @contents
+    end
+
+    results = project.query_vector(params[:question])
+    @contents = results['matches'].map { |resp| resp['metadata']['contents'] }.join("\n")
   end
 
   def step_set_header
@@ -26,9 +41,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def step_open_stream
-    Gpt::Chat.new.stream_chat(
-      build_context
-    ) do |chunk|
+    Gpt::Chat.new.stream_chat(build_context) do |chunk|
       response.stream.write(chunk.dig('choices', 0, 'delta', 'content'))
     end
   rescue ActionController::Live::ClientDisconnected
@@ -37,6 +50,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
 
   def step_close_stream
     response.stream.close
+  rescue StandardError
   end
 
   def build_context
@@ -50,10 +64,11 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def system_content
-    "Bạn là trợ lý cho hệ thống. Hãy dựa vào nội dung cung cấp bên dưới và trả lời câu hỏi cho người dùng. Nếu không biết thì hãy trả lời 'Xin lỗi, tôi không biết.'
+    "Bạn là trợ lý cho hệ thống. Hãy dựa vào nội dung cung cấp bên dưới và trả lời câu hỏi cho người dùng.
+    Nếu thông tin không có trong phần NỘI DUNG thì hãy trả lời với tông giọng thân thiện 'Xin lỗi, nội dung này tôi chưa được cung cấp. Xin cảm ơn!'
 
     ***NỘI DUNG:**
-    #{project[:contents]}
+    #{contents}
 
     #**TRẢ LỜI:**
     "

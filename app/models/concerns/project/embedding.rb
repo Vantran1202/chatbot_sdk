@@ -74,13 +74,15 @@ module Project::Embedding
 
   # Query a vector from the index
   #
-  #   @param [Array] embedding - The vector to query
+  #   @param [Array] prompt - Prompt to be used for the query
   #   @param [Hash] opts - Optional parameters
   #     @option [Integer] top_k - The maximum number of results to return (default 10)
   #     @option [Boolean] include_values - Whether to include the values in the response (default false)
   #     @option [Boolean] include_metadata - Whether to include metadata in the response (default true
-  def query_vector(embedding, opts = {})
+  def query_vector(prompt, opts = {})
+    embedding = Gpt::Embedding.create(prompt)
+
     index = pinecone.index(index_name)
-    response = index.query(vector: embedding, namespace: namespace_vector, **opts)
+    response = index.query(vector: embedding['data'][0]['embedding'], namespace: namespace_vector, **opts)
   end
 end
