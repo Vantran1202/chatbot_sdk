@@ -1,0 +1,23 @@
+nav.sidebar-nav.scroll-sidebar(data-simplebar="")
+  ul#sidebarnav.in
+    li.nav-small-cap
+      i.ti.ti-dots.nav-small-cap-icon.fs-4
+      span.hide-menu Dashboard
+
+    li.sidebar-item
+      a.sidebar-link(href="#{new_campaign_project_path}" aria-expanded="false")
+        span
+          i.ti.ti-plus
+        span.hide-menu Create Project
+
+    li.sidebar-item.selected
+      a.sidebar-link(href="#{campaign_projects_path}" aria-expanded="false")
+        span
+          i.ti.ti-list
+        span.hide-menu My Projects
+
+    li.nav-small-cap
+      i.ti.ti-dots.nav-small-cap-icon.fs-4
+      span#subscription-plan-name.hide-menu Free Plan
+
+    = render partial: 'layouts/shared/projects/sidebar_items/plan_option'

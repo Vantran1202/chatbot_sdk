@@ -13,12 +13,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /home/developer/.asdf/installs/ruby/3.2.2/include/ruby-3.2.0
+topdir = /home/developer/.asdf/installs/ruby/3.2.1/include/ruby-3.2.0
 hdrdir = $(topdir)
-arch_hdrdir = /home/developer/.asdf/installs/ruby/3.2.2/include/ruby-3.2.0/x86_64-linux
+arch_hdrdir = /home/developer/.asdf/installs/ruby/3.2.1/include/ruby-3.2.0/x86_64-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/home/developer/.asdf/installs/ruby/3.2.2
+prefix = $(DESTDIR)/home/developer/.asdf/installs/ruby/3.2.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -88,10 +88,10 @@ CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC -fvisibility=hidden -I.. -Wall -O3 -std=gnu99 -ggdb3 -DHASH_ASET_DEDUPE=1 -DSTR_UMINUS_DEDUPE_FROZEN=1 $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_RB_ENC_INTERNED_STR -DHAVE_RB_HASH_NEW_CAPA -DHAVE_RB_PROC_CALL_WITH_BLOCK -I/home/developer/.asdf/installs/ruby/3.2.2/include  $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_RB_ENC_INTERNED_STR -DHAVE_RB_HASH_NEW_CAPA -DHAVE_RB_PROC_CALL_WITH_BLOCK -I/home/developer/.asdf/installs/ruby/3.2.1/include  $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS)  $(ARCH_FLAG)
-ldflags  = -L. -L/home/developer/.asdf/installs/ruby/3.2.2/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed
-dldflags = -L/home/developer/.asdf/installs/ruby/3.2.2/lib  -Wl,--compress-debug-sections=zlib 
+ldflags  = -L. -L/home/developer/.asdf/installs/ruby/3.2.1/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed
+dldflags = -L/home/developer/.asdf/installs/ruby/3.2.1/lib  -Wl,--compress-debug-sections=zlib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -shared

@@ -1,5 +1,5 @@
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/pg-1.5.4/ext
-/home/developer/.asdf/installs/ruby/3.2.2/bin/ruby extconf.rb
+/home/developer/.asdf/installs/ruby/3.2.1/bin/ruby -I /home/developer/.asdf/installs/ruby/3.2.1/lib/ruby/3.2.0 extconf.rb
 Calling libpq with GVL unlocked
 checking for pg_config... yes
 Using config values from /usr/bin/pg_config
@@ -25,10 +25,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/pg-1.5.4/ext
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-s16hra sitelibdir\=./.gem.20231011-46827-s16hra clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-37t0y3 sitelibdir\=./.gem.20231211-116275-37t0y3 clean
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/pg-1.5.4/ext
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-s16hra sitelibdir\=./.gem.20231011-46827-s16hra
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-37t0y3 sitelibdir\=./.gem.20231211-116275-37t0y3
 compiling gvl_wrappers.c
 compiling pg.c
 compiling pg_binary_decoder.c
@@ -53,9 +53,9 @@ compiling pg_util.c
 linking shared-object pg_ext.so
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/pg-1.5.4/ext
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-s16hra sitelibdir\=./.gem.20231011-46827-s16hra install
-/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20231011-46827-s16hra
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-37t0y3 sitelibdir\=./.gem.20231211-116275-37t0y3 install
+/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20231211-116275-37t0y3
 installing pg_ext libraries
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/pg-1.5.4/ext
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-s16hra sitelibdir\=./.gem.20231011-46827-s16hra clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-37t0y3 sitelibdir\=./.gem.20231211-116275-37t0y3 clean

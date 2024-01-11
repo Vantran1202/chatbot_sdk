@@ -1,12 +1,12 @@
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-/home/developer/.asdf/installs/ruby/3.2.2/bin/ruby extconf.rb
+/home/developer/.asdf/installs/ruby/3.2.1/bin/ruby -I /home/developer/.asdf/installs/ruby/3.2.1/lib/ruby/3.2.0 extconf.rb
 creating Makefile
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-g24phe sitelibdir\=./.gem.20231011-46827-g24phe clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-cqvz9e sitelibdir\=./.gem.20231211-116275-cqvz9e clean
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-g24phe sitelibdir\=./.gem.20231011-46827-g24phe
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-cqvz9e sitelibdir\=./.gem.20231211-116275-cqvz9e
 compiling websocket_mask.c
 websocket_mask.c: In function ‘Init_websocket_mask’:
 websocket_mask.c:26:6: warning: old-style function definition [-Wold-style-definition]
@@ -19,8 +19,8 @@ cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ 
 linking shared-object websocket_mask.so
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-g24phe sitelibdir\=./.gem.20231011-46827-g24phe install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20231011-46827-g24phe
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-cqvz9e sitelibdir\=./.gem.20231211-116275-cqvz9e install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20231211-116275-cqvz9e
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-g24phe sitelibdir\=./.gem.20231011-46827-g24phe clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-cqvz9e sitelibdir\=./.gem.20231211-116275-cqvz9e clean

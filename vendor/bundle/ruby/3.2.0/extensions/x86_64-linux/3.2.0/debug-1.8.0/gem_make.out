@@ -1,19 +1,19 @@
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
-/home/developer/.asdf/installs/ruby/3.2.2/bin/ruby extconf.rb
+/home/developer/.asdf/installs/ruby/3.2.1/bin/ruby -I /home/developer/.asdf/installs/ruby/3.2.1/lib/ruby/3.2.0 extconf.rb
 creating Makefile
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-n654bb sitelibdir\=./.gem.20231011-46827-n654bb clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-ja2m72 sitelibdir\=./.gem.20231211-116275-ja2m72 clean
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-n654bb sitelibdir\=./.gem.20231011-46827-n654bb
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-ja2m72 sitelibdir\=./.gem.20231211-116275-ja2m72
 compiling debug.c
 compiling iseq_collector.c
 linking shared-object debug/debug.so
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-n654bb sitelibdir\=./.gem.20231011-46827-n654bb install
-/usr/bin/install -c -m 0755 debug.so ./.gem.20231011-46827-n654bb/debug
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-ja2m72 sitelibdir\=./.gem.20231211-116275-ja2m72 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20231211-116275-ja2m72/debug
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-n654bb sitelibdir\=./.gem.20231011-46827-n654bb clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-ja2m72 sitelibdir\=./.gem.20231211-116275-ja2m72 clean

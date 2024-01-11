@@ -37,5 +37,5 @@
 /public/assets
 /vendor/bundle
 
-# Ignore somefiles
-database.yml
+# Ignore configs.
+/config/database.yml

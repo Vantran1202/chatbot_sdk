@@ -1,0 +1,5 @@
+#v-pills-text-panel.tab-pane.tab-pane-type.fade.rounded.bg-white class="#{h_active_sidebar_form_project('text', params[:content_type] || @project&.content_type)}" role="tabpanel" aria-labelledby="v-pills-text-tab"
+  .mb-3
+    = f.label :content, 'Content *', class: 'form-label'
+    = f.text_area :content, class: 'form-project form-control project-content-input js-content-training', rows: 15, data: { limitted_character_counts: current_user.user_counter.remain_character_counts }
+    = error_message_for(:content, f)

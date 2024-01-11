@@ -1,0 +1,70 @@
+.tab-pane.tab-pane-left.fade.rounded.bg-white.p-3#v-pills-interface-panel role="tabpanel" aria-labelledby="v-pills-interface-tab"
+  div
+    = form_with(model: form, url: campaign_project_interfaces_path(project.uuid), local: true, scope: '', method: :post, id: 'chat_interface_form') do |f|
+      input type="hidden" id="project_id" value="f841620a-970c-4de5-aa7a-a63eb1743934"
+      input type="hidden" id="chat_interface_id" value=""
+      input type="hidden" name="_token" value="RxIz69iKTpJiCnTcOl1S60KYn0MqXPzBSNRpXmbl" autocomplete="off"
+      div.border.border-gray-200
+        div.border-bottom.border-gray-200.bg-white.py-3.px-5
+          h3.text-xl.font-semibold.text-gray-900 Chat Interface
+        div.p-1.p-sm-5
+          h4.mb-4.text-sm.text-gray-600 Note: Applies when embedded on a website
+          div.row
+            div.col-lg-6
+
+              div.pb-4
+                label.form-label Display name
+                = f.text_field :chatbot_name, value: f.object&.chatbot_name, class: 'form-control', id: 'bot_name'
+
+              div.pb-4
+                div.d-flex.justify-content-between
+                  label.form-label Theme
+                  button#theme_reset.btn.btn-sm.btn-primary.mb-2[type="button"] Reset
+                div.mb-2
+                  = f.color_field :theme_color, value: f.object&.theme_color, class: 'form-control w-2 h-2 p-1 border bg-gray-100', id: 'theme'
+
+              div.pb-4
+                div.d-flex.justify-content-between.mb-2
+                  label.form-label Initial Messages
+                  button#initial_reset.btn.btn-sm.btn-primary[type="button"] Reset
+                div.mb-2
+                  = f.text_area :initial_message, value: f.object&.initial_message, rows: 4, maxlength: 1000, class: 'form-control', id: 'initial_messages', placeholder: "Hi! What can I help you with?"
+
+              div
+                label.form-label Suggested Messages
+                div.mb-2
+                  = f.text_area :suggest_message, value: f.object&.suggest_message, rows: 4, maxlength: 1000, class: 'form-control', id: 'suggested_messages', placeholder: "What is example.com?"
+                p.mt-2.text-sm.text-gray-600 Enter each message in a new line.
+
+              div.pb-4.d-grid.gap-2
+                = f.submit 'Save', class: "modify-project-btn form-project btn btn-outline-primary mx-2 mb-1 mt-1", id: 'update-chat-interface'
+
+            div.col-lg-6
+              div.d-flex.flex-column.flex-shrink-0.border.rounded-top
+                div.w-100
+                  div#chat_theme.d-flex.justify-between.py-1.mb-2.mh-50.rounded-top.bg-gray-800.rounded-top.text-white style="background-color: rgb(31, 41, 55);"
+                    div.d-flex.align-items-center.p-1.m-1
+                      img#chat_bot_profile_picture.rounded-circle.mx-2 src="" width="35" height="35" decoding="async" data-nimg="1" loading="lazy" alt="profile picture" style="display: none;" onerror="this.style.display='none';"
+                      h1#chat_bot_name.h4.mx-2.fs-5.m-auto style="color: #fff"= f.object&.chatbot_name
+                  div.h-26.overflow-auto
+                    div.pr-2.p-2
+                      div.d-flex.justify-content-start.mb-3
+                        div#chat_initial_messages.reply.text-black.white-break.rounded-lg.py-2.px-4.typing.bg-gray-200= f.object&.initial_message
+                      div.d-flex.justify-content-end.mb-3
+                        div.text-white.rounded-lg.py-2.px-4.bg-question Hi
+                  div.w-100
+                    div.container.mt-4
+                      div#suggest_mess.py-3.d-flex.overflow-x-auto
+                        = render partial: 'campaigns/projects/shared/tab/embed_on_site/suggest', collection: f.object&.suggest_message&.split("\n"), as: :suggest
+
+                  div#chat-input-container.p-2.border-t.border-gray-200
+                    div.items-center.d-flex
+                      input type="text" id="chat-input" class="min-w-0 flex-1 rounded-md px-4 py-2 outline-none border-none" placeholder="Type your message..."
+                      button type="button" id="chat-submit" class="bg-gray-800 text-white rounded-md px-4 py-2 cursor-pointer border-0"
+                        i.ti.ti-send aria-hidden="true"
+                    div.flex.text-center.text-xs.pt-2
+                      span.flex-1
+                        | Prompted by 
+                        a#current_url href="" target="_blank" class="text-indigo-600" Atarbot
+
+

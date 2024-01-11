@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.licenses = ["BSD-2-Clause".freeze]
   s.rdoc_options = ["--main".freeze, "README.md".freeze, "--title".freeze, "PG: The Ruby PostgreSQL Driver".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.4.20".freeze
+  s.rubygems_version = "3.4.6".freeze
   s.summary = "Pg is the Ruby interface to the PostgreSQL RDBMS".freeze
 
-  s.installed_by_version = "3.4.20" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.4.6" if s.respond_to? :installed_by_version
 end

@@ -1,5 +1,5 @@
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.4/ext/bigdecimal
-/home/developer/.asdf/installs/ruby/3.2.2/bin/ruby extconf.rb
+/home/developer/.asdf/installs/ruby/3.2.1/bin/ruby -I /home/developer/.asdf/installs/ruby/3.2.1/lib/ruby/3.2.0 extconf.rb
 checking for __builtin_clz()... yes
 checking for __builtin_clzl()... yes
 checking for __builtin_clzll()... yes
@@ -32,17 +32,17 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.4/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-fqfgob sitelibdir\=./.gem.20231011-46827-fqfgob clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-qwh23t sitelibdir\=./.gem.20231211-116275-qwh23t clean
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.4/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-fqfgob sitelibdir\=./.gem.20231011-46827-fqfgob
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-qwh23t sitelibdir\=./.gem.20231211-116275-qwh23t
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.4/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-fqfgob sitelibdir\=./.gem.20231011-46827-fqfgob install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20231011-46827-fqfgob
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-qwh23t sitelibdir\=./.gem.20231211-116275-qwh23t install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20231211-116275-qwh23t
 
 current directory: /home/developer/Documents/Projects/chatbot_sdk/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.4/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20231011-46827-fqfgob sitelibdir\=./.gem.20231011-46827-fqfgob clean
+make DESTDIR\= sitearchdir\=./.gem.20231211-116275-qwh23t sitelibdir\=./.gem.20231211-116275-qwh23t clean

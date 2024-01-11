@@ -1,0 +1,8 @@
+.my-3
+  == render 'campaigns/upgrades/index/page_title'
+
+  .row
+    == render partial: 'campaigns/upgrades/index/plan', collection: @plans, as: :plan
+
+  .row.mb-9
+    == render partial: 'campaigns/upgrades/index/feature', locals: { plans: @plans }

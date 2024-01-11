@@ -17,6 +17,10 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 //
 // import * as Turbo from '@hotwired/turbo'
 // Turbo.start()
+
+import "@hotwired/turbo-rails"
+Turbo.session.drive = false
+
 //
 // import ActiveStorage from '@rails/activestorage'
 // ActiveStorage.start()
@@ -24,5 +28,26 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // // Import all channels.
 // const channels = import.meta.globEager('./**/*_channel.js')
 
-// Example: Import a stylesheet in app/frontend/index.css
-// import '~/index.css'
+import '../controllers'
+import * as boostrap from 'bootstrap'
+import $ from 'jquery';
+import '../vendors/atar'
+
+window.$ = $;
+window.boostrap = boostrap
+
+// initialize the page
+window.addEventListener('load', (event) => {
+    initPage();
+});
+window.addEventListener('turbo:render', (event) => {
+    initPage();
+});
+function initPage() {
+  // initialize popovers
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+}
+
