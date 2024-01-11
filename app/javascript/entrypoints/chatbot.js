@@ -7,14 +7,14 @@ $(function() {
   const chatSubmit     = document.getElementById('chat-submit');
   const chatMessages   = document.getElementById('chat-messages');
 
-  const chatbotName    = document.getElementById('chatbot_name');
-  const chatbotAvatar  = document.getElementById('chatbot_avatar');
-  const chatHeader     = document.getElementById('chat-header');
-  const chatInitial    = document.getElementById('chat_initial');
-  const suggestMessage = document.getElementById('suggest_mess');
+  // const chatbotName    = document.getElementById('chatbot_name');
+  // const chatbotAvatar  = document.getElementById('chatbot_avatar');
+  // const chatHeader     = document.getElementById('chat-header');
+  // const chatInitial    = document.getElementById('chat_initial');
+  // const suggestMessage = document.getElementById('suggest_mess');
   // const API_CHAT_INTERFACE = `${window.location.origin}/api/v1/chat_interface/${projectId}`;
   // var xhr = new XMLHttpRequest();
-  // xhr.open("GET", API_CHAT_INTERFACE, true);
+  // xhr.open("GET", API_URL, true);
 
   // xhr.onload = function() {
   //     if (xhr.status === 200) {
@@ -88,6 +88,13 @@ $(function() {
   　if (event.keyCode == 13 && !event.shiftKey) {
       chatSubmit.click();
   　}
+  });
+
+  var buttonSuggest = document.getElementsByClassName("js-chatbot-suggest-message ");
+  Array.from(buttonSuggest).forEach(function(element) {
+    element.addEventListener('click', function() {
+      onUserRequest(this.innerText);
+    });
   });
 
   async function onUserRequest(message) {

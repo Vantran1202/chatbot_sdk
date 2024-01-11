@@ -6,7 +6,7 @@ module Project::Embedding
   end
 
   def index_name
-    "#{user.id}-#{user.fullname.parameterize}"
+    "user-#{user.id}"
   end
 
   def describe_index(name = nil)
@@ -17,14 +17,14 @@ module Project::Embedding
   end
 
   def create_index(name = nil)
-    Retryable.retryable(tries: 3) do
+    Retryable.retryable(tries: 3) do |retries, exception|
       resp = pinecone.create_index({
                                      metric: 'cosine',
                                      name: name || index_name,
                                      dimension: 1536 # OpenAI/text-embedding-ada-002
                                    })
-
-      raise StandardError, "Failed to create index. Error: #{resp}" if resp.response.code.to_i > 200
+      puts "try #{retries + 1} failed with exception: #{exception}" if retries > 0
+      raise StandardError, "Failed to create index. Error: #{resp}" if resp.response.code.to_i > 300
 
       resp
     end

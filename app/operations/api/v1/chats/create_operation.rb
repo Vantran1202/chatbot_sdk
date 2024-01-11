@@ -11,6 +11,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
     step_load_contents
     step_set_header
     step_open_stream
+    step_incr_request_counts
   rescue StandardError => e
     Rails.logger.error("#{e.class} - #{e.message}")
     response.stream.write('Oops! Something went wrong. Please try reloading the page and try again.')
@@ -51,6 +52,10 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   def step_close_stream
     response.stream.close
   rescue StandardError
+  end
+
+  def step_incr_request_counts
+    project.user.user_counter.increment!(:used_request_counts)
   end
 
   def build_context

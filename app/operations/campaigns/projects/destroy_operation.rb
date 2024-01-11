@@ -14,13 +14,17 @@ class Campaigns::Projects::DestroyOperation < ApplicationOperation
 
   def step_destroy_project
     @project = current_user.projects.find_by!(uuid: params[:uuid])
+    @project.delete_index
     @project.destroy!
   end
 
   def step_recover_counter
     counter = current_user.user_counter
     counter.used_character_counts -= project.total_character
+    counter.used_character_counts  = 0 if counter.used_character_counts < 0
+
     counter.used_project_counts -= 1
+    counter.used_project_counts  = 0 if counter.used_project_counts < 0
     counter.save!
   end
 end

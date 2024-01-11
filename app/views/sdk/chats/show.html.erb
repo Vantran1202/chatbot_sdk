@@ -20,7 +20,7 @@
     <div>
         <div class="container">
             <div id="suggest_mess" class="p-4 flex overflow-x-auto">
-
+              <%= render partial: 'sdk/chats/suggest_message', collection: @project.cfg_interfaces['suggest_message'].split("\r\n"), as: :message %>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
         </button>
       </div>
       <div class="flex text-center text-xs pt-2">
-        <span class="flex-1">Prompted by <a id="current_url" href="https://tomosia.com" target="_blank" class="text-indigo-600">Atarbot</a></span>
+        <span class="flex-1">Prompted by <a id="current_url" href="" target="_blank" class="text-indigo-600">Atarbot</a></span>
       </div>
     </div>
   </div>
