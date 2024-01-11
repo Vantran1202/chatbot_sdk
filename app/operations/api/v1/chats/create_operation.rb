@@ -7,9 +7,11 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def call
-    step_load_project
-    step_load_contents
     step_set_header
+    step_load_project
+    step_load_user_counter
+    step_validation { return }
+    step_load_contents
     step_open_stream
     step_incr_request_counts
   rescue StandardError => e
@@ -21,10 +23,25 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
 
   private
 
-  attr_reader :response, :project, :contents
+  attr_reader :response, :project, :contents, :user_counter
 
   def step_load_project
     @project = Project.find_by!(uuid: params[:project_id])
+  end
+
+  def step_load_user_counter
+    @user_counter = project.user.user_counter
+  end
+
+  def step_set_header
+    response.headers['Content-Type'] = 'text/event-stream'
+  end
+
+  def step_validation
+    return if user_counter.used_request_counts < user_counter.limited_request_counts
+
+    response.stream.write('Oops! Failed to chat')
+    yield
   end
 
   def step_load_contents
@@ -35,10 +52,6 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
 
     results = project.query_vector(params[:question])
     @contents = results['matches'].map { |resp| resp['metadata']['contents'] }.join("\n")
-  end
-
-  def step_set_header
-    response.headers['Content-Type'] = 'text/event-stream'
   end
 
   def step_open_stream
@@ -55,7 +68,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def step_incr_request_counts
-    project.user.user_counter.increment!(:used_request_counts)
+    user_counter.increment!(:used_request_counts)
   end
 
   def build_context
