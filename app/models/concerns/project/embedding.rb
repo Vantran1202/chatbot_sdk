@@ -36,6 +36,9 @@ module Project::Embedding
     return false if is_not_found
 
     resp
+  rescue StandardError => e
+    Rails.logger.error("Failed to delete index. Error: #{e}")
+    false
   end
 
   def namespace_vector
