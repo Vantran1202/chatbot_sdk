@@ -45,7 +45,7 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
   end
 
   def step_load_contents
-    if project.total_character <= Settings.gpt.max_characters_to_load_vector
+    if project.project_contents.count == 1
       @contents = project.project_contents.map { |record| record.contents }.join("\n")
       return @contents
     end

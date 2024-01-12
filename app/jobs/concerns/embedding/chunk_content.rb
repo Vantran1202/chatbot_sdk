@@ -63,7 +63,7 @@ class Embedding::ChunkContent
     end
   end
 
-  def create_chunk_project_contents!(contents, word_limit: 1_500)
+  def create_chunk_project_contents!(contents, word_limit: Settings.gpt.max_characters_to_chunk)
     split_contents = Gpt::TikToken.split_text_by_word_limit(contents, word_limit:)
     ActiveRecord::Base.transaction do
       split_contents.each do |chunk_content|

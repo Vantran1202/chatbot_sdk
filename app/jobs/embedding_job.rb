@@ -5,9 +5,13 @@ class EmbeddingJob < ApplicationJob
     ActiveRecord::Base.transaction do
       Embedding::ChunkContent.new(project).call
       return if project.status == Project.status.failed
+      if project.project_contents.count == 1 # no need to generate vector for 1 content
+        project.update!(status: Project.status.done)
+      else
+        Embedding::GenerateVector.new(project).call
+        Embedding::CreateVector.new(project).call
+      end
 
-      Embedding::GenerateVector.new(project).call
-      Embedding::CreateVector.new(project).call
       delete_reason_failure
     end
   rescue StandardError => e
