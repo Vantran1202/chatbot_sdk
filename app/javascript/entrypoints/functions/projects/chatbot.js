@@ -98,7 +98,8 @@ class ChatApp {
     this.msgHistory.append(userMessage);
     this.messageInput.value = "";
 
-    const question = encodeURIComponent(promptInput);
+    // const question = encodeURIComponent(promptInput);
+    const question = promptInput;
     const user_avatar = $('.js-user-avatar').data('user-avatar')
 
     const assistantMessage = `

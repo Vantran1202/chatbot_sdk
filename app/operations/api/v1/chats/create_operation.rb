@@ -78,6 +78,8 @@ class Api::V1::Chats::CreateOperation < ApplicationOperation
     @build_context.push(params[:histories].as_json) if params[:histories].present?
     @build_context.push({ 'role' => 'user', 'content' => params[:question] })
     @build_context.flatten!
+
+    puts @build_context
     @build_context
   end
 
